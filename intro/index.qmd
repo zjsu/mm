@@ -1,0 +1,96 @@
+---
+author: 浙江工商大学计算机学院
+title: 数学建模与MATLAB
+format:
+  revealjs:
+    theme: white
+    include-in-header:
+      text: |
+        <style>
+          .small-table table {
+            font-size: .6em
+          }
+        </style>
+    mermaid:
+      theme: neutral
+---
+
+## 数学建模
+
+- **数学模型**是使用数学来将一个系统简化后予以描述
+- 广泛应用在自然科学、工程学科以及社会科学
+- 科学家和工程师用模型来解释一个系统，研究不同组成部分的影响，以及对行为做出预测
+- 描述不同对象的模型可能有相同的形式，同一个模型也可能包含了不同的抽象结构
+
+## 数学建模
+
+- 预测变化
+- 对现实世界进行简化
+
+```{dot}
+//| fig-width: 6.5
+digraph G {
+  layout=circo;
+  mindist=1.5;
+  normalize=true;
+  node [shape=box margin=0.2];
+  A[label="实际数据"];
+  B[label="数学模型"];
+  C[label="数学结论"];
+  D[label="预测/解释"];
+
+  A -> B [label="简化"];
+  B -> C [label="分析  "];
+  C -> D [label="阐明"];
+  D -> A [label="验证  "];
+}   
+```
+
+## MATLAB
+
+- The MathWorks公司出品的商业数学软件
+- 用于算法开发、数据可视化、数据分析以及数值计算
+- 创建用户界面，以及调用其它语言编写的程序
+
+![](images/matlab.jpg){fig-align="center"}
+
+## 教材及参考资料
+
+- **数学建模(原书第5版), Frank R.Giordano, Willam P.Fox, Steven B.Horton, 叶其孝/姜启源译, 机械工业出版社**
+- 数学模型(第四版), 姜启源/谢金星/叶俊, 高等教育出版社
+- 数学建模, 杨启帆/谈之奕/何勇, 浙江大学出版社
+- 数学建模算法与应用, 司守奎/孙玺菁, 国防工业出版社
+- MATLAB揭秘, David McMahon著/郑碧波译
+- 精通MATLAB R2011a, 张志涌, 北京航天航空大学出版社
+
+## 课程安排
+
+时间
+: 16周 = 12课堂 + 4实验
+
+考试
+: 成绩 = 平时 $\times$ 30%+ 期末(闭卷) $\times$ 70%
+
+## 课程概要
+
+```{mermaid}
+flowchart LR
+  subgraph BASE[" "]
+    A["①对变化进行建模"] --> B["②建模过程、比例性和几何相似性"]
+    B --> C["③模型拟合"]
+  end
+  BASE --> D["④实验建模"]
+  D --> E["⑤模拟方法建模"]
+  BASE --> F["⑥离散概率模型"]
+  BASE --> G["⑦离散模型的优化"]
+  BASE --> H["⑧图论建模"]
+  F --> I["⑨决策论建模"]
+  I --> J["⑩博弈论"]
+  BASE --> K["⑪用微分方程建模"]
+  K --> L["⑫用微分方程组建模"]
+  L --> M["⑬连续模型的优化"]
+  E --> N["⑭量纲分析和相似性"]
+  BASE --> O["⑮函数图表构成模型"]
+  classDef missing stroke-width:2px,stroke-dasharray: 5 5
+  class N,O missing
+```

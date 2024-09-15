@@ -9,11 +9,14 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: 数学建模
+      - href: matlab/index.qmd
+        text: MATLAB
+      - href: intro/index.qmd
+        text: 课程介绍
 
 format:
   html:
-    theme: cosmo
+    theme: superhero
     css: styles.css
     toc: true
