@@ -5,7 +5,7 @@ execute:
   freeze: auto
 
 website:
-  title: "mmm-slides"
+  title: "数学建模与MATLAB"
   navbar:
     left:
       - href: index.qmd
