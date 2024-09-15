@@ -1,6 +1,9 @@
 project:
   type: website
 
+execute:
+  freeze: auto
+
 website:
   title: "mmm-slides"
   navbar:
@@ -14,6 +17,3 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
-
-
-
