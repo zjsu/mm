@@ -346,7 +346,15 @@
 <h2>弹簧系统</h2>
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><img data-src="images/spring_mass.png"></p>
+<div id="bc4511c3" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="index_files/figure-revealjs/cell-2-output-1.png" width="812" height="434"></p>
+</figure>
+</div>
+</div>
+</div>
 </div><div class="column" style="width:25%;">
 <div class="small-table">
 <table class="caption-top">
@@ -412,19 +420,11 @@
 <section id="对变化进行建模" class="slide level2">
 <h2>对变化进行建模</h2>
 <ul>
-<li><span class="math inline">\(未来值 = 现在值 + 变化\)</span></li>
-<li><span class="math inline">\(变化 = 未来值 - 现在值\)</span></li>
+<li>未来值 = 现在值 + 变化</li>
+<li>变化 = 未来值 - 现在值</li>
+<li><strong>离散时间</strong>：差分方程(difference equation)</li>
+<li><strong>连续时间</strong>: 微分方程(第11章)</li>
 </ul>
-<dl>
-<dt>离散时间</dt>
-<dd>
-差分方程(difference equation)
-</dd>
-<dt>连续时间</dt>
-<dd>
-微分方程(第11章)
-</dd>
-</dl>
 </section>
 <section id="差分方程" class="slide level2">
 <h2>差分方程</h2>
@@ -506,9 +506,9 @@ b_0 &amp;= 80000
 <section id="用差分方程来近似变化" class="slide level2">
 <h2>用差分方程来近似变化</h2>
 <ul>
-<li><p>变化 = <span class="math inline">\(\Delta a_n\)</span> = 某个函数<span class="math inline">\(f\)</span></p></li>
-<li><p>离散变化与连续变化</p></li>
-<li><p>模型的细化: 生、死、资源</p></li>
+<li>变化 = <span class="math inline">\(\Delta a_n\)</span> = 某个函数<span class="math inline">\(f\)</span></li>
+<li>离散变化与连续变化</li>
+<li>模型的细化: 生、死、资源</li>
 </ul>
 </section>
 <section id="酵母培养-找出模型" class="slide level2">
@@ -525,7 +525,21 @@ b_0 &amp;= 80000
 <h2>酵母培养 – 模型验证</h2>
 
 <img data-src="yeast-verify.png" class="r-stretch"><p><span class="math display">\[p_{n+1} = p_n + 0.00082(665 - p_n)p_n\]</span></p>
-<p>思考:　看书上例2传染病传播模型, 考虑如何为该模型加入其它因素?</p>
+<div title="思考">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>思考</strong></p>
+</div>
+<div class="callout-content">
+<p>如何为书上例2传染病传播模型加入其它因素?</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="地高辛在血流中的变化" class="slide level2">
 <h2>地高辛在血流中的变化</h2>
@@ -615,22 +629,23 @@ a_4 &amp;= 1040.6 = 1.01(1030.3) = 1.01^4 (1000)
 <section id="动态系统的解法-猜测-1" class="slide level2">
 <h2>动态系统的解法 – 猜测</h2>
 <p>猜测: <span class="math inline">\(a_k = 1.01^k(1000)\)</span> 验证、结论: …</p>
+<div title="猜测法的一般步骤">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Tip</strong></p>
+<p><strong>猜测法的一般步骤</strong></p>
 </div>
 <div class="callout-content">
-<p>推测法的一般步骤</p>
 <ol type="1">
-<li><p>观察模式</p></li>
-<li><p>猜测动力系统的形式</p></li>
-<li><p>用带入法来测试该猜测</p></li>
-<li><p>接受或拒绝该推测：取决于代入和代数运算后结果是否满足该动力系统。</p></li>
+<li>观察模式</li>
+<li>猜测动力系统的形式</li>
+<li>用带入法来测试该猜测</li>
+<li>接受或拒绝该推测：取决于代入和代数运算后结果是否满足该动力系统。</li>
 </ol>
+</div>
 </div>
 </div>
 </div>
@@ -671,7 +686,21 @@ a_4 &amp;= 1040.6 = 1.01(1030.3) = 1.01^4 (1000)
 <p><span class="math inline">\(a_{n+1} = ra_n + b, r \neq 1\)</span>的不动点为：</p>
 <p><span class="math display">\[a = \frac{b}{1-r}\]</span></p>
 <p>上述动态系统的解为： <span class="math inline">\(a_k=r^kc+\frac{b}{1-r}\)</span>.</p>
-<p>思考： <span class="math inline">\(r\)</span>的值不同时，长期来说系统如何变化？</p>
+<div title="思考">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>思考</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(r\)</span>的值不同时，长期来说系统如何变化？</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="非线性系统" class="slide level2">
 <h2>非线性系统</h2>
@@ -680,31 +709,25 @@ a_4 &amp;= 1040.6 = 1.01(1030.3) = 1.01^4 (1000)
 <section id="差分方程组" class="slide level2">
 <h2>差分方程组</h2>
 <ul>
-<li><p>找出不动点</p></li>
-<li><p>当初始值在不动点附近时，系统如何变化</p></li>
+<li>找出不动点</li>
+<li>当初始值在不动点附近时，系统如何变化</li>
 </ul>
 <p>研究系统的长期变化，看系统对如下条件是否敏感：</p>
 <ul>
-<li><p>初始条件</p></li>
-<li><p>对模型中的常量进行扰动</p></li>
+<li>初始条件</li>
+<li>对模型中的常量进行扰动</li>
 </ul>
 </section>
 <section id="汽车租赁公司" class="slide level2">
 <h2>汽车租赁公司</h2>
 <div class="columns">
-<div class="column" style="width:80%;">
+<div class="column" style="width:60%;">
 <p><img data-src="taxi.png"></p>
 </div></div>
-<dl>
-<dt><span class="math inline">\(O_n\)</span></dt>
-<dd>
-第<span class="math inline">\(n\)</span>天营业结束时在奥兰多的车辆数
-</dd>
-<dt><span class="math inline">\(T_n\)</span></dt>
-<dd>
-第<span class="math inline">\(n\)</span>天营业结束时在坦帕的车辆数
-</dd>
-</dl>
+<ul>
+<li><span class="math inline">\(O_n\)</span>: 第<span class="math inline">\(n\)</span>天营业结束时在奥兰多的车辆数</li>
+<li><span class="math inline">\(T_n\)</span>: 第<span class="math inline">\(n\)</span>天营业结束时在坦帕的车辆数</li>
+</ul>
 <p><span class="math display">\[
 \begin{align*}
 O_{n+1} &amp;=0.6O_n + 0.3T_n \\
