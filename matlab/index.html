@@ -1,0 +1,2289 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.5.57">
+
+  <meta name="author" content="浙江工商大学计算机学院">
+  <title>数学建模与MATLAB – MATLAB</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <style>
+    .small-table table {
+      font-size: .6em
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">MATLAB</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+浙江工商大学计算机学院 
+</div>
+</div>
+</div>
+
+</section>
+<section id="matlab" class="slide level2">
+<h2>MATLAB</h2>
+<ul>
+<li>MATLAB是<strong>ma</strong>trix <strong>lab</strong>oratory的缩写</li>
+<li>提供强大的矩阵和数组运算</li>
+<li>方便进行科学与工程计算</li>
+</ul>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[50, 20]]">
+<div class="quarto-layout-row quarto-layout-valign-center">
+<div class="quarto-layout-cell" style="flex-basis: 71.4%;justify-content: center;">
+<p><img data-src="images/matlab-system.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 28.6%;justify-content: center;">
+<p><img data-src="images/matlab-usage.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="界面" class="slide level2">
+<h2>界面</h2>
+
+<img data-src="images/matlab.jpg" class="r-stretch"></section>
+<section>
+<section id="矩阵向量" class="title-slide slide level1 center">
+<h1>矩阵向量</h1>
+<p>矩阵和向量是MATLAB中最重要的数据结构</p>
+</section>
+<section id="变量" class="slide level2">
+<h2>变量</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>所有的MATLAB变量都是多维数组</li>
+<li>变量区分大小写</li>
+<li>用<code>ans</code>来存储未指定变量的结果</li>
+<li><code>format</code>: 改变数字显示格式</li>
+<li><code>save/load</code>: 保存/加载变量</li>
+<li><code>clear</code>: 清除变量</li>
+<li><code>clc</code>: 清除MATLAB命令窗口</li>
+<li><code>who</code>: 显示所有变量</li>
+<li><code>help</code>: 显示帮助</li>
+</ul>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:30%;">
+<div class="sourceCode" id="cb1"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">=</span> <span class="fl">1</span></span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span></span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span></span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">b</span> <span class="op">=</span> <span class="va">pi</span></span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">b</span> <span class="op">=</span></span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">3.1416</span></span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">c</span> <span class="op">=</span> <span class="va">a</span> <span class="op">+</span> <span class="va">b</span></span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a><span class="va">c</span> <span class="op">=</span></span>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">4.1416</span></span>
+<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">d</span> <span class="op">=</span> <span class="va">cos</span>(<span class="va">a</span>)</span>
+<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a><span class="va">d</span> <span class="op">=</span></span>
+<span id="cb1-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.5403</span></span>
+<span id="cb1-13"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">sin</span>(<span class="va">a</span>)</span>
+<span id="cb1-14"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb1-15"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.8415</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+<section id="语句与变量" class="slide level2">
+<h2>语句与变量</h2>
+<ul>
+<li>语句与变量
+<ul>
+<li><code>变量 = 表达式</code></li>
+<li><code>表达式</code></li>
+</ul></li>
+<li>数: 默认全部是 double 类型</li>
+<li>关系运算： <code>&lt;, &lt;=, &gt;, &gt;=, ==, ~=</code></li>
+<li>无短路逻辑运算：<code>&amp;, |, ~</code></li>
+<li>短路逻辑运算：<code>&amp;&amp;, ||, ~</code></li>
+<li><code>any</code>, <code>all</code></li>
+</ul>
+</section>
+<section id="语句分隔" class="slide level2">
+<h2>语句分隔</h2>
+<ul>
+<li>逗号和分号可作为指令间的分隔符</li>
+<li>分号如果出现在指令后，屏幕上将不显示结果</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">=</span> <span class="fl">2</span><span class="op">,</span> <span class="va">b</span> <span class="op">=</span> <span class="fl">3</span></span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span></span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">2</span></span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">b</span> <span class="op">=</span></span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">3</span></span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">=</span> <span class="fl">2</span><span class="op">;</span> <span class="va">b</span> <span class="op">=</span> <span class="fl">3</span></span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">b</span> <span class="op">=</span></span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">3</span></span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">c</span> <span class="op">=</span> <span class="va">a</span> <span class="op">+</span> <span class="va">b</span><span class="op">;</span></span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">c</span> <span class="op">=</span> <span class="va">a</span> <span class="op">+</span> <span class="va">b</span></span>
+<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a><span class="va">c</span> <span class="op">=</span></span>
+<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="矩阵和数组" class="slide level2">
+<h2>矩阵和数组</h2>
+<ul>
+<li>创建数组时，元素用逗号(<code>,</code>)或空格分隔</li>
+<li>数组就是一个行向量</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">=</span> [<span class="fl">1</span><span class="op">,</span> <span class="fl">2</span><span class="op">,</span> <span class="fl">3</span><span class="op">,</span> <span class="fl">4</span>]</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span></span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">2</span>     <span class="fl">3</span>     <span class="fl">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>创建包含多行的矩阵时，行与行之间用分号(<code>;</code>)分隔</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">=</span> [<span class="fl">1</span><span class="op">,</span> <span class="fl">2</span><span class="op">,</span> <span class="fl">3</span><span class="op">;</span> <span class="fl">4</span><span class="op">,</span> <span class="fl">5</span><span class="op">,</span> <span class="fl">6</span><span class="op">;</span> <span class="fl">7</span><span class="op">,</span> <span class="fl">8</span><span class="op">,</span> <span class="fl">9</span>]</span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span></span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">2</span>     <span class="fl">3</span></span>
+<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">4</span>     <span class="fl">5</span>     <span class="fl">6</span></span>
+<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">7</span>     <span class="fl">8</span>     <span class="fl">9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="矩阵元素" class="slide level2">
+<h2>矩阵元素</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>实数</li>
+<li>复数(如<code>3+4i</code>、<code>1+2j</code>)</li>
+<li>任何MATLAB表达式</li>
+<li>行（列）向量</li>
+<li>另外一个矩阵</li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:55%;">
+<div class="sourceCode" id="cb5"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span><span class="op">=</span>[<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span><span class="op">;</span><span class="fl">4</span> <span class="fl">5</span> <span class="fl">6</span>]</span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span></span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">2</span>     <span class="fl">3</span></span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">4</span>     <span class="fl">5</span>     <span class="fl">6</span></span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">b</span> <span class="op">=</span> [<span class="va">a</span><span class="op">;</span> [<span class="fl">7</span><span class="op">,</span><span class="fl">8</span><span class="op">,</span><span class="fl">9</span>]]</span>
+<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">b</span> <span class="op">=</span></span>
+<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">2</span>     <span class="fl">3</span></span>
+<span id="cb5-8"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">4</span>     <span class="fl">5</span>     <span class="fl">6</span></span>
+<span id="cb5-9"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">7</span>     <span class="fl">8</span>     <span class="fl">9</span></span>
+<span id="cb5-10"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">x</span><span class="op">=</span>[<span class="fl">2</span> <span class="va">pi</span><span class="op">/</span><span class="fl">2</span><span class="op">;</span><span class="va">sqrt</span>(<span class="fl">3</span>) <span class="fl">3</span><span class="op">+</span><span class="fl">5i</span>]</span>
+<span id="cb5-11"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span></span>
+<span id="cb5-12"><a aria-hidden="true" tabindex="-1"></a>   <span class="fl">2.0000</span> <span class="op">+</span> <span class="fl">0.0000i</span>   <span class="fl">1.5708</span> <span class="op">+</span> <span class="fl">0.0000i</span></span>
+<span id="cb5-13"><a aria-hidden="true" tabindex="-1"></a>   <span class="fl">1.7321</span> <span class="op">+</span> <span class="fl">0.0000i</span>   <span class="fl">3.0000</span> <span class="op">+</span> <span class="fl">5.0000i</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+<section id="用函数创建矩阵" class="slide level2">
+<h2>用函数创建矩阵</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>空阵: <code>[]</code></li>
+<li>随机矩阵: <code>rand</code></li>
+<li>单位矩阵: <code>eye</code></li>
+<li>全部元素都为0的矩阵: <code>zeros</code></li>
+<li>全部元素都为1的矩阵: <code>ones</code></li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:35%;">
+<div class="sourceCode" id="cb6"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">z</span> <span class="op">=</span> <span class="va">zeros</span>(<span class="fl">2</span><span class="op">,</span> <span class="fl">3</span>)</span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">z</span> <span class="op">=</span></span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span></span>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span></span>
+<span id="cb6-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">=</span> <span class="va">rand</span>(<span class="fl">2</span><span class="op">,</span> <span class="fl">2</span>)</span>
+<span id="cb6-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span></span>
+<span id="cb6-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.9572</span>    <span class="fl">0.8003</span></span>
+<span id="cb6-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.4854</span>    <span class="fl">0.1419</span></span>
+<span id="cb6-10"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">b</span> <span class="op">=</span> <span class="va">ones</span>(<span class="fl">2</span>) <span class="op">-</span> <span class="va">eye</span>(<span class="fl">2</span>)</span>
+<span id="cb6-12"><a aria-hidden="true" tabindex="-1"></a><span class="va">b</span> <span class="op">=</span></span>
+<span id="cb6-13"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">0</span>     <span class="fl">1</span></span>
+<span id="cb6-14"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+<section id="等间距向量" class="slide level2">
+<h2>等间距向量</h2>
+<ul>
+<li>可以用冒号(<code>:</code>)生成等间距向量</li>
+<li><code>a:b</code>表示从<code>a</code>到<code>b</code>的等间距向量</li>
+<li><code>a:s:b</code>表示从<code>a</code>到<code>b</code>的等间距向量，每隔<code>s</code>个元素</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span></span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">2</span>     <span class="fl">3</span>     <span class="fl">4</span>     <span class="fl">5</span></span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">:</span><span class="fl">5</span></span>
+<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb7-7"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">3</span>     <span class="fl">5</span></span>
+<span id="cb7-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="fl">5</span><span class="op">:-</span><span class="fl">2</span><span class="op">:</span><span class="fl">1</span></span>
+<span id="cb7-10"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb7-11"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">5</span>     <span class="fl">3</span>     <span class="fl">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="矩阵和向量运算" class="slide level2">
+<h2>矩阵和向量运算</h2>
+<ul>
+<li>可以用一个运算符或函数对所有元素进行运算</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">=</span> <span class="va">magic</span>(<span class="fl">2</span>)</span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span></span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">3</span></span>
+<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">4</span>     <span class="fl">2</span></span>
+<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">+</span> <span class="fl">10</span></span>
+<span id="cb8-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb8-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">11</span>    <span class="fl">13</span></span>
+<span id="cb8-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">14</span>    <span class="fl">12</span></span>
+<span id="cb8-9"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">sin</span>(<span class="va">a</span>)</span>
+<span id="cb8-10"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb8-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.8415</span>    <span class="fl">0.1411</span></span>
+<span id="cb8-12"><a aria-hidden="true" tabindex="-1"></a>   <span class="op">-</span><span class="fl">0.7568</span>    <span class="fl">0.9093</span></span>
+<span id="cb8-13"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">sqrt</span>(<span class="va">a</span>)</span>
+<span id="cb8-14"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb8-15"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">1.0000</span>    <span class="fl">1.7321</span></span>
+<span id="cb8-16"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">2.0000</span>    <span class="fl">1.4142</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="常用矩阵运算" class="slide level2">
+<h2>常用矩阵运算</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li><code>'</code>: 矩阵转置</li>
+<li><code>inv</code>: 矩阵求逆</li>
+<li><code>det</code>: 行列式的值</li>
+<li><code>eig</code>: 矩阵的特征值</li>
+<li><code>diag</code>: 对角线元素</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="sourceCode" id="cb9"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">=</span> <span class="va">magic</span>(<span class="fl">2</span>)</span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span></span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">3</span></span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">4</span>     <span class="fl">2</span></span>
+<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">b</span> <span class="op">=</span> <span class="va">a</span><span class="op">'</span></span>
+<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">b</span> <span class="op">=</span></span>
+<span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">4</span></span>
+<span id="cb9-8"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">3</span>     <span class="fl">2</span></span>
+<span id="cb9-9"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">det</span>(<span class="va">a</span>)</span>
+<span id="cb9-10"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb9-11"><a aria-hidden="true" tabindex="-1"></a>   <span class="op">-</span><span class="fl">10</span></span>
+<span id="cb9-12"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">c</span> <span class="op">=</span> <span class="va">inv</span>(<span class="va">a</span>)</span>
+<span id="cb9-13"><a aria-hidden="true" tabindex="-1"></a><span class="va">c</span> <span class="op">=</span></span>
+<span id="cb9-14"><a aria-hidden="true" tabindex="-1"></a>   <span class="op">-</span><span class="fl">0.2000</span>    <span class="fl">0.3000</span></span>
+<span id="cb9-15"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.4000</span>   <span class="op">-</span><span class="fl">0.1000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+<section id="矩阵加减" class="slide level2">
+<h2>矩阵加减</h2>
+<ul>
+<li>相加、减的两矩阵行列必须相同，对应元素相加减。</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">=</span> [<span class="fl">1</span><span class="op">,</span> <span class="fl">2</span><span class="op">,</span> <span class="fl">3</span><span class="op">;</span> <span class="fl">4</span><span class="op">,</span> <span class="fl">5</span><span class="op">,</span> <span class="fl">6</span><span class="op">;</span> <span class="fl">7</span><span class="op">,</span> <span class="fl">8</span><span class="op">,</span> <span class="fl">9</span>]</span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span></span>
+<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">2</span>     <span class="fl">3</span></span>
+<span id="cb10-4"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">4</span>     <span class="fl">5</span>     <span class="fl">6</span></span>
+<span id="cb10-5"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">7</span>     <span class="fl">8</span>     <span class="fl">9</span></span>
+<span id="cb10-6"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">b</span> <span class="op">=</span> [<span class="fl">1</span><span class="op">,</span> <span class="fl">4</span><span class="op">,</span> <span class="fl">7</span><span class="op">;</span> <span class="fl">2</span><span class="op">,</span> <span class="fl">5</span><span class="op">,</span> <span class="fl">8</span><span class="op">;</span> <span class="fl">3</span><span class="op">,</span> <span class="fl">6</span><span class="op">,</span> <span class="fl">9</span>]</span>
+<span id="cb10-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">b</span> <span class="op">=</span></span>
+<span id="cb10-8"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">4</span>     <span class="fl">7</span></span>
+<span id="cb10-9"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">2</span>     <span class="fl">5</span>     <span class="fl">8</span></span>
+<span id="cb10-10"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">3</span>     <span class="fl">6</span>     <span class="fl">9</span></span>
+<span id="cb10-11"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">c</span> <span class="op">=</span> <span class="va">a</span> <span class="op">+</span> <span class="va">b</span></span>
+<span id="cb10-12"><a aria-hidden="true" tabindex="-1"></a><span class="va">c</span> <span class="op">=</span></span>
+<span id="cb10-13"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">2</span>     <span class="fl">6</span>    <span class="fl">10</span></span>
+<span id="cb10-14"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">6</span>    <span class="fl">10</span>    <span class="fl">14</span></span>
+<span id="cb10-15"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">10</span>    <span class="fl">14</span>    <span class="fl">18</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="矩阵乘法" class="slide level2">
+<h2>矩阵乘法</h2>
+<ul>
+<li><span class="math inline">\(a\)</span>矩阵的列数必须等于<span class="math inline">\(b\)</span>矩阵的行数</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">=</span> [<span class="op">-</span><span class="fl">1</span><span class="op">;</span> <span class="fl">0</span><span class="op">;</span> <span class="fl">2</span>]</span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span></span>
+<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span><span class="fl">1</span></span>
+<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">0</span></span>
+<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">2</span></span>
+<span id="cb11-6"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">b</span> <span class="op">=</span> [<span class="op">-</span><span class="fl">2</span><span class="op">;</span> <span class="op">-</span><span class="fl">1</span><span class="op">;</span> <span class="fl">1</span>]</span>
+<span id="cb11-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">b</span> <span class="op">=</span></span>
+<span id="cb11-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span><span class="fl">2</span></span>
+<span id="cb11-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span><span class="fl">1</span></span>
+<span id="cb11-10"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span></span>
+<span id="cb11-11"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span><span class="op">'</span> <span class="op">*</span> <span class="va">b</span></span>
+<span id="cb11-12"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb11-13"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">4</span></span>
+<span id="cb11-14"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">*</span> <span class="va">b</span><span class="op">'</span></span>
+<span id="cb11-15"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb11-16"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">2</span>     <span class="fl">1</span>    <span class="op">-</span><span class="fl">1</span></span>
+<span id="cb11-17"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">0</span>     <span class="fl">0</span>     <span class="fl">0</span></span>
+<span id="cb11-18"><a aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span><span class="fl">4</span>    <span class="op">-</span><span class="fl">2</span>     <span class="fl">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="矩阵除法" class="slide level2">
+<h2>矩阵除法</h2>
+<ul>
+<li>MATLAB中有两种矩阵除法： 左除<code>\</code>和右除<code>/</code></li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">% a \ b =&gt; inv(a)*b</span></span>
+<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">% a / b =&gt; a*inv(b)</span></span>
+<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">=</span> <span class="va">magic</span>(<span class="fl">2</span>)</span>
+<span id="cb12-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span></span>
+<span id="cb12-6"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">3</span></span>
+<span id="cb12-7"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">4</span>     <span class="fl">2</span></span>
+<span id="cb12-8"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">det</span>(<span class="va">a</span>)</span>
+<span id="cb12-9"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb12-10"><a aria-hidden="true" tabindex="-1"></a>   <span class="op">-</span><span class="fl">10</span></span>
+<span id="cb12-11"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">*</span> <span class="va">inv</span>(<span class="va">a</span>)</span>
+<span id="cb12-12"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb12-13"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">1.0000</span>   <span class="op">-</span><span class="fl">0.0000</span></span>
+<span id="cb12-14"><a aria-hidden="true" tabindex="-1"></a>         <span class="fl">0</span>    <span class="fl">1.0000</span></span>
+<span id="cb12-15"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">/</span> <span class="va">a</span></span>
+<span id="cb12-16"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb12-17"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">0</span></span>
+<span id="cb12-18"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">0</span>     <span class="fl">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="求解线性方程组" class="slide level2">
+<h2>求解线性方程组</h2>
+<p><span class="math display">\[\begin{array}{rcl} 2x_1 + x_2 - 5x_3 + x_4 &amp;=&amp; 8 \\ x_1 - 3x_2 - 6x_4 &amp;=&amp; 9 \\ 2x_2 - x_3 + 2x_4 &amp;=&amp; -5 \\ x_1 + 4x_2 - 7x_3 + 6x_4 &amp;=&amp; 0 \end{array} \]</span></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">A</span><span class="op">=</span>[<span class="fl">2</span><span class="op">,</span><span class="fl">1</span><span class="op">,-</span><span class="fl">5</span><span class="op">,</span><span class="fl">1</span><span class="op">;</span> <span class="fl">1</span><span class="op">,-</span><span class="fl">3</span><span class="op">,</span><span class="fl">0</span><span class="op">,-</span><span class="fl">6</span><span class="op">;</span><span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">,-</span><span class="fl">1</span><span class="op">,</span><span class="fl">2</span><span class="op">;</span><span class="fl">1</span><span class="op">,</span><span class="fl">4</span><span class="op">,-</span><span class="fl">7</span><span class="op">,</span><span class="fl">6</span>]<span class="op">;</span></span>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">b</span><span class="op">=</span>[<span class="fl">8</span><span class="op">;</span><span class="fl">9</span><span class="op">;-</span><span class="fl">5</span><span class="op">;</span><span class="fl">0</span>]<span class="op">;</span></span>
+<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">det</span>(<span class="va">A</span>)</span>
+<span id="cb13-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb13-5"><a aria-hidden="true" tabindex="-1"></a>   <span class="fl">27.0000</span></span>
+<span id="cb13-6"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">x</span> <span class="op">=</span> <span class="va">A</span><span class="op">\</span><span class="va">b</span></span>
+<span id="cb13-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span></span>
+<span id="cb13-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">3.0000</span></span>
+<span id="cb13-9"><a aria-hidden="true" tabindex="-1"></a>   <span class="op">-</span><span class="fl">4.0000</span></span>
+<span id="cb13-10"><a aria-hidden="true" tabindex="-1"></a>   <span class="op">-</span><span class="fl">1.0000</span></span>
+<span id="cb13-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">1.0000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="逐元素运算" class="slide level2">
+<h2>逐元素运算</h2>
+<ul>
+<li><code>+</code>、<code>-</code>本身就是逐元素运算</li>
+<li><code>sin</code>、<code>sqrt</code>等大多数函数都是逐元素运算</li>
+<li><code>*</code>、<code>/</code>、<code>^</code>等前面加一个<code>.</code>表示逐元素运算</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb14"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">=</span> <span class="va">magic</span>(<span class="fl">2</span>)</span>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span></span>
+<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">3</span></span>
+<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">4</span>     <span class="fl">2</span></span>
+<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">b</span> <span class="op">=</span> <span class="va">a</span><span class="op">'</span></span>
+<span id="cb14-7"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">4</span></span>
+<span id="cb14-8"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">3</span>     <span class="fl">2</span></span>
+<span id="cb14-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">.*</span> <span class="va">b</span></span>
+<span id="cb14-11"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb14-12"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>    <span class="fl">12</span></span>
+<span id="cb14-13"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">12</span>     <span class="fl">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb15"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">./</span> <span class="va">b</span></span>
+<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">1.0000</span>    <span class="fl">0.7500</span></span>
+<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">1.3333</span>    <span class="fl">1.0000</span></span>
+<span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">.^</span> <span class="fl">2</span></span>
+<span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb15-8"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">9</span></span>
+<span id="cb15-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">16</span>     <span class="fl">4</span></span>
+<span id="cb15-10"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="fl">2</span> <span class="op">.^</span> <span class="va">a</span></span>
+<span id="cb15-12"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb15-13"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">2</span>     <span class="fl">8</span></span>
+<span id="cb15-14"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">16</span>     <span class="fl">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+<section id="下标" class="slide level2">
+<h2>下标</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li>MATLAB的下标是从1开始的</li>
+<li><code>A(i,j)</code>表示第<code>i</code>行第<code>j</code>列</li>
+<li><code>A(i)</code>表示逐列访问时的第<code>i</code>个元素
+<ul>
+<li>可以用<code>A(:)</code>将<code>A</code>转换为列向量</li>
+</ul></li>
+<li><code>end</code>表示最后一个元素</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<div class="sourceCode" id="cb16"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">A</span> <span class="op">=</span> <span class="va">magic</span>(<span class="fl">3</span>)</span>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">A</span> <span class="op">=</span></span>
+<span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">8</span>     <span class="fl">1</span>     <span class="fl">6</span></span>
+<span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">3</span>     <span class="fl">5</span>     <span class="fl">7</span></span>
+<span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">4</span>     <span class="fl">9</span>     <span class="fl">2</span></span>
+<span id="cb16-6"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">A</span>(<span class="fl">1</span><span class="op">,</span><span class="fl">1</span>)</span>
+<span id="cb16-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb16-8"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">8</span></span>
+<span id="cb16-9"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">A</span>(<span class="fl">4</span>)</span>
+<span id="cb16-10"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb16-11"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span></span>
+<span id="cb16-12"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">A</span>(<span class="kw">end</span><span class="op">,</span> <span class="kw">end</span>) <span class="op">=</span> <span class="fl">10</span></span>
+<span id="cb16-13"><a aria-hidden="true" tabindex="-1"></a><span class="va">A</span> <span class="op">=</span></span>
+<span id="cb16-14"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">8</span>     <span class="fl">1</span>     <span class="fl">6</span></span>
+<span id="cb16-15"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">3</span>     <span class="fl">5</span>     <span class="fl">7</span></span>
+<span id="cb16-16"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">4</span>     <span class="fl">9</span>    <span class="fl">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+<section id="下标越界" class="slide level2">
+<h2>下标越界</h2>
+<ul>
+<li>如果读取的下标超出范围，会报错</li>
+<li>如果写入的下标超出范围，矩阵会自动扩充</li>
+</ul>
+<div class="sourceCode" id="cb17"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">A</span> <span class="op">=</span> <span class="va">magic</span>(<span class="fl">2</span>)</span>
+<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">A</span> <span class="op">=</span></span>
+<span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">3</span></span>
+<span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">4</span>     <span class="fl">2</span></span>
+<span id="cb17-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">A</span>(<span class="fl">3</span><span class="op">,</span><span class="fl">3</span>)</span>
+<span id="cb17-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">Index</span> <span class="va">in</span> <span class="va">position</span> <span class="fl">1</span> <span class="va">exceeds</span> <span class="va">array</span> <span class="va">bounds</span>. <span class="va">Index</span> <span class="va">must</span> <span class="va">not</span> <span class="va">exceed</span> <span class="fl">2</span>.</span>
+<span id="cb17-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">A</span>(<span class="fl">3</span><span class="op">,</span><span class="fl">3</span>) <span class="op">=</span> <span class="fl">10</span></span>
+<span id="cb17-10"><a aria-hidden="true" tabindex="-1"></a><span class="va">A</span> <span class="op">=</span></span>
+<span id="cb17-11"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">3</span>     <span class="fl">0</span></span>
+<span id="cb17-12"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">4</span>     <span class="fl">2</span>     <span class="fl">0</span></span>
+<span id="cb17-13"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">0</span>     <span class="fl">0</span>    <span class="fl">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="同时访问多个元素" class="slide level2">
+<h2>同时访问多个元素</h2>
+<ul>
+<li>下标中可以使用向量访问多个元素</li>
+<li>可以用冒号<code>:</code>生成下标向量</li>
+</ul>
+<div class="sourceCode" id="cb18"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">A</span> <span class="op">=</span> <span class="va">magic</span>(<span class="fl">3</span>)</span>
+<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">A</span> <span class="op">=</span></span>
+<span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">8</span>     <span class="fl">1</span>     <span class="fl">6</span></span>
+<span id="cb18-4"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">3</span>     <span class="fl">5</span>     <span class="fl">7</span></span>
+<span id="cb18-5"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">4</span>     <span class="fl">9</span>     <span class="fl">2</span></span>
+<span id="cb18-6"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">A</span>(<span class="fl">1</span><span class="op">,</span> <span class="fl">1</span><span class="op">:</span><span class="kw">end</span>)</span>
+<span id="cb18-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb18-8"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">8</span>     <span class="fl">1</span>     <span class="fl">6</span></span>
+<span id="cb18-9"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">A</span>(<span class="fl">1</span><span class="op">,</span> [<span class="fl">1</span><span class="op">,</span> <span class="fl">3</span>])</span>
+<span id="cb18-10"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb18-11"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">8</span>     <span class="fl">6</span></span>
+<span id="cb18-12"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">A</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">:</span><span class="fl">3</span><span class="op">,</span> <span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">:</span><span class="fl">3</span>) <span class="op">=</span> <span class="fl">0</span></span>
+<span id="cb18-13"><a aria-hidden="true" tabindex="-1"></a><span class="va">A</span> <span class="op">=</span></span>
+<span id="cb18-14"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">0</span>     <span class="fl">1</span>     <span class="fl">0</span></span>
+<span id="cb18-15"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">3</span>     <span class="fl">5</span>     <span class="fl">7</span></span>
+<span id="cb18-16"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">0</span>     <span class="fl">9</span>     <span class="fl">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="下标访问示例" class="slide level2">
+<h2>下标访问示例</h2>
+<div class="sourceCode" id="cb19"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">A</span> <span class="op">=</span> [<span class="fl">1</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">3</span><span class="op">;</span> <span class="fl">4</span><span class="op">,</span><span class="fl">5</span><span class="op">,</span><span class="fl">6</span><span class="op">;</span> <span class="fl">7</span><span class="op">,</span><span class="fl">8</span><span class="op">,</span><span class="fl">9</span>]</span>
+<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">A</span>(<span class="fl">3</span><span class="op">,</span><span class="fl">3</span>) <span class="op">=</span> <span class="va">A</span>(<span class="fl">1</span><span class="op">,</span><span class="fl">3</span>) <span class="op">+</span> <span class="va">A</span>(<span class="fl">3</span><span class="op">,</span><span class="fl">1</span>)</span>
+<span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">A</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">,</span> <span class="kw">end</span>)  <span class="op">=</span> <span class="va">A</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">,</span> <span class="fl">1</span>)</span>
+<span id="cb19-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">A</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">,</span><span class="fl">3</span>)</span>
+<span id="cb19-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">A</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">,</span> <span class="fl">2</span><span class="op">:</span><span class="fl">3</span>)</span>
+<span id="cb19-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">A</span>(<span class="op">:,</span> <span class="fl">2</span>)</span>
+<span id="cb19-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">A</span>(<span class="fl">1</span><span class="op">,</span> <span class="op">:</span>)</span>
+<span id="cb19-8"><a aria-hidden="true" tabindex="-1"></a><span class="va">A</span>([<span class="fl">1</span><span class="op">,</span><span class="fl">3</span>]<span class="op">,</span> [<span class="fl">1</span><span class="op">,</span><span class="fl">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>如何取出一个矩阵的奇数行、偶数列？</li>
+<li>如何取出一个矩阵的四角元素？</li>
+<li>如何将一个矩阵所有的列左右反转？</li>
+<li>如何将一个矩阵所有的奇数行都置0？</li>
+</ul>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="常用数学函数" class="title-slide slide level1 center">
+<h1>常用数学函数</h1>
+<p>MATLAB提供了丰富的标准函数，利用这些标准函数可以很方便地进行科学与工程计算</p>
+</section>
+<section id="向量的最大值" class="slide level2">
+<h2>向量的最大值</h2>
+<dl>
+<dt><code>max(x)</code></dt>
+<dd>
+返回向量<code>x</code>的最大值，如果<code>x</code>中包含复数元素，则按模取最大值
+</dd>
+<dt><code>[y, i] = max(x)</code></dt>
+<dd>
+返回向量<code>x</code>的最大值存入<code>y</code>，最大值的序号存入<code>i</code>，如果<code>x</code>中包含复数元素，则按模取最大值
+</dd>
+</dl>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>最小值<code>min</code>与之类似</p>
+</div>
+</div>
+</div>
+</section>
+<section id="矩阵的最大值" class="slide level2">
+<h2>矩阵的最大值</h2>
+<dl>
+<dt><code>max(A)</code></dt>
+<dd>
+返回一个行向量，第<code>i</code>个元素是矩阵<code>A</code>的第<code>i</code>列的最大值
+</dd>
+<dt><code>[y, u] = max(A)</code></dt>
+<dd>
+返回行向量<code>y</code>和<code>u</code>，<code>y</code>是<code>A</code>每列最大值，<code>u</code>是最大值所在行
+</dd>
+</dl>
+<p><code>max(A, [], dim)</code> : * <code>dim</code>取1时，和<code>max(A)</code>完全相同 * <code>dim</code>取2时，按行取最大值</p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>最小值<code>min</code>与之类似</p>
+</div>
+</div>
+</div>
+</section>
+<section id="求和与求积" class="slide level2">
+<h2>求和与求积</h2>
+<dl>
+<dt><code>sum(x)</code></dt>
+<dd>
+返回向量<code>x</code>各元素之和
+</dd>
+<dt><code>sum(A)</code></dt>
+<dd>
+返回一个行向量，其第<code>i</code>个元素是<code>A</code>的第<code>i</code>列元素之和
+</dd>
+</dl>
+<p><code>sum(A, dim)</code> : * <code>dim = 1</code>时相当于sum(A) * <code>dim = 2</code>时，返回列向量</p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>求乘积<code>prod</code>与之类似</p>
+</div>
+</div>
+</div>
+</section>
+<section id="平均值" class="slide level2">
+<h2>平均值</h2>
+<p><span class="math display">\[ \bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i \]</span></p>
+<dl>
+<dt><code>mean(x)</code></dt>
+<dd>
+返回向量<code>x</code>的算法平均值
+</dd>
+</dl>
+<p><code>y = mean(A,dim)</code> : * <code>dim = 1</code>返回行向量<code>y</code>，按列求平均值 * <code>dim = 2</code>返回列向量<code>y</code>，按行求平均值</p>
+</section>
+<section id="标准方差" class="slide level2">
+<h2>标准方差</h2>
+<p><span class="math inline">\(\sigma_1 = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2}\)</span></p>
+<p><span class="math inline">\(\sigma_2 = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (x_i - \bar{x})^2}\)</span></p>
+<dl>
+<dt><code>std(x)</code></dt>
+<dd>
+返回向量<code>x</code>的标准方差
+</dd>
+</dl>
+<p><code>y=std(A,flag,dim)</code> : * <code>dim = 1</code>: 求各列元素的标准方差 * <code>dim = 2</code>: 求各行元素的标准方差 * <code>flag = 0</code>: 按照<span class="math inline">\(\sigma_1\)</span>计算 * <code>flag = 1</code>: 按照<span class="math inline">\(\sigma_2\)</span>计算</p>
+</section>
+<section id="排序" class="slide level2">
+<h2>排序</h2>
+<dl>
+<dt><code>y=sort(x)</code></dt>
+<dd>
+返回一个对<code>x</code>中元素按升序排列后的向量<code>y</code>
+</dd>
+<dt><code>[y,i] = sort(x)</code></dt>
+<dd>
+返回一个对<code>x</code>中元素按升序排列的向量<code>y</code>，而<code>i</code>记录<code>y</code>中元素在<code>x</code>中的位置
+</dd>
+</dl>
+</section></section>
+<section>
+<section id="多项式" class="title-slide slide level1 center">
+<h1>多项式</h1>
+
+</section>
+<section id="多项式的表示" class="slide level2">
+<h2>多项式的表示</h2>
+<ul>
+<li><span class="math inline">\(n\)</span>次多项式用一个<span class="math inline">\(n+1\)</span>维的行向量表示，缺少的幂次项系数为0</li>
+<li>如果<span class="math inline">\(n\)</span>次多项式表示为</li>
+</ul>
+<p><span class="math display">\[p(x)=a_1x^n+a_2x^{n-1}+...+a_nx+a_{n+1}\]</span></p>
+<p>则在MATLAB中，<span class="math inline">\(p(x)\)</span>用向量<span class="math inline">\(p=[a_1,a_2,…,a_n,a_{n+1}]\)</span>表示</p>
+</section>
+<section id="多项式的运算" class="slide level2">
+<h2>多项式的运算</h2>
+<dl>
+<dt>加减运算</dt>
+<dd>
+向量加减，如果项数不同，在项数较少的前面补0
+</dd>
+<dt>乘法运算</dt>
+<dd>
+<code>conv(p1,p2)</code>表示多项式p1, p2的乘积。
+</dd>
+<dt>除法运算</dt>
+<dd>
+<code>[q, r] = deconv(p1, p2)</code>，其中<code>q</code>是商，<code>r</code>是余数
+</dd>
+<dt><code>p</code>的导函数</dt>
+<dd>
+<code>p=polyder(p1)</code>
+</dd>
+<dt><code>p1</code>和<code>p2</code>乘积的导函数</dt>
+<dd>
+<code>p=polyder(p1,p2)</code>
+</dd>
+<dt><code>p1</code>和<code>p2</code>之商的导函数</dt>
+<dd>
+<code>[p,q] = polyder(p1,p2)</code> ，<code>p</code>和<code>q</code>是分子、分母
+</dd>
+</dl>
+</section>
+<section id="多项式的求值与求根" class="slide level2">
+<h2>多项式的求值与求根</h2>
+<p><code>y=polyval(p, x)</code> : * 若x为一数值，则求多项式在该点的值 * 若x为一向量，则求其中每个元素对应多项式的值</p>
+<dl>
+<dt><code>x=roots(p)</code></dt>
+<dd>
+求多项式的根
+</dd>
+<dt><code>p=poly(x)</code></dt>
+<dd>
+建立以x为根的多项式
+</dd>
+<dt><code>z=fzero(‘fname’,x0)</code></dt>
+<dd>
+求单变量非线性方程在x0附近的根
+</dd>
+</dl>
+</section></section>
+<section>
+<section id="编程" class="title-slide slide level1 center">
+<h1>编程</h1>
+<p>Matlab语言与其他计算机语言一样,可用于编程</p>
+</section>
+<section id="m文件" class="slide level2">
+<h2>M文件</h2>
+<ul>
+<li>用matlab语言编写的程序</li>
+<li>Matlab中的内部函数与命令以及各种工具箱</li>
+<li>分为命令文件和函数文件</li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: left;">命令文件</th>
+<th style="text-align: left;">函数文件</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>输入/输出参数</td>
+<td style="text-align: left;">无</td>
+<td style="text-align: left;">有</td>
+</tr>
+<tr class="even">
+<td>变量作用域</td>
+<td style="text-align: left;">Matlab工作空间</td>
+<td style="text-align: left;">函数内部</td>
+</tr>
+<tr class="odd">
+<td>调用方式</td>
+<td style="text-align: left;">命令执行</td>
+<td style="text-align: left;">函数调用</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="操作m文件" class="slide level2">
+<h2>操作M文件</h2>
+<ul>
+<li>建立新的M文件
+<ul>
+<li>命令按钮：工具栏上<code>New M-File</code>命令按钮</li>
+<li>命令操作：<code>edit</code></li>
+</ul></li>
+<li>打开已有的M文件
+<ul>
+<li>命令按钮：工具栏上<code>Open File</code>命令按钮</li>
+<li>命令操作：<code>edit 文件名</code></li>
+</ul></li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>对于不在当前路径的M文件，点击<code>设置路径</code>按钮，将其路径加到<code>MATLAB搜索路径</code></p>
+</div>
+</div>
+</div>
+</section>
+<section id="程序控制结构" class="slide level2">
+<h2>程序控制结构</h2>
+<ul>
+<li>使用matlab的数据结构
+<ul>
+<li>矩阵、向量…</li>
+<li>充分利用数据结构特点，简化程序结构</li>
+</ul></li>
+<li>顺序结构、选择结构、循环结构</li>
+</ul>
+</section>
+<section id="顺序结构" class="slide level2">
+<h2>顺序结构</h2>
+<ul>
+<li>数据输入</li>
+</ul>
+<div class="sourceCode" id="cb20"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span> <span class="va">input</span>(‘输入正整数’)<span class="op">;</span></span>
+<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">input</span>(‘请输入姓名’<span class="op">,</span>’<span class="va">s</span>’)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>数据处理</li>
+</ul>
+<div class="sourceCode" id="cb21"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span> <span class="va">a</span> <span class="op">+</span> <span class="fl">1</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>数据输出</li>
+</ul>
+<div class="sourceCode" id="cb22"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">disp</span>(<span class="va">a</span>)</span>
+<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">fprintf</span>(‘圆周率<span class="va">pi</span><span class="op">=</span><span class="co">%10.9f’, pi)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="选择结构-if" class="slide level2">
+<h2>选择结构: <code>if</code></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="sourceCode" id="cb23"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> 条件</span>
+<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a>    语句组</span>
+<span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb23-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> 条件<span class="fl">1</span></span>
+<span id="cb23-6"><a aria-hidden="true" tabindex="-1"></a>    语句组<span class="fl">1</span></span>
+<span id="cb23-7"><a aria-hidden="true" tabindex="-1"></a><span class="kw">elseif</span> 条件<span class="fl">2</span></span>
+<span id="cb23-8"><a aria-hidden="true" tabindex="-1"></a>    语句组<span class="fl">2</span></span>
+<span id="cb23-9"><a aria-hidden="true" tabindex="-1"></a>    …</span>
+<span id="cb23-10"><a aria-hidden="true" tabindex="-1"></a><span class="kw">elseif</span> 条件<span class="va">n</span></span>
+<span id="cb23-11"><a aria-hidden="true" tabindex="-1"></a>    语句组<span class="va">n</span></span>
+<span id="cb23-12"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb23-13"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-14"><a aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> 条件</span>
+<span id="cb23-15"><a aria-hidden="true" tabindex="-1"></a>    语句组<span class="fl">1</span></span>
+<span id="cb23-16"><a aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
+<span id="cb23-17"><a aria-hidden="true" tabindex="-1"></a>    语句组<span class="fl">2</span></span>
+<span id="cb23-18"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:60%;">
+<p><span class="math display">\[
+y  = \begin{cases}
+\frac{sin(x)}{x} &amp;  x \neq 0\\
+1 &amp;  x = 0
+\end{cases}
+\]</span></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> <span class="va">input</span>(‘请输入<span class="va">x</span><span class="op">=</span>’)<span class="op">;</span></span>
+<span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="va">x</span> <span class="op">~=</span> <span class="fl">0</span></span>
+<span id="cb24-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="va">y</span> <span class="op">=</span> <span class="va">sin</span>(<span class="va">x</span>)<span class="op">/</span><span class="va">x</span><span class="op">;</span></span>
+<span id="cb24-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
+<span id="cb24-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="va">y</span> <span class="op">=</span> <span class="fl">1</span><span class="op">;</span></span>
+<span id="cb24-6"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb24-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+<section id="选择结构switch" class="slide level2">
+<h2>选择结构：<code>switch</code></h2>
+<div class="sourceCode" id="cb25"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">switch</span> 表达式</span>
+<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">case</span> 表达式<span class="fl">1</span></span>
+<span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a>    语句组<span class="fl">1</span></span>
+<span id="cb25-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">case</span> 表达式<span class="fl">2</span></span>
+<span id="cb25-5"><a aria-hidden="true" tabindex="-1"></a>    语句组<span class="fl">2</span></span>
+<span id="cb25-6"><a aria-hidden="true" tabindex="-1"></a>    …</span>
+<span id="cb25-7"><a aria-hidden="true" tabindex="-1"></a><span class="kw">case</span> 表达式<span class="va">n</span></span>
+<span id="cb25-8"><a aria-hidden="true" tabindex="-1"></a>    语句组<span class="va">n</span></span>
+<span id="cb25-9"><a aria-hidden="true" tabindex="-1"></a><span class="kw">otherwise</span></span>
+<span id="cb25-10"><a aria-hidden="true" tabindex="-1"></a>    语句组<span class="va">n</span><span class="op">+</span><span class="fl">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="循环结构" class="slide level2">
+<h2>循环结构</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="sourceCode" id="cb26"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> 循环变量<span class="op">=</span>表达式<span class="fl">1</span> <span class="op">:</span> 表达式<span class="fl">2</span> <span class="op">:</span> 表达式<span class="fl">3</span></span>
+<span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a>    循环语句</span>
+<span id="cb26-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb26-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> 条件</span>
+<span id="cb26-6"><a aria-hidden="true" tabindex="-1"></a>    循环语句</span>
+<span id="cb26-7"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>break</code> 语句和 <code>continue</code> 语句</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><span class="math display">\[
+A = \begin{bmatrix}
+1^0 &amp; 1^1 &amp; 1^2 \\
+2^0 &amp; 2^1 &amp; 2^2 \\
+3^0 &amp; 3^1 &amp; 3^2 \\
+\end{bmatrix}
+\]</span></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb27-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="va">i</span> <span class="op">=</span> <span class="fl">1</span> <span class="op">:</span> <span class="fl">1</span> <span class="op">:</span> <span class="fl">3</span></span>
+<span id="cb27-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">for</span> <span class="va">j</span> <span class="op">=</span> <span class="fl">0</span> <span class="op">:</span> <span class="fl">1</span> <span class="op">:</span> <span class="fl">2</span></span>
+<span id="cb27-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">A</span> (<span class="va">i</span><span class="op">,</span> <span class="va">j</span> <span class="op">+</span> <span class="fl">1</span>) <span class="op">=</span> <span class="va">i</span> <span class="op">^</span> <span class="va">j</span></span>
+<span id="cb27-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">end</span></span>
+<span id="cb27-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb27-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">A</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+<section id="函数文件" class="slide level2">
+<h2>函数文件</h2>
+<ul>
+<li>函数文件的基本结构</li>
+</ul>
+<div class="sourceCode" id="cb28"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> [输出函数<span class="fl">1</span><span class="op">,</span> …<span class="op">,</span> 输出参数<span class="va">n</span>] <span class="op">=</span> 函数名(输入参数<span class="fl">1</span><span class="op">,</span> … <span class="op">,</span> 输入参数<span class="va">m</span>)</span>
+<span id="cb28-2"><a aria-hidden="true" tabindex="-1"></a>注释说明部分</span>
+<span id="cb28-3"><a aria-hidden="true" tabindex="-1"></a>函数体语句</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb29-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> [<span class="va">s</span><span class="op">,</span> <span class="va">c</span>] <span class="op">=</span> <span class="va">mycircle</span>(<span class="va">r</span>)</span>
+<span id="cb29-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">% 计算半径为的圆的面积和周长</span></span>
+<span id="cb29-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">% [s,c] = mycircle(r)</span></span>
+<span id="cb29-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">% r: 圆半径</span></span>
+<span id="cb29-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">% s, c: 圆面积与周长</span></span>
+<span id="cb29-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">s</span> <span class="op">=</span> <span class="va">pi</span> <span class="op">*</span> <span class="va">r</span> <span class="op">*</span> <span class="va">r</span><span class="op">;</span></span>
+<span id="cb29-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">c</span> <span class="op">=</span> <span class="fl">2</span> <span class="op">*</span> <span class="va">pi</span> <span class="op">*</span> <span class="va">r</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>写一个判断是否为闰年的函数</li>
+<li>写一个判断是否为素数的函数</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="判断是否为闰年" class="slide level2">
+<h2>判断是否为闰年</h2>
+<div class="sourceCode" id="cb30"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="va">isleap</span> <span class="op">=</span> <span class="va">myisleap</span>(<span class="va">year</span>)</span>
+<span id="cb30-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">% 判断是否为闰年</span></span>
+<span id="cb30-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">% isleap = myisleap(year)</span></span>
+<span id="cb30-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">isleap</span> <span class="op">=</span> <span class="va">mod</span>(<span class="va">year</span><span class="op">,</span> <span class="fl">4</span>) <span class="op">==</span> <span class="fl">0</span> <span class="op">&amp;</span> (<span class="va">mod</span>(<span class="va">year</span><span class="op">,</span> <span class="fl">100</span>) <span class="op">~=</span> <span class="fl">0</span> <span class="op">|</span> <span class="va">mod</span>(<span class="va">year</span><span class="op">,</span> <span class="fl">400</span>) <span class="op">==</span> <span class="fl">0</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="判断是否为素数" class="slide level2">
+<h2>判断是否为素数</h2>
+<div class="sourceCode" id="cb31"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb31-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="va">isp</span> <span class="op">=</span> <span class="va">myisprime</span>(<span class="va">n</span>)</span>
+<span id="cb31-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">% 判断是否为素数</span></span>
+<span id="cb31-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">% isp = myisprime(n)</span></span>
+<span id="cb31-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">% n: 整数</span></span>
+<span id="cb31-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">isp</span> <span class="op">=</span> <span class="va">true</span><span class="op">;</span></span>
+<span id="cb31-6"><a aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="va">i</span> <span class="op">=</span> <span class="fl">2</span> <span class="op">:</span> <span class="fl">1</span> <span class="op">:</span> <span class="va">floor</span>(<span class="va">sqrt</span>(<span class="va">n</span>))</span>
+<span id="cb31-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span> <span class="va">mod</span>(<span class="va">n</span><span class="op">,</span> <span class="va">i</span>) <span class="op">==</span> <span class="fl">0</span></span>
+<span id="cb31-8"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">isp</span> <span class="op">=</span> <span class="va">false</span><span class="op">;</span></span>
+<span id="cb31-9"><a aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>向量化写法</li>
+</ul>
+<div class="sourceCode" id="cb32"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb32-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="va">isp</span> <span class="op">=</span> <span class="va">myisprime</span>(<span class="va">n</span>)</span>
+<span id="cb32-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">% 判断是否为素数</span></span>
+<span id="cb32-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">% isp = myisprime(n)</span></span>
+<span id="cb32-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">isp</span> <span class="op">=</span> <span class="op">~</span><span class="va">any</span>(<span class="va">mod</span>(<span class="va">n</span><span class="op">,</span> <span class="fl">2</span> <span class="op">:</span> <span class="fl">1</span> <span class="op">:</span> <span class="va">floor</span>(<span class="va">sqrt</span>(<span class="va">n</span>))) <span class="op">==</span> <span class="fl">0</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="函数调用" class="slide level2">
+<h2>函数调用</h2>
+<div class="sourceCode" id="cb33"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb33-1"><a aria-hidden="true" tabindex="-1"></a>[输出函数<span class="fl">1</span><span class="op">,</span> … <span class="op">,</span>输出参数<span class="va">n</span>] <span class="op">=</span> 函数名(输入参数<span class="fl">1</span><span class="op">,</span>…<span class="op">,</span> 输入参数<span class="va">m</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb34-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> [<span class="va">s</span><span class="op">,</span> <span class="va">c</span>] <span class="op">=</span> <span class="va">mycircle</span>(<span class="va">r</span>)</span>
+<span id="cb34-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">% 计算半径为的圆的面积和周长</span></span>
+<span id="cb34-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">% [s,c] = mycircle(r)</span></span>
+<span id="cb34-4"><a aria-hidden="true" tabindex="-1"></a><span class="co">% r: 圆半径</span></span>
+<span id="cb34-5"><a aria-hidden="true" tabindex="-1"></a><span class="co">% s, c: 圆面积与周长</span></span>
+<span id="cb34-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">s</span> <span class="op">=</span> <span class="va">pi</span> <span class="op">*</span> <span class="va">r</span> <span class="op">*</span> <span class="va">r</span><span class="op">;</span></span>
+<span id="cb34-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">c</span> <span class="op">=</span> <span class="fl">2</span> <span class="op">*</span> <span class="va">pi</span> <span class="op">*</span> <span class="va">r</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb35-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">A</span> <span class="op">=</span> <span class="va">mycircle</span>(<span class="va">r</span>)<span class="op">;</span></span>
+<span id="cb35-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">A</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>函数支持递归</li>
+</ul>
+</section>
+<section id="程序举例" class="slide level2">
+<h2>程序举例</h2>
+<ul>
+<li>利用编程求解某个数学问题
+<ul>
+<li>建立一个可计算的数学模型</li>
+<li>离散化、递推化：累加、累积、递推等</li>
+</ul></li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>计算<code>sin(x)</code>近似值</li>
+<li>计算多项式的值</li>
+<li>计算定积分值</li>
+<li>求方程的近似根</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="计算pi的近似值" class="slide level2">
+<h2>计算<span class="math inline">\(\pi\)</span>的近似值</h2>
+<ul>
+<li><span class="math inline">\(\pi = \frac{4}{1} - \frac{4}{3} + \frac{4}{5} - \frac{4}{7} + \cdots\)</span> (莱布尼兹公式)</li>
+<li><span class="math inline">\(\pi = 3 + \frac{4}{2 \times 3 \times 4} - \frac{4}{4 \times 5 \times 6} + \frac{4}{6 \times 7 \times 8} - \cdots\)</span></li>
+</ul>
+<div class="sourceCode" id="cb36"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb36-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="va">p</span> <span class="op">=</span> <span class="va">mypi</span>(<span class="va">n</span>)</span>
+<span id="cb36-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">% 计算π的近似值</span></span>
+<span id="cb36-3"><a aria-hidden="true" tabindex="-1"></a><span class="co">% p = mypi(n)</span></span>
+<span id="cb36-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">p</span> <span class="op">=</span> <span class="fl">4</span> <span class="op">*</span> <span class="va">sum</span>((<span class="op">-</span><span class="fl">1</span>) <span class="op">.^</span> (<span class="fl">2</span><span class="op">:</span><span class="va">n</span><span class="op">+</span><span class="fl">1</span>) <span class="op">./</span> (<span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">:</span><span class="fl">2</span><span class="op">*</span><span class="va">n</span>))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section>
+<section>
+<section id="绘图" class="title-slide slide level1 center">
+<h1>绘图</h1>
+
+</section>
+<section id="手工绘图" class="slide level2">
+<h2>手工绘图</h2>
+<ol type="1">
+<li>找点: <code>x=0, pi/4, pi/2,...</code></li>
+<li>计算函数值: <code>sin(0), sin(pi/4), sin(pi/2),...</code></li>
+<li>描点: 在坐标系中画出这些离散点</li>
+<li>用直线或曲线连接这些点，得到函数的大致图形</li>
+</ol>
+
+<img data-src="images/manual_plot.png" class="r-stretch"></section>
+<section id="matlab绘图" class="slide level2">
+<h2>MATLAB绘图</h2>
+<ol type="1">
+<li>给出离散点列: <code>x = 0:pi/10:2*pi</code></li>
+<li>计算函数值: <code>y = sin(x)</code></li>
+<li>画图: 用<code>plot</code>函数绘图</li>
+</ol>
+<div class="sourceCode" id="cb37"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb37-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span><span class="va">linnspace</span>(<span class="fl">0</span><span class="op">,</span> <span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,</span> <span class="fl">100</span>)<span class="op">;</span></span>
+<span id="cb37-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span> <span class="op">=</span> <span class="va">sin</span>(<span class="va">x</span>)<span class="op">;</span></span>
+<span id="cb37-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span> <span class="va">y</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>用<code>linspace(起点,终点,点数)</code>函数可以生成固定点数的等差数列</p>
+</div>
+</div>
+</div>
+</section>
+<section id="二维绘图函数" class="slide level2">
+<h2>二维绘图函数</h2>
+<ul>
+<li><code>plot(x, y)</code>: <code>x</code>和<code>y</code>长度相同，分别存储<span class="math inline">\(x\)</span>、<span class="math inline">\(y\)</span>坐标</li>
+<li>在<span class="math inline">\(0 \le x \le 2\pi\)</span>区间内，绘制曲线<span class="math inline">\(y=2e^{-0.5x}sin(2\pi x)\)</span></li>
+</ul>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb38"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb38-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span><span class="op">=</span><span class="fl">0</span><span class="op">:</span><span class="va">pi</span><span class="op">/</span><span class="fl">100</span><span class="op">:</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">;</span></span>
+<span id="cb38-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span><span class="op">=</span><span class="fl">2</span><span class="op">*</span><span class="va">exp</span>(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span><span class="va">x</span>) <span class="op">.*</span> <span class="va">sin</span>(<span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">*</span><span class="va">x</span>)<span class="op">;</span></span>
+<span id="cb38-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/plot2d.png"></p>
+</div></div>
+</div>
+</section>
+<section id="绘制参数方程曲线" class="slide level2">
+<h2>绘制参数方程曲线</h2>
+<p><span class="math display">\[
+\begin{cases}
+  x &amp;= tcos(3t)\\
+  y &amp;= tsin^2(t)
+\end{cases}
+, t \in [-\pi,\pi]
+\]</span></p>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb39"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb39-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">t</span> <span class="op">=</span> <span class="op">-</span><span class="va">pi</span><span class="op">:</span><span class="va">pi</span><span class="op">/</span><span class="fl">100</span><span class="op">:</span><span class="va">pi</span><span class="op">;</span></span>
+<span id="cb39-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> <span class="va">t</span> <span class="op">.*</span> <span class="va">cos</span>(<span class="fl">3</span> <span class="op">*</span> <span class="va">t</span>)<span class="op">;</span></span>
+<span id="cb39-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span> <span class="op">=</span> <span class="va">t</span> <span class="op">.*</span> <span class="va">sin</span>(<span class="va">t</span>) <span class="op">.^</span> <span class="fl">2</span><span class="op">;</span></span>
+<span id="cb39-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span> <span class="va">y</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/parametric_curve.png"></p>
+</div></div>
+</div>
+</section>
+<section id="plotx-y的参数形式" class="slide level2">
+<h2><code>plot(x, y)</code>的参数形式</h2>
+<ul>
+<li>当<code>x</code>、<code>y</code>是维度相同的矩阵，以对应列为横、纵坐标绘图</li>
+</ul>
+<div class="sourceCode" id="cb40"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb40-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">t</span> <span class="op">=</span> <span class="va">linspace</span>(<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,</span><span class="fl">100</span>)<span class="op">;</span></span>
+<span id="cb40-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> [<span class="va">t</span><span class="op">;</span><span class="va">t</span>]<span class="op">';</span></span>
+<span id="cb40-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span> <span class="op">=</span> [<span class="va">sin</span>(<span class="va">t</span>)<span class="op">;</span><span class="va">cos</span>(<span class="va">t</span>)]<span class="op">';</span></span>
+<span id="cb40-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>当<code>x</code>是向量，<code>y</code>有一维与<code>x</code>同维，则以<code>x</code>为横坐标，<code>y</code>中与其同维的列为纵坐标画出多根曲线</li>
+</ul>
+<div class="sourceCode" id="cb41"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb41-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> <span class="va">linspace</span>(<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,</span><span class="fl">100</span>)<span class="op">;</span></span>
+<span id="cb41-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span> <span class="op">=</span> [<span class="va">sin</span>(<span class="va">x</span>)<span class="op">;</span><span class="va">cos</span>(<span class="va">x</span>)]<span class="op">;</span></span>
+<span id="cb41-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span> <span class="va">y</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>最简单形式：<code>plot(y)</code>，此时横坐标是元素对应的下标</li>
+</ul>
+<div class="sourceCode" id="cb42"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb42-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span> <span class="op">=</span> [<span class="fl">1</span><span class="op">,</span> <span class="fl">1</span><span class="op">,</span> <span class="fl">1</span><span class="op">;</span> <span class="fl">4</span><span class="op">,</span> <span class="fl">8</span><span class="op">,</span> <span class="fl">16</span><span class="op">;</span> <span class="fl">9</span><span class="op">,</span> <span class="fl">27</span><span class="op">,</span> <span class="fl">81</span>]<span class="op">;</span></span>
+<span id="cb42-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">y</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="图形保持" class="slide level2">
+<h2>图形保持</h2>
+<ul>
+<li>下面代码会在图像窗口画出几条曲线？</li>
+</ul>
+<div class="sourceCode" id="cb43"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb43-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">t</span> <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="va">pi</span><span class="op">/</span><span class="fl">100</span><span class="op">:</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">;</span></span>
+<span id="cb43-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">t</span><span class="op">,</span> <span class="va">sin</span>(<span class="va">t</span>))<span class="op">;</span></span>
+<span id="cb43-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">t</span><span class="op">,</span> <span class="va">cos</span>(<span class="va">t</span>))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<ul>
+<li>答案：<strong>1条</strong>，只会画出<span class="math inline">\(cos(t)\)</span></li>
+</ul>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>默认情况下，每次执行<code>plot</code>都会清空前面的图形
+<ul>
+<li><code>hold on</code>: 保持前面的图形</li>
+<li><code>hold off</code>: 不保持前面的图形</li>
+<li><code>hold</code>: 在两种状态之间切换</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="思考题" class="slide level2">
+<h2>思考题</h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>已知<code>t</code>，在同一坐标系同时画出<code>sin(t)</code>和<code>cos(t)</code>曲线有几种方法?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb44"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb44-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">t</span><span class="op">,</span> <span class="va">sin</span>(<span class="va">t</span>)<span class="op">,</span> <span class="va">t</span><span class="op">,</span> <span class="va">cos</span>(<span class="va">t</span>))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb45"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb45-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>([<span class="va">t</span><span class="op">;</span> <span class="va">t</span>]<span class="op">',</span> [<span class="va">sin</span>(<span class="va">t</span>)<span class="op">;</span> <span class="va">cos</span>(<span class="va">t</span>)]<span class="op">'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb46"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb46-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">t</span><span class="op">,</span> [<span class="va">sin</span>(<span class="va">t</span>)<span class="op">;</span> <span class="va">cos</span>(<span class="va">t</span>)]<span class="op">'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb47"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb47-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">t</span><span class="op">,</span> <span class="va">sin</span>(<span class="va">t</span>))<span class="op">;</span></span>
+<span id="cb47-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">hold</span> <span class="va">on</span><span class="op">;</span></span>
+<span id="cb47-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">t</span><span class="op">,</span> <span class="va">cos</span>(<span class="va">t</span>))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="带选项的plot函数" class="slide level2">
+<h2>带选项的<code>plot</code>函数</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="sourceCode" id="cb48"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb48-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x1</span><span class="op">,</span> <span class="va">y1</span><span class="op">,</span> 选项<span class="fl">1</span><span class="op">,</span> <span class="va">x2</span><span class="op">,</span> <span class="va">y2</span><span class="op">,</span> 选项<span class="fl">2</span><span class="op">,...</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb49-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> [<span class="fl">0</span><span class="op">:</span><span class="fl">0.2</span><span class="op">:</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span>]<span class="op">;</span></span>
+<span id="cb49-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">cos</span>(<span class="va">x</span>))<span class="op">;</span></span>
+<span id="cb49-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">cos</span>(<span class="va">x</span>)<span class="op">,</span><span class="ss">'r+:'</span>)<span class="op">;</span>  <span class="co">% 红色、虚线、  加号点</span></span>
+<span id="cb49-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">cos</span>(<span class="va">x</span>)<span class="op">,</span><span class="ss">'bd-.'</span>)<span class="op">;</span> <span class="co">% 蓝色、点划线、菱形点</span></span>
+<span id="cb49-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">cos</span>(<span class="va">x</span>)<span class="op">,</span><span class="ss">'k*-'</span>)<span class="op">;</span>  <span class="co">% 黑色、实线、  星号点</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img data-src="images/plot_options.png"></p>
+</div><div class="column" style="width:40%;">
+<div class="small-table">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">线型</th>
+<th style="text-align: left;">点标记</th>
+<th style="text-align: left;">颜色</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>-</code> 实线</td>
+<td style="text-align: left;"><code>.</code> 点</td>
+<td style="text-align: left;"><code>y</code> 黄色</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>:</code> 虚线</td>
+<td style="text-align: left;"><code>o</code> 小圆圈</td>
+<td style="text-align: left;"><code>m</code> 棕色</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>-.</code> 点划线</td>
+<td style="text-align: left;"><code>x</code> 叉子符</td>
+<td style="text-align: left;"><code>c</code> 青色</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>--</code> 间断线</td>
+<td style="text-align: left;"><code>+</code> 加号</td>
+<td style="text-align: left;"><code>r</code> 红色</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>*</code> 星号</td>
+<td style="text-align: left;"><code>g</code> 绿色</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>s</code> 方格</td>
+<td style="text-align: left;"><code>b</code> 蓝色</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>d</code> 菱形</td>
+<td style="text-align: left;"><code>w</code> 白色</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>^</code> 朝上三角</td>
+<td style="text-align: left;"><code>k</code> 黑色</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>v</code> 朝下三角</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>&gt;</code> 朝右三角</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>&lt;</code> 朝左三角</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>p</code> 五角星</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>h</code> 六角星</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
+</section>
+<section id="牛刀小试" class="slide level2">
+<h2>牛刀小试</h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>用不同线型和颜色在同一坐标内绘制曲线<span class="math inline">\(y=2e^{-0.5x}sin(2\pi x)\)</span>及其包络线</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="sourceCode" id="annotated-cell-51"><pre class="sourceCode matlab code-annotation-code code-with-copy code-annotated"><code class="sourceCode matlab"><span id="annotated-cell-51-1"><a href="#annotated-cell-51-1" aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> (<span class="fl">0</span><span class="op">:</span><span class="va">pi</span><span class="op">/</span><span class="fl">100</span><span class="op">:</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span>)<span class="op">';</span></span>
+<span id="annotated-cell-51-2"><a href="#annotated-cell-51-2" aria-hidden="true" tabindex="-1"></a><span class="va">y1</span> <span class="op">=</span> <span class="fl">2</span><span class="op">*</span><span class="va">exp</span>(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span><span class="va">x</span>)<span class="op">*</span>[<span class="fl">1</span><span class="op">,-</span><span class="fl">1</span>]<span class="op">;</span></span>
+<span id="annotated-cell-51-3"><a href="#annotated-cell-51-3" aria-hidden="true" tabindex="-1"></a><span class="va">y2</span> <span class="op">=</span> <span class="fl">2</span><span class="op">*</span><span class="va">exp</span>(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span><span class="va">x</span>)<span class="op">.*</span><span class="va">sin</span>(<span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">*</span><span class="va">x</span>)<span class="op">;</span></span>
+<span id="annotated-cell-51-4"><a href="#annotated-cell-51-4" aria-hidden="true" tabindex="-1"></a><span class="va">x1</span> <span class="op">=</span> (<span class="fl">0</span><span class="op">:</span><span class="fl">12</span>)<span class="op">/</span><span class="fl">2</span><span class="op">;</span></span>
+<span id="annotated-cell-51-5"><a href="#annotated-cell-51-5" aria-hidden="true" tabindex="-1"></a><span class="va">y3</span> <span class="op">=</span> <span class="fl">2</span><span class="op">*</span><span class="va">exp</span>(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span><span class="va">x1</span>)<span class="op">.*</span><span class="va">sin</span>(<span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">*</span><span class="va">x1</span>)<span class="op">;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-51" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-51-6" class="code-annotation-target"><a href="#annotated-cell-51-6" aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">y1</span><span class="op">,</span><span class="ss">'g:'</span><span class="op">,</span><span class="va">x</span><span class="op">,</span><span class="va">y2</span><span class="op">,</span><span class="ss">'b--'</span><span class="op">,</span><span class="va">x1</span><span class="op">,</span><span class="va">y3</span><span class="op">,</span><span class="ss">'rp'</span>)<span class="op">;</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-51" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-51" data-code-lines="6" data-code-annotation="1">这行也可以用<code>hold on</code>实现:</span>
+</dd>
+</dl>
+<div class="sourceCode" id="cb50"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb50-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">y1</span><span class="op">,</span><span class="ss">'g:'</span>)<span class="op">;</span></span>
+<span id="cb50-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">hold</span> <span class="va">on</span></span>
+<span id="cb50-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">y2</span><span class="op">,</span><span class="ss">'b--'</span>)<span class="op">;</span></span>
+<span id="cb50-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x1</span><span class="op">,</span><span class="va">y3</span><span class="op">,</span><span class="ss">'rp'</span>)<span class="op">;</span></span>
+<span id="cb50-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">hold</span> <span class="va">off</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:40%;">
+<p><img data-src="images/enclose.png"></p>
+</div></div>
+</div>
+</section>
+<section id="双纵坐标函数" class="slide level2">
+<h2>双纵坐标函数</h2>
+<ul>
+<li>把不同量纲、不同数量级的两个函数绘制在同一坐标中</li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>用不同标度在同一坐标内绘制曲线<span class="math inline">\(y_1=e^{-0.5x}sin(2\pi x)\)</span>及曲线<span class="math inline">\(y_2=1.5e^{-0.1x}sin(x)\)</span></p>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="sourceCode" id="cb51"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb51-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">x1</span> <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="va">pi</span><span class="op">/</span><span class="fl">100</span><span class="op">:</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">;</span></span>
+<span id="cb51-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">x2</span> <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="va">pi</span><span class="op">/</span><span class="fl">100</span><span class="op">:</span><span class="fl">3</span><span class="op">*</span><span class="va">pi</span><span class="op">;</span></span>
+<span id="cb51-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">y1</span> <span class="op">=</span> <span class="va">exp</span>(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span><span class="va">x1</span>)<span class="op">.*</span><span class="va">sin</span>(<span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">*</span><span class="va">x1</span>)<span class="op">;</span></span>
+<span id="cb51-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">y2</span> <span class="op">=</span> <span class="fl">1.5</span><span class="op">*</span><span class="va">exp</span>(<span class="op">-</span><span class="fl">0.1</span><span class="op">*</span><span class="va">x2</span>)<span class="op">.*</span><span class="va">sin</span>(<span class="va">x2</span>)<span class="op">;</span></span>
+<span id="cb51-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">plotyy</span>(<span class="va">x1</span><span class="op">,</span><span class="va">y1</span><span class="op">,</span><span class="va">x2</span><span class="op">,</span><span class="va">y2</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:40%;">
+<p><img data-src="images/plot_yy.png"></p>
+</div></div>
+</section>
+<section id="绘图的辅助操作" class="slide level2">
+<h2>绘图的辅助操作</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li><code>title(图形名称)</code></li>
+<li><code>xlabel(x轴说明)</code></li>
+<li><code>ylabel(y轴说明)</code></li>
+<li><code>text(x,y,图形说明)</code></li>
+<li><code>legend(图例1,图例2,…)</code></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="sourceCode" id="cb52"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb52-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="va">pi</span><span class="op">/</span><span class="fl">100</span><span class="op">:</span><span class="fl">4</span><span class="op">*</span><span class="va">pi</span><span class="op">;</span></span>
+<span id="cb52-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span> <span class="op">=</span> <span class="va">sin</span>(<span class="va">x</span>)<span class="op">;</span></span>
+<span id="cb52-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span>)<span class="op">;</span></span>
+<span id="cb52-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'y=sin(x)的图像'</span>)<span class="op">;</span></span>
+<span id="cb52-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">xlabel</span>(<span class="ss">'x'</span>)<span class="op">;</span></span>
+<span id="cb52-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">ylabel</span>(<span class="ss">'y=sin(x)'</span>)<span class="op">;</span></span>
+<span id="cb52-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">text</span>(<span class="va">pi</span><span class="op">/</span><span class="fl">2</span><span class="op">,</span> <span class="fl">0.8</span><span class="op">,</span><span class="ss">'最大值'</span>)<span class="op">;</span></span>
+<span id="cb52-8"><a aria-hidden="true" tabindex="-1"></a><span class="va">legend</span>(<span class="ss">'sin(x)'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img data-src="images/plot_help.png"></p>
+</div></div>
+</section>
+<section id="坐标控制" class="slide level2">
+<h2>坐标控制</h2>
+<ul>
+<li><code>axis([xmin xmax ymin ymax zmin zmax])</code></li>
+<li><code>axis equal</code>: 纵、横坐标轴采用等长刻度</li>
+<li><code>axis square</code>: 产生正方形坐标系(缺省为矩形)</li>
+<li><code>axis auto</code>: 使用缺省设置</li>
+<li><code>axis on/off</code>: 显示/隐藏坐标轴</li>
+<li><code>grid on/off</code>: 显示/隐藏网格线</li>
+<li><code>box on/off</code>: 显示/隐藏边框线</li>
+</ul>
+</section>
+<section id="子窗口" class="slide level2 smaller">
+<h2>子窗口</h2>
+<ul>
+<li><code>subplot(m, n, p)</code>: 将绘图区域划分为<span class="math inline">\(m\times n\)</span>个子图,并在第p个子图上绘图(子图从上到下、从左到右进行编号，从1开始)</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="sourceCode" id="cb53"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb53-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span><span class="op">=</span><span class="va">linspace</span>(<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,</span><span class="fl">60</span>)<span class="op">;</span></span>
+<span id="cb53-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span><span class="op">=</span><span class="va">sin</span>(<span class="va">x</span>)<span class="op">;</span></span>
+<span id="cb53-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">z</span><span class="op">=</span><span class="va">cos</span>(<span class="va">x</span>)<span class="op">;</span></span>
+<span id="cb53-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">t</span><span class="op">=</span><span class="va">sin</span>(<span class="va">x</span>)<span class="op">./</span>(<span class="va">cos</span>(<span class="va">x</span>)<span class="op">+</span><span class="va">eps</span>)<span class="op">;</span></span>
+<span id="cb53-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">ct</span><span class="op">=</span><span class="va">cos</span>(<span class="va">x</span>)<span class="op">./</span>(<span class="va">sin</span>(<span class="va">x</span>)<span class="op">+</span><span class="va">eps</span>)<span class="op">;</span></span>
+<span id="cb53-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">1</span>)<span class="op">;</span></span>
+<span id="cb53-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span>)<span class="op">;</span></span>
+<span id="cb53-8"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'sin(x)'</span>)<span class="op">;</span></span>
+<span id="cb53-9"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">1</span><span class="op">,</span><span class="fl">1</span>])<span class="op">;</span></span>
+<span id="cb53-10"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">2</span>)<span class="op">;</span></span>
+<span id="cb53-11"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">z</span>)<span class="op">;</span></span>
+<span id="cb53-12"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'cos(x)'</span>)<span class="op">;</span></span>
+<span id="cb53-13"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">1</span><span class="op">,</span><span class="fl">1</span>])<span class="op">;</span></span>
+<span id="cb53-14"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">3</span>)<span class="op">;</span></span>
+<span id="cb53-15"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">t</span>)<span class="op">;</span></span>
+<span id="cb53-16"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'tangent(x)'</span>)<span class="op">;</span></span>
+<span id="cb53-17"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">40</span><span class="op">,</span><span class="fl">40</span>])<span class="op">;</span></span>
+<span id="cb53-18"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">4</span>)<span class="op">;</span></span>
+<span id="cb53-19"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">ct</span>)<span class="op">;</span></span>
+<span id="cb53-20"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'cotangent(x)'</span>)<span class="op">;</span></span>
+<span id="cb53-21"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">40</span><span class="op">,</span><span class="fl">40</span>])<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:65%;">
+<p><img data-src="images/subfig.png"></p>
+</div></div>
+</section>
+<section id="窗口灵活分割" class="slide level2 smaller">
+<h2>窗口灵活分割</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb54"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb54-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span><span class="op">=</span><span class="va">linspace</span>(<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,</span><span class="fl">60</span>)<span class="op">;</span> <span class="va">y</span><span class="op">=</span><span class="va">sin</span>(<span class="va">x</span>)<span class="op">;</span></span>
+<span id="cb54-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">1</span>)<span class="op">;</span> <span class="co">%选择2×2个区中的1号区</span></span>
+<span id="cb54-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">stairs</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span>)<span class="op">;</span></span>
+<span id="cb54-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'sin(x)-1'</span>)<span class="op">;</span></span>
+<span id="cb54-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">1</span><span class="op">,</span><span class="fl">1</span>])<span class="op">;</span></span>
+<span id="cb54-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">1</span><span class="op">,</span><span class="fl">2</span>)<span class="op">;</span> <span class="co">%选择2×1个区中的2号区</span></span>
+<span id="cb54-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">stem</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span>)<span class="op">;</span></span>
+<span id="cb54-8"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'sin(x)-2'</span>)<span class="op">;</span></span>
+<span id="cb54-9"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">1</span><span class="op">,</span><span class="fl">1</span>])<span class="op">;</span></span>
+<span id="cb54-10"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">4</span><span class="op">,</span><span class="fl">3</span>)<span class="op">;</span> <span class="co">%选择4×4个区中的3号区</span></span>
+<span id="cb54-11"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span>)<span class="op">;</span></span>
+<span id="cb54-12"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'sin(x)'</span>)<span class="op">;</span></span>
+<span id="cb54-13"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">1</span><span class="op">,</span><span class="fl">1</span>])<span class="op">;</span></span>
+<span id="cb54-14"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">4</span><span class="op">,</span><span class="fl">4</span>)<span class="op">;</span> <span class="co">%选择4×4个区中的4号区</span></span>
+<span id="cb54-15"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span> <span class="va">cos</span>(<span class="va">x</span>))<span class="op">;</span></span>
+<span id="cb54-16"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'cos(x)'</span>)<span class="op">;</span></span>
+<span id="cb54-17"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">1</span><span class="op">,</span><span class="fl">1</span>])<span class="op">;</span></span>
+<span id="cb54-18"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">4</span><span class="op">,</span><span class="fl">7</span>)<span class="op">;</span> <span class="co">%选择4×4个区中的7号区</span></span>
+<span id="cb54-19"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span> <span class="va">sin</span>(<span class="va">x</span>)<span class="op">./</span>(<span class="va">cos</span>(<span class="va">x</span>)<span class="op">+</span><span class="va">eps</span>))<span class="op">;</span></span>
+<span id="cb54-20"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'tangent(x)'</span>)<span class="op">;</span></span>
+<span id="cb54-21"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">40</span><span class="op">,</span><span class="fl">40</span>])<span class="op">;</span></span>
+<span id="cb54-22"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">4</span><span class="op">,</span><span class="fl">8</span>)<span class="op">;</span> <span class="co">%选择4×4个区中的8号区</span></span>
+<span id="cb54-23"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span> <span class="va">cos</span>(<span class="va">x</span>)<span class="op">./</span>(<span class="va">sin</span>(<span class="va">x</span>)<span class="op">+</span><span class="va">eps</span>))<span class="op">;</span></span>
+<span id="cb54-24"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'cotangent(x)'</span>)<span class="op">;</span></span>
+<span id="cb54-25"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">40</span><span class="op">,</span><span class="fl">40</span>])<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/figsplit.png"></p>
+</div></div>
+</section>
+<section id="绘制其他二维图形" class="slide level2">
+<h2>绘制其他二维图形</h2>
+<ul>
+<li><code>bar(x,y,选项)</code>: 条形图</li>
+<li><code>stairs(x,y,选项)</code>: 阶梯图</li>
+<li><code>stem(x,y,选项)</code>: 杆图</li>
+<li><code>fill(x1,y1,选项1,x2,y2,选项2,…)</code>: 填充图</li>
+</ul>
+</section>
+<section id="其他二维图形示例" class="slide level2">
+<h2>其他二维图形示例</h2>
+<ul>
+<li>用条形图、填充图、阶梯图和杆图绘制曲线<span class="math inline">\(y=2e^{-0.5x}\)</span></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb55"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb55-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span><span class="op">=</span><span class="fl">0</span><span class="op">:</span><span class="fl">0.35</span><span class="op">:</span><span class="fl">7</span><span class="op">;</span></span>
+<span id="cb55-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span><span class="op">=</span><span class="fl">2</span><span class="op">*</span><span class="va">exp</span>(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span><span class="va">x</span>)<span class="op">;</span></span>
+<span id="cb55-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">1</span>)<span class="op">;</span></span>
+<span id="cb55-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">bar</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span><span class="op">,</span><span class="ss">'g'</span>)<span class="op">;</span></span>
+<span id="cb55-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'bar(x,y,''g'')'</span>)<span class="op">;</span></span>
+<span id="cb55-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span>([<span class="fl">0</span><span class="op">,</span><span class="fl">7</span><span class="op">,</span><span class="fl">0</span><span class="op">,</span><span class="fl">2</span>])<span class="op">;</span> </span>
+<span id="cb55-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">2</span>)<span class="op">;</span></span>
+<span id="cb55-8"><a aria-hidden="true" tabindex="-1"></a><span class="va">fill</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span><span class="op">,</span><span class="ss">'r'</span>)<span class="op">;</span></span>
+<span id="cb55-9"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'fill(x,y,''r'')'</span>)<span class="op">;</span></span>
+<span id="cb55-10"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span>([<span class="fl">0</span><span class="op">,</span><span class="fl">7</span><span class="op">,</span><span class="fl">0</span><span class="op">,</span><span class="fl">2</span>])<span class="op">;</span></span>
+<span id="cb55-11"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">3</span>)<span class="op">;</span></span>
+<span id="cb55-12"><a aria-hidden="true" tabindex="-1"></a><span class="va">stairs</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span><span class="op">,</span><span class="ss">'b'</span>)<span class="op">;</span></span>
+<span id="cb55-13"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'stairs(x,y,''b'')'</span>)<span class="op">;</span></span>
+<span id="cb55-14"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span>([<span class="fl">0</span><span class="op">,</span><span class="fl">7</span><span class="op">,</span><span class="fl">0</span><span class="op">,</span><span class="fl">2</span>])<span class="op">;</span></span>
+<span id="cb55-15"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">4</span>)<span class="op">;</span></span>
+<span id="cb55-16"><a aria-hidden="true" tabindex="-1"></a><span class="va">stem</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span><span class="op">,</span><span class="ss">'k'</span>)<span class="op">;</span></span>
+<span id="cb55-17"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'stem(x,y,''k'')'</span>)<span class="op">;</span></span>
+<span id="cb55-18"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span>([<span class="fl">0</span><span class="op">,</span><span class="fl">7</span><span class="op">,</span><span class="fl">0</span><span class="op">,</span><span class="fl">2</span>])<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/other2d.png"></p>
+</div></div>
+</section>
+<section id="极坐标图" class="slide level2">
+<h2>极坐标图</h2>
+<ul>
+<li><code>polar(theta, rho, 选项)</code></li>
+<li>绘制<span class="math inline">\(\rho=sin(2\theta)cos(2\theta)\)</span>的极坐标图</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="sourceCode" id="cb56"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb56-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">theta</span><span class="op">=</span><span class="fl">0</span><span class="op">:</span><span class="fl">0.01</span><span class="op">:</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">;</span></span>
+<span id="cb56-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">rho</span><span class="op">=</span><span class="va">sin</span>(<span class="fl">2</span><span class="op">*</span><span class="va">theta</span>)<span class="op">.*</span><span class="va">cos</span>(<span class="fl">2</span><span class="op">*</span><span class="va">theta</span>)<span class="op">;</span></span>
+<span id="cb56-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">polar</span>(<span class="va">theta</span><span class="op">,</span><span class="va">rho</span><span class="op">,</span><span class="ss">'k'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>自学对数坐标、半对数坐标<code>semilogx</code>、<code>semilogy</code>和<code>loglog</code></p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<p><img data-src="images/polar_sample.png"></p>
+</div></div>
+</section>
+<section id="空间三维作图" class="slide level2">
+<h2>空间三维作图</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>画出三维螺旋线</li>
+</ul>
+<p><span class="math display">\[
+\begin{cases}
+x = 2t\\
+y = sin(t)\\
+z = cos(t)
+\end{cases}
+\]</span></p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb57-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">t</span><span class="op">=</span>[<span class="fl">0</span><span class="op">:</span><span class="fl">0.1</span><span class="op">:</span><span class="fl">10</span><span class="op">*</span><span class="va">pi</span>]<span class="op">;</span></span>
+<span id="cb57-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span><span class="op">=</span><span class="fl">2</span><span class="op">*</span><span class="va">t</span><span class="op">;</span> </span>
+<span id="cb57-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span><span class="op">=</span><span class="va">sin</span>(<span class="va">t</span>)<span class="op">;</span> </span>
+<span id="cb57-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">z</span><span class="op">=</span><span class="va">cos</span>(<span class="va">t</span>)<span class="op">;</span></span>
+<span id="cb57-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot3</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span><span class="op">,</span><span class="va">z</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:40%;">
+<p><img data-src="images/plot3_sample.png"></p>
+</div></div>
+</section>
+<section id="绘制三维曲面" class="slide level2">
+<h2>绘制三维曲面</h2>
+<div class="sourceCode" id="cb58"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb58-1"><a aria-hidden="true" tabindex="-1"></a>[<span class="va">X</span><span class="op">,</span><span class="va">Y</span>]<span class="op">=</span><span class="va">meshgrid</span>(<span class="op">-</span><span class="fl">8</span><span class="op">:</span><span class="fl">0.1</span><span class="op">:</span><span class="fl">8</span>)<span class="op">;</span></span>
+<span id="cb58-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">r</span><span class="op">=</span><span class="va">sqrt</span>(<span class="va">X</span><span class="op">.^</span><span class="fl">2</span><span class="op">+</span><span class="va">Y</span><span class="op">.^</span><span class="fl">2</span>)<span class="op">+</span><span class="va">eps</span><span class="op">;</span></span>
+<span id="cb58-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">Z</span><span class="op">=</span><span class="va">sin</span>(<span class="va">r</span>)<span class="op">./</span><span class="va">r</span><span class="op">;</span></span>
+<span id="cb58-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">surf</span>(<span class="va">X</span><span class="op">,</span><span class="va">Y</span><span class="op">,</span><span class="va">Z</span><span class="op">,</span> <span class="ss">'EdgeColor'</span><span class="op">,</span><span class="ss">'none'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<img data-src="images/mexicain.png" class="r-stretch"></section>
+<section id="matlab画图类型" class="slide level2">
+<h2>Matlab画图类型</h2>
+
+
+<img data-src="images/matlab_plots.png" class="r-stretch"><div class="quarto-auto-generated-content">
+<div class="footer footer-default">
+
+</div>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/zjsu\.github\.io\/mm\/");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
