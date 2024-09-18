@@ -387,6 +387,20 @@
   </style>
   <script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
   <link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+  <style>
+    .reveal .slide table {
+      font-size: 0.6em;
+    }
+
+    .reveal .observablehq table {
+      font-size: 0.6em !important;
+    }
+
+    .reveal .observablehq table td:first-child,
+    .reveal .observablehq table th:first-child {
+      visibility: hidden;
+    }
+  </style>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -407,7 +421,7 @@
 <section id="弹簧系统" class="slide level2">
 <h2>弹簧系统</h2>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="14" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 13;"><span id="cb1-14"><a></a>spring_data <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"spring.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="30" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 29;"><span id="cb1-30"><a></a>spring_data <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"spring.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
 
@@ -416,17 +430,17 @@
 </div>
 <div class="columns">
 <div class="column" style="width:55%;">
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="22" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 21;"><span id="cb2-22"><a></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb2-23"><a></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
-<span id="cb2-24"><a></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb2-25"><a></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])<span class="op">,</span></span>
-<span id="cb2-26"><a></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">0</span>])<span class="op">,</span></span>
-<span id="cb2-27"><a></a>    Plot<span class="op">.</span><span class="fu">dot</span>(spring_data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"质量"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"拉伸"</span><span class="op">,</span> <span class="dt">symbol</span><span class="op">:</span> <span class="st">"circle"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"currentColor"</span>})<span class="op">,</span></span>
-<span id="cb2-28"><a></a>    Plot<span class="op">.</span><span class="fu">line</span>([[<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span>]<span class="op">,</span> [<span class="dv">550</span><span class="op">,</span> <span class="fl">8.9375</span>]]<span class="op">,</span> {<span class="dt">stroke</span><span class="op">:</span> <span class="st">"green"</span>})<span class="op">,</span></span>
-<span id="cb2-29"><a></a>    Plot<span class="op">.</span><span class="fu">dot</span>([[<span class="dv">200</span><span class="op">,</span> <span class="fl">3.25</span>]<span class="op">,</span> [<span class="dv">300</span><span class="op">,</span> <span class="fl">4.875</span>]]<span class="op">,</span> {<span class="dt">fill</span><span class="op">:</span> <span class="st">"red"</span>})<span class="op">,</span></span>
-<span id="cb2-30"><a></a>    Plot<span class="op">.</span><span class="fu">text</span>([<span class="st">"e = 0.01625m"</span>]<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="dv">250</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">16</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span>})</span>
-<span id="cb2-31"><a></a>  ]</span>
-<span id="cb2-32"><a></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="38" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 37;"><span id="cb2-38"><a></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb2-39"><a></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb2-40"><a></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb2-41"><a></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])<span class="op">,</span></span>
+<span id="cb2-42"><a></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">0</span>])<span class="op">,</span></span>
+<span id="cb2-43"><a></a>    Plot<span class="op">.</span><span class="fu">dot</span>(spring_data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"质量"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"拉伸"</span><span class="op">,</span> <span class="dt">symbol</span><span class="op">:</span> <span class="st">"circle"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"currentColor"</span>})<span class="op">,</span></span>
+<span id="cb2-44"><a></a>    Plot<span class="op">.</span><span class="fu">line</span>([[<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span>]<span class="op">,</span> [<span class="dv">550</span><span class="op">,</span> <span class="fl">8.9375</span>]]<span class="op">,</span> {<span class="dt">stroke</span><span class="op">:</span> <span class="st">"green"</span>})<span class="op">,</span></span>
+<span id="cb2-45"><a></a>    Plot<span class="op">.</span><span class="fu">dot</span>([[<span class="dv">200</span><span class="op">,</span> <span class="fl">3.25</span>]<span class="op">,</span> [<span class="dv">300</span><span class="op">,</span> <span class="fl">4.875</span>]]<span class="op">,</span> {<span class="dt">fill</span><span class="op">:</span> <span class="st">"red"</span>})<span class="op">,</span></span>
+<span id="cb2-46"><a></a>    Plot<span class="op">.</span><span class="fu">text</span>([<span class="st">"e = 0.01625m"</span>]<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="dv">250</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">16</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span>})</span>
+<span id="cb2-47"><a></a>  ]</span>
+<span id="cb2-48"><a></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div id="ojs-cell-2" class="quarto-layout-cell" data-nodetype="expression" style="flex-basis: 100.0%;justify-content: flex-start;">
@@ -437,16 +451,16 @@
 <p><span class="math inline">\(斜率 = \frac{4.875-3.25}{300-200} = 0.01625\)</span></p>
 </div><div class="column" height="100%" style="width:25%;">
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="41" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 40;"><span id="cb3-41"><a></a>Inputs<span class="op">.</span><span class="fu">table</span>(spring_data<span class="op">,</span> {</span>
-<span id="cb3-42"><a></a>  <span class="co">// </span><span class="al">TODO</span><span class="co">: uncomment the following when observable is updated</span></span>
-<span id="cb3-43"><a></a>  <span class="co">// select: false,</span></span>
-<span id="cb3-44"><a></a>  <span class="dt">format</span><span class="op">:</span> {</span>
-<span id="cb3-45"><a></a>    <span class="st">'拉伸'</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">3</span>)</span>
-<span id="cb3-46"><a></a>  }<span class="op">,</span></span>
-<span id="cb3-47"><a></a>  <span class="dt">align</span><span class="op">:</span> {</span>
-<span id="cb3-48"><a></a>    <span class="st">'质量'</span><span class="op">:</span> <span class="st">"left"</span></span>
-<span id="cb3-49"><a></a>  }<span class="op">,</span></span>
-<span id="cb3-50"><a></a>  <span class="dt">height</span><span class="op">:</span> <span class="st">"100%"</span> })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="57" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 56;"><span id="cb3-57"><a></a>Inputs<span class="op">.</span><span class="fu">table</span>(spring_data<span class="op">,</span> {</span>
+<span id="cb3-58"><a></a>  <span class="co">// </span><span class="al">TODO</span><span class="co">: uncomment the following when observable is updated</span></span>
+<span id="cb3-59"><a></a>  <span class="co">// select: false,</span></span>
+<span id="cb3-60"><a></a>  <span class="dt">format</span><span class="op">:</span> {</span>
+<span id="cb3-61"><a></a>    <span class="st">'拉伸'</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">3</span>)</span>
+<span id="cb3-62"><a></a>  }<span class="op">,</span></span>
+<span id="cb3-63"><a></a>  <span class="dt">align</span><span class="op">:</span> {</span>
+<span id="cb3-64"><a></a>    <span class="st">'质量'</span><span class="op">:</span> <span class="st">"left"</span></span>
+<span id="cb3-65"><a></a>  }<span class="op">,</span></span>
+<span id="cb3-66"><a></a>  <span class="dt">height</span><span class="op">:</span> <span class="st">"100%"</span> })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-3" data-nodetype="expression">
 
