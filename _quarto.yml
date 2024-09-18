@@ -1,9 +1,6 @@
 project:
   type: website
 
-execute:
-  freeze: auto
-
 website:
   title: "数学建模与MATLAB"
   navbar:
