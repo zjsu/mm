@@ -4,87 +4,52 @@ title: 第 1 章 对变化进行建模
 image: cover.jpg
 format:
   revealjs:
-    theme: white
-    include-in-header:
-      text: |
-        <style>
-          .small-table table {
-            font-size: .6em
-          }
-        </style>
+    theme: [white, custom.scss]
     mermaid:
       theme: neutral
 ---
 
 ## 弹簧系统
 
+```{ojs}
+spring_data = FileAttachment("spring.csv").csv({ typed: true })
+```
 :::: columns
 
 ::: {.column width="55%"}
 
-```{python}
-import matplotlib.pyplot as plt
-import numpy as np
+```{ojs}
+//| layout-ncol: 1
+Plot.plot({
+  grid: true,
+  marks: [
+    Plot.ruleY([0]),
+    Plot.ruleX([0]),
+    Plot.dot(spring_data, {x: "质量", y: "拉伸", symbol: "circle", fill: "currentColor"}),
+    Plot.line([[0, 0], [550, 8.9375]], {stroke: "green"}),
+    Plot.dot([[200, 3.25], [300, 4.875]], {fill: "red"}),
+    Plot.text(["e = 0.01625m"], {x: 250, y: 3, fontSize: 16, fontWeight: "bold"})
+  ]
+}) 
+```
+$斜率 = \frac{4.875-3.25}{300-200} = 0.01625$
 
-# 数据定义
-mass = np.array([50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550])
-length = np.array([1.0, 1.875, 2.75, 3.25, 4.375, 4.875, 5.675, 6.5, 7.25, 8.0, 8.75])
+:::
 
-# 计算斜率
-k = (length[5] - length[3]) / (mass[5] - mass[3])
-
-# 创建图形
-plt.figure()
-
-# 绘制直线
-plt.plot([0, 600], [0, k * 600], color='green', linewidth=2)
-
-# 绘制点
-plt.plot(mass, length, color='black', linestyle='None', marker='o', markersize=2)
-
-# 绘制特定点
-plt.plot(mass[[3, 5]], length[[3, 5]], color='red', linestyle='None', marker='o', markersize=5)
-
-# 添加注释
-plt.annotate('e = 0.01625m', xy=(350, 5.5), xytext=(320, k*320 - 2),
-             arrowprops=dict(facecolor='black', shrink=0.05))
-
-# 设置坐标轴标签
-plt.xlabel('m')
-plt.ylabel('e')
-
-# 设置坐标轴范围
-plt.axis([0, 600, 0, 9])
-
-# 关闭框线
-plt.box(False)
-
-# 显示网格
-plt.grid(True)
-
-# 显示图形
-plt.show()
+::: {.column width="25%" height="100%"}
+```{ojs}
+Inputs.table(spring_data, {
+  // TODO: uncomment the following when observable is updated
+  // select: false,
+  format: {
+    '拉伸': d => d.toFixed(3)
+  },
+  align: {
+    '质量': "left"
+  },
+  height: "100%" })
 ```
 :::
-
-::: {.column width="25%"}
-::: small-table
-| 质量($m$) | 拉伸($e$)|
-|-----------|----------|
-| 50        | 1.000    |
-| 100       | 1.875    |
-| 150       | 2.750    |
-| 200       | 3.250    |
-| 250       | 4.375    |
-| 300       | 4.875    |
-| 350       | 5.675    |
-| 400       | 6.500    |
-| 450       | 7.250    |
-| 500       | 8.000    |
-| 550       | 8.750    |
-:::
-:::
-
 
 ::: {.column width="20%"}
 ![](spring.png)
@@ -92,13 +57,11 @@ plt.show()
 
 ::::
 
-$斜率 = \frac{4.875-3.25}{300-200} = 0.01625$
-
 ## 对变化进行建模
 
 * 未来值 = 现在值 + 变化
 * 变化 = 未来值 - 现在值
-* **离散时间**：差分方程(difference equation)
+* **离散时间**: 差分方程(difference equation)
 * **连续时间**: 微分方程(第11章)
 
 ## 差分方程
@@ -235,6 +198,8 @@ $$
 
 ## 动态系统的解法 -- 猜测 {.smaller} 
 
+:::: columns
+::: {.column width=60%}
 存款问题: $a_{n+1} = 1.01a_n, a_0 = 1000$
 
 $$
@@ -246,8 +211,8 @@ a_4 &= 1040.6 = 1.01(1030.3) = 1.01^4 (1000)
 \end{align*}
 $$
 
-:::: columns
-::: {.column width=60%}
+:::
+::: {.column width=40%}
 ![](saving.png)
 :::
 ::::

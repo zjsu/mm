@@ -1,0 +1,18 @@
+/*-- scss:defaults --*/
+
+/*-- scss:rules --*/
+.reveal .slide table {
+  font-size: 0.6em;
+}
+
+.reveal .observablehq table {
+  font-size: 0.6em !important;
+}
+
+// Hide table checkbox
+// TODO: remove this when ObservableHQ is updated
+// https://github.com/observablehq/inputs/pull/262
+.reveal .observablehq table td:first-child,
+.reveal .observablehq table th:first-child {
+    visibility: hidden;
+}
