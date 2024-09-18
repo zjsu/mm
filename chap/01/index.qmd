@@ -4,7 +4,23 @@ title: 第 1 章 对变化进行建模
 image: cover.jpg
 format:
   revealjs:
-    theme: [white, custom.scss]
+    theme: white
+    include-in-header:
+      text: |
+        <style>
+          .reveal .slide table {
+            font-size: 0.6em;
+          }
+
+          .reveal .observablehq table {
+            font-size: 0.6em !important;
+          }
+
+          .reveal .observablehq table td:first-child,
+          .reveal .observablehq table th:first-child {
+            visibility: hidden;
+          }
+        </style>
     mermaid:
       theme: neutral
 ---
