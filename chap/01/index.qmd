@@ -37,6 +37,7 @@ $斜率 = \frac{4.875-3.25}{300-200} = 0.01625$
 :::
 
 ::: {.column width="25%" height="100%"}
+
 ```{ojs}
 Inputs.table(spring_data, {
   // TODO: uncomment the following when observable is updated
