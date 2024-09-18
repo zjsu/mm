@@ -441,48 +441,6 @@
     "text": "第 1 章 对变化进行建模\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "intro/index.html#数学建模",
-    "href": "intro/index.html#数学建模",
-    "title": "数学建模与MATLAB",
-    "section": "数学建模",
-    "text": "数学建模\n\n数学模型是使用数学来将一个系统简化后予以描述\n广泛应用在自然科学、工程学科以及社会科学\n科学家和工程师用模型来解释一个系统，研究不同组成部分的影响，以及对行为做出预测\n描述不同对象的模型可能有相同的形式，同一个模型也可能包含了不同的抽象结构"
-  },
-  {
-    "objectID": "intro/index.html#数学建模-1",
-    "href": "intro/index.html#数学建模-1",
-    "title": "数学建模与MATLAB",
-    "section": "数学建模",
-    "text": "数学建模\n\n预测变化\n对现实世界进行简化\n\n\n\n\n\n\n\n\nG\n\n\n\nA\n\n实际数据\n\n\n\nB\n\n数学模型\n\n\n\nA-&gt;B\n\n\n简化\n\n\n\nC\n\n数学结论\n\n\n\nB-&gt;C\n\n\n分析  \n\n\n\nD\n\n预测/解释\n\n\n\nC-&gt;D\n\n\n阐明\n\n\n\nD-&gt;A\n\n\n验证"
-  },
-  {
-    "objectID": "intro/index.html#matlab",
-    "href": "intro/index.html#matlab",
-    "title": "数学建模与MATLAB",
-    "section": "MATLAB",
-    "text": "MATLAB\n\nThe MathWorks公司出品的商业数学软件\n用于算法开发、数据可视化、数据分析以及数值计算\n创建用户界面，以及调用其它语言编写的程序"
-  },
-  {
-    "objectID": "intro/index.html#教材及参考资料",
-    "href": "intro/index.html#教材及参考资料",
-    "title": "数学建模与MATLAB",
-    "section": "教材及参考资料",
-    "text": "教材及参考资料\n\n数学建模(原书第5版), Frank R.Giordano, Willam P.Fox, Steven B.Horton, 叶其孝/姜启源译, 机械工业出版社\n数学模型(第四版), 姜启源/谢金星/叶俊, 高等教育出版社\n数学建模, 杨启帆/谈之奕/何勇, 浙江大学出版社\n数学建模算法与应用, 司守奎/孙玺菁, 国防工业出版社\nMATLAB揭秘, David McMahon著/郑碧波译\n精通MATLAB R2011a, 张志涌, 北京航天航空大学出版社"
-  },
-  {
-    "objectID": "intro/index.html#课程安排",
-    "href": "intro/index.html#课程安排",
-    "title": "数学建模与MATLAB",
-    "section": "课程安排",
-    "text": "课程安排\n\n时间\n\n16周 = 12课堂 + 4实验\n\n考试\n\n成绩 = 平时 \\(\\times\\) 30%+ 期末(闭卷) \\(\\times\\) 70%"
-  },
-  {
-    "objectID": "intro/index.html#课程概要",
-    "href": "intro/index.html#课程概要",
-    "title": "数学建模与MATLAB",
-    "section": "课程概要",
-    "text": "课程概要\n\n\n\n\n\nflowchart LR\n  subgraph BASE[\" \"]\n    A[\"①对变化进行建模\"] --&gt; B[\"②建模过程、比例性和几何相似性\"]\n    B --&gt; C[\"③模型拟合\"]\n  end\n  BASE --&gt; D[\"④实验建模\"]\n  D --&gt; E[\"⑤模拟方法建模\"]\n  BASE --&gt; F[\"⑥离散概率模型\"]\n  BASE --&gt; G[\"⑦离散模型的优化\"]\n  BASE --&gt; H[\"⑧图论建模\"]\n  F --&gt; I[\"⑨决策论建模\"]\n  I --&gt; J[\"⑩博弈论\"]\n  BASE --&gt; K[\"⑪用微分方程建模\"]\n  K --&gt; L[\"⑫用微分方程组建模\"]\n  L --&gt; M[\"⑬连续模型的优化\"]\n  E --&gt; N[\"⑭量纲分析和相似性\"]\n  BASE --&gt; O[\"⑮函数图表构成模型\"]\n  classDef missing stroke-width:2px,stroke-dasharray: 5 5\n  class N,O missing"
-  },
-  {
     "objectID": "chap/01/index.html#弹簧系统",
     "href": "chap/01/index.html#弹簧系统",
     "title": "第 1 章 对变化进行建模",
@@ -831,5 +789,47 @@
     "title": "第 1 章 对变化进行建模",
     "section": "总结",
     "text": "总结\n系统相当稳定，即使刚开始没有人坐US Airways和United Airlines的旅客数."
+  },
+  {
+    "objectID": "intro/index.html#数学建模",
+    "href": "intro/index.html#数学建模",
+    "title": "数学建模与MATLAB",
+    "section": "数学建模",
+    "text": "数学建模\n\n数学模型是使用数学来将一个系统简化后予以描述\n广泛应用在自然科学、工程学科以及社会科学\n科学家和工程师用模型来解释一个系统，研究不同组成部分的影响，以及对行为做出预测\n描述不同对象的模型可能有相同的形式，同一个模型也可能包含了不同的抽象结构"
+  },
+  {
+    "objectID": "intro/index.html#数学建模-1",
+    "href": "intro/index.html#数学建模-1",
+    "title": "数学建模与MATLAB",
+    "section": "数学建模",
+    "text": "数学建模\n\n预测变化\n对现实世界进行简化\n\n\n\n\n\n\n\n\nG\n\n\n\nA\n\n实际数据\n\n\n\nB\n\n数学模型\n\n\n\nA-&gt;B\n\n\n简化\n\n\n\nC\n\n数学结论\n\n\n\nB-&gt;C\n\n\n分析  \n\n\n\nD\n\n预测/解释\n\n\n\nC-&gt;D\n\n\n阐明\n\n\n\nD-&gt;A\n\n\n验证"
+  },
+  {
+    "objectID": "intro/index.html#matlab",
+    "href": "intro/index.html#matlab",
+    "title": "数学建模与MATLAB",
+    "section": "MATLAB",
+    "text": "MATLAB\n\nThe MathWorks公司出品的商业数学软件\n用于算法开发、数据可视化、数据分析以及数值计算\n创建用户界面，以及调用其它语言编写的程序"
+  },
+  {
+    "objectID": "intro/index.html#教材及参考资料",
+    "href": "intro/index.html#教材及参考资料",
+    "title": "数学建模与MATLAB",
+    "section": "教材及参考资料",
+    "text": "教材及参考资料\n\n数学建模(原书第5版), Frank R.Giordano, Willam P.Fox, Steven B.Horton, 叶其孝/姜启源译, 机械工业出版社\n数学模型(第四版), 姜启源/谢金星/叶俊, 高等教育出版社\n数学建模, 杨启帆/谈之奕/何勇, 浙江大学出版社\n数学建模算法与应用, 司守奎/孙玺菁, 国防工业出版社\nMATLAB揭秘, David McMahon著/郑碧波译\n精通MATLAB R2011a, 张志涌, 北京航天航空大学出版社"
+  },
+  {
+    "objectID": "intro/index.html#课程安排",
+    "href": "intro/index.html#课程安排",
+    "title": "数学建模与MATLAB",
+    "section": "课程安排",
+    "text": "课程安排\n\n时间\n\n16周 = 12课堂 + 4实验\n\n考试\n\n成绩 = 平时 \\(\\times\\) 30%+ 期末(闭卷) \\(\\times\\) 70%"
+  },
+  {
+    "objectID": "intro/index.html#课程概要",
+    "href": "intro/index.html#课程概要",
+    "title": "数学建模与MATLAB",
+    "section": "课程概要",
+    "text": "课程概要\n\n\n\n\n\nflowchart LR\n  subgraph BASE[\" \"]\n    A[\"①对变化进行建模\"] --&gt; B[\"②建模过程、比例性和几何相似性\"]\n    B --&gt; C[\"③模型拟合\"]\n  end\n  BASE --&gt; D[\"④实验建模\"]\n  D --&gt; E[\"⑤模拟方法建模\"]\n  BASE --&gt; F[\"⑥离散概率模型\"]\n  BASE --&gt; G[\"⑦离散模型的优化\"]\n  BASE --&gt; H[\"⑧图论建模\"]\n  F --&gt; I[\"⑨决策论建模\"]\n  I --&gt; J[\"⑩博弈论\"]\n  BASE --&gt; K[\"⑪用微分方程建模\"]\n  K --&gt; L[\"⑫用微分方程组建模\"]\n  L --&gt; M[\"⑬连续模型的优化\"]\n  E --&gt; N[\"⑭量纲分析和相似性\"]\n  BASE --&gt; O[\"⑮函数图表构成模型\"]\n  classDef missing stroke-width:2px,stroke-dasharray: 5 5\n  class N,O missing"
   }
 ]
