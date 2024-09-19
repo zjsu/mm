@@ -1,5 +1,4 @@
 ---
-author: 浙江工商大学计算机学院
 title: 数学建模与MATLAB
 format:
   revealjs:

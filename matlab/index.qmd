@@ -1,5 +1,4 @@
 ---
-author: 浙江工商大学计算机学院
 title: MATLAB
 format:
   revealjs:

@@ -1,5 +1,4 @@
 ---
-author: 浙江工商大学计算机学院
 title: 第 1 章 对变化进行建模
 image: cover.jpg
 format:
