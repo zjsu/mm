@@ -4,7 +4,7 @@
     "href": "matlab/index.html#matlab",
     "title": "MATLAB",
     "section": "MATLAB",
-    "text": "MATLAB\n\nMATLAB是matrix laboratory的缩写\n提供强大的矩阵和数组运算\n方便进行科学与工程计算"
+    "text": "MATLAB\n\nmatrix laboratory的缩写\n提供强大的矩阵和数组运算\n方便进行科学与工程计算"
   },
   {
     "objectID": "matlab/index.html#界面",
@@ -18,14 +18,7 @@
     "href": "matlab/index.html#变量",
     "title": "MATLAB",
     "section": "变量",
-    "text": "变量\n\n\n\n所有的MATLAB变量都是多维数组\n变量区分大小写\n用ans来存储未指定变量的结果\nformat: 改变数字显示格式\nsave/load: 保存/加载变量\nclear: 清除变量\nclc: 清除MATLAB命令窗口\nwho: 显示所有变量\nhelp: 显示帮助\n\n\n\n\n&gt;&gt; a = 1\na =\n     1\n&gt;&gt; b = pi\nb =\n    3.1416\n&gt;&gt; c = a + b\nc =\n    4.1416\n&gt;&gt; d = cos(a)\nd =\n    0.5403\n&gt;&gt; sin(a)\nans =\n    0.8415"
-  },
-  {
-    "objectID": "matlab/index.html#语句与变量",
-    "href": "matlab/index.html#语句与变量",
-    "title": "MATLAB",
-    "section": "语句与变量",
-    "text": "语句与变量\n\n语句与变量\n\n变量 = 表达式\n表达式\n\n数: 默认全部是 double 类型\n关系运算： &lt;, &lt;=, &gt;, &gt;=, ==, ~=\n无短路逻辑运算：&, |, ~\n短路逻辑运算：&&, ||, ~\nany, all"
+    "text": "变量\n\n\n\n变量都是多维数组\n区分大小写\n语句与变量\n\n变量 = 表达式\n表达式\n\n用ans来存储未指定变量的结果\n\n\n\n\n&gt;&gt; a = 1\na =\n     1\n&gt;&gt; b = pi\nb =\n    3.1416\n&gt;&gt; c = a + b\nc =\n    4.1416\n&gt;&gt; d = cos(a)\nd =\n    0.5403\n&gt;&gt; sin(a)\nans =\n    0.8415"
   },
   {
     "objectID": "matlab/index.html#语句分隔",
@@ -33,6 +26,20 @@
     "title": "MATLAB",
     "section": "语句分隔",
     "text": "语句分隔\n\n逗号和分号可作为指令间的分隔符\n分号如果出现在指令后，屏幕上将不显示结果\n\n&gt;&gt; a = 2, b = 3\na =\n     2\nb =\n     3\n&gt;&gt; a = 2; b = 3\nb =\n     3\n&gt;&gt; c = a + b;\n&gt;&gt; c = a + b\nc =\n     5"
+  },
+  {
+    "objectID": "matlab/index.html#常用命令",
+    "href": "matlab/index.html#常用命令",
+    "title": "MATLAB",
+    "section": "常用命令",
+    "text": "常用命令\n\nhelp: 显示帮助\nformat: 改变数字显示格式\nsave/load: 保存/加载变量\nclear: 清除变量\nclc: 清除MATLAB命令窗口\nwho: 显示所有变量"
+  },
+  {
+    "objectID": "matlab/index.html#数据类型",
+    "href": "matlab/index.html#数据类型",
+    "title": "MATLAB",
+    "section": "数据类型",
+    "text": "数据类型\n\n\n\n\n\n\n\nmindmap\n  root((MATLAB 数据类型))\n    数值类型\n      double\n      single\n      int8\n      int16\n      int32\n      int64\n      uint8\n      uint16\n      uint32\n      uint64\n    逻辑类型\n      logical\n    字符与字符串类型\n      char\n      string\n    日期和时间类型\n      datetime\n      duration\n    复数类型\n      complex\n    结构体\n      struct\n    单元格数组\n      cell\n    函数句柄\n      function_handle\n    类\n      class\n\n\n\n\n\n\n\n\n数字默认 double 类型\n\nnum = 42.5;       % 默认double\niVal = int32(10); % 定义整型\nisTrue = true;    % 布尔型\ns = 'MATLAB';     % 字符串\n\n% Cell array\nc = {num, iVal, isTrue, s};\n\n% Structure datatype\nperson.name = 'John Doe';\nperson.age = 30;\nperson.isStudent = false;\n\n% Displaying all variables\ndisp('Numeric datatype (double):');\ndisp(num);"
   },
   {
     "objectID": "matlab/index.html#矩阵和数组",
@@ -61,6 +68,13 @@
     "title": "MATLAB",
     "section": "等间距向量",
     "text": "等间距向量\n\n可以用冒号(:)生成等间距向量\na:b表示从a到b的等间距向量\na:s:b表示从a到b的等间距向量，每隔s个元素\n\n&gt;&gt; 1:5\nans =\n     1     2     3     4     5\n\n&gt;&gt; 1:2:5\nans =\n     1     3     5\n\n&gt;&gt; 5:-2:1\nans =\n     5     3     1"
+  },
+  {
+    "objectID": "matlab/index.html#逻辑运算",
+    "href": "matlab/index.html#逻辑运算",
+    "title": "MATLAB",
+    "section": "逻辑运算",
+    "text": "逻辑运算\n\n关系运算： &lt;, &lt;=, &gt;, &gt;=, ==, ~=\n无短路逻辑运算：&, |, ~\n短路逻辑运算：&&, ||, ~\nany, all\n\nA = [1 2 3; 4 5 6; 7 8 9];\nB = [2 2 2; 2 5 2; 2 2 2];\n\ngreater_than = A &gt; B;\nless_than = A &lt; B;\nequal_to = A == B;\nnot_equal = A ~= B;\ngreater_or_equal = A &gt;= B;\nless_or_equal = A &lt;= B;"
   },
   {
     "objectID": "matlab/index.html#矩阵和向量运算",
