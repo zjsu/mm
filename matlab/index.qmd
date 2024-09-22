@@ -5,7 +5,7 @@ format:
     theme: white
     code-line-numbers: false
     mermaid:
-      theme: neutral
+      theme: forest
     include-in-header:
       text: |
         <style>
@@ -18,11 +18,11 @@ format:
 ## MATLAB
 
 
-* MATLAB是**ma**trix **lab**oratory的缩写
+* **ma**trix **lab**oratory的缩写
 * 提供强大的矩阵和数组运算
 * 方便进行科学与工程计算
 
-::: {layout="[[50, 20]]" layout-valign="center"}
+::: {layout="[[10, 20]]" layout-valign="center"}
 ![](images/matlab-system.png)
 
 ![](images/matlab-usage.png)
@@ -43,15 +43,12 @@ format:
 :::: columns
 
 ::: {.column width="60%"}
-* 所有的MATLAB变量都是多维数组
-* 变量区分大小写
+* 变量都是多维数组
+* 区分大小写
+* 语句与变量
+  * `变量 = 表达式`
+  * `表达式`
 * 用`ans`来存储未指定变量的结果
-* `format`: 改变数字显示格式
-* `save/load`: 保存/加载变量
-* `clear`: 清除变量
-* `clc`: 清除MATLAB命令窗口
-* `who`: 显示所有变量
-* `help`: 显示帮助
 :::
 
 ::: {.column width="10%"}
@@ -80,17 +77,6 @@ ans =
 
 ::::
 
-## 语句与变量
-
-* 语句与变量
-  * `变量 = 表达式`
-  * `表达式`
-* 数: 默认全部是 double 类型
-* 关系运算： `<, <=, >, >=, ==, ~=`
-* 无短路逻辑运算：`&, |, ~`
-* 短路逻辑运算：`&&, ||, ~`
-* `any`, `all`
-
 ## 语句分隔
 
 * 逗号和分号可作为指令间的分隔符
@@ -110,6 +96,79 @@ b =
 c =
      5
 ```
+
+## 常用命令
+
+* `help`: 显示帮助
+* `format`: 改变数字显示格式
+* `save/load`: 保存/加载变量
+* `clear`: 清除变量
+* `clc`: 清除MATLAB命令窗口
+* `who`: 显示所有变量
+
+## 数据类型
+
+:::: columns
+
+::: {.column width="60%"}
+```{mermaid}
+mindmap
+  root((MATLAB 数据类型))
+    数值类型
+      double
+      single
+      int8
+      int16
+      int32
+      int64
+      uint8
+      uint16
+      uint32
+      uint64
+    逻辑类型
+      logical
+    字符与字符串类型
+      char
+      string
+    日期和时间类型
+      datetime
+      duration
+    复数类型
+      complex
+    结构体
+      struct
+    单元格数组
+      cell
+    函数句柄
+      function_handle
+    类
+      class
+```
+:::
+
+::: {.column width="40%"}
+* 数字默认 double 类型
+
+~~~ matlab
+num = 42.5;       % 默认double
+iVal = int32(10); % 定义整型
+isTrue = true;    % 布尔型
+s = 'MATLAB';     % 字符串
+
+% Cell array
+c = {num, iVal, isTrue, s};
+
+% Structure datatype
+person.name = 'John Doe';
+person.age = 30;
+person.isStudent = false;
+
+% Displaying all variables
+disp('Numeric datatype (double):');
+disp(num);
+~~~
+:::
+::::
 
 ## 矩阵和数组
 
@@ -229,6 +288,25 @@ ans =
 ans =
      5     3     1
 ```
+## 逻辑运算
+
+* 关系运算： `<, <=, >, >=, ==, ~=`
+* 无短路逻辑运算：`&, |, ~`
+* 短路逻辑运算：`&&, ||, ~`
+* `any`, `all`
+
+~~~ matlab
+A = [1 2 3; 4 5 6; 7 8 9];
+B = [2 2 2; 2 5 2; 2 2 2];
+
+greater_than = A > B;
+less_than = A < B;
+equal_to = A == B;
+not_equal = A ~= B;
+greater_or_equal = A >= B;
+less_or_equal = A <= B;
+~~~
+
 
 ## 矩阵和向量运算
 
