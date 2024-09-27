@@ -808,6 +808,7 @@
 <section id="求解线性方程组" class="slide level2">
 <h2>求解线性方程组</h2>
 <p><span class="math display">\[\begin{array}{rcl} 2x_1 + x_2 - 5x_3 + x_4 &amp;=&amp; 8 \\ x_1 - 3x_2 - 6x_4 &amp;=&amp; 9 \\ 2x_2 - x_3 + 2x_4 &amp;=&amp; -5 \\ x_1 + 4x_2 - 7x_3 + 6x_4 &amp;=&amp; 0 \end{array} \]</span></p>
+<div class="fragment">
 <div class="sourceCode" id="cb15"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">A</span><span class="op">=</span>[<span class="fl">2</span><span class="op">,</span><span class="fl">1</span><span class="op">,-</span><span class="fl">5</span><span class="op">,</span><span class="fl">1</span><span class="op">;</span> <span class="fl">1</span><span class="op">,-</span><span class="fl">3</span><span class="op">,</span><span class="fl">0</span><span class="op">,-</span><span class="fl">6</span><span class="op">;</span><span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">,-</span><span class="fl">1</span><span class="op">,</span><span class="fl">2</span><span class="op">;</span><span class="fl">1</span><span class="op">,</span><span class="fl">4</span><span class="op">,-</span><span class="fl">7</span><span class="op">,</span><span class="fl">6</span>]<span class="op">;</span></span>
 <span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">b</span><span class="op">=</span>[<span class="fl">8</span><span class="op">;</span><span class="fl">9</span><span class="op">;-</span><span class="fl">5</span><span class="op">;</span><span class="fl">0</span>]<span class="op">;</span></span>
 <span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">det</span>(<span class="va">A</span>)</span>
@@ -819,6 +820,7 @@
 <span id="cb15-9"><a aria-hidden="true" tabindex="-1"></a>   <span class="op">-</span><span class="fl">4.0000</span></span>
 <span id="cb15-10"><a aria-hidden="true" tabindex="-1"></a>   <span class="op">-</span><span class="fl">1.0000</span></span>
 <span id="cb15-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">1.0000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="逐元素运算" class="slide level2">
 <h2>逐元素运算</h2>
