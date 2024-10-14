@@ -390,7 +390,7 @@
   <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
   <style>
     .small-table table {
-      font-size: .6em
+      font-size: .5em
     }
   </style>
 </head>
@@ -502,7 +502,7 @@
 <section id="数据类型" class="slide level2">
 <h2>数据类型</h2>
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column" style="width:55%;">
 <div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -545,7 +545,7 @@
 </div>
 </div>
 </div>
-</div><div class="column" style="width:40%;">
+</div><div class="column" style="width:45%;">
 <ul>
 <li>数字默认 double 类型</li>
 </ul>
@@ -576,18 +576,16 @@
 <div class="sourceCode" id="cb4"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">=</span> [<span class="fl">1</span><span class="op">,</span> <span class="fl">2</span><span class="op">,</span> <span class="fl">3</span><span class="op">,</span> <span class="fl">4</span>]</span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span></span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">2</span>     <span class="fl">3</span>     <span class="fl">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">2</span>     <span class="fl">3</span>     <span class="fl">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>创建包含多行的矩阵时，行与行之间用分号(<code>;</code>)分隔</li>
 </ul>
 <div class="sourceCode" id="cb5"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">=</span> [<span class="fl">1</span><span class="op">,</span> <span class="fl">2</span><span class="op">,</span> <span class="fl">3</span><span class="op">;</span> <span class="fl">4</span><span class="op">,</span> <span class="fl">5</span><span class="op">,</span> <span class="fl">6</span><span class="op">;</span> <span class="fl">7</span><span class="op">,</span> <span class="fl">8</span><span class="op">,</span> <span class="fl">9</span>]</span>
 <span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span></span>
-<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">2</span>     <span class="fl">3</span></span>
-<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">4</span>     <span class="fl">5</span>     <span class="fl">6</span></span>
-<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">7</span>     <span class="fl">8</span>     <span class="fl">9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">2</span>     <span class="fl">3</span></span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">4</span>     <span class="fl">5</span>     <span class="fl">6</span></span>
+<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">7</span>     <span class="fl">8</span>     <span class="fl">9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="矩阵元素" class="slide level2">
 <h2>矩阵元素</h2>
@@ -788,22 +786,21 @@
 </ul>
 <div class="sourceCode" id="cb14"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">% a \ b =&gt; inv(a)*b</span></span>
 <span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">% a / b =&gt; a*inv(b)</span></span>
-<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">=</span> <span class="va">magic</span>(<span class="fl">2</span>)</span>
-<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span></span>
-<span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">3</span></span>
-<span id="cb14-7"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">4</span>     <span class="fl">2</span></span>
-<span id="cb14-8"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">det</span>(<span class="va">a</span>)</span>
-<span id="cb14-9"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
-<span id="cb14-10"><a aria-hidden="true" tabindex="-1"></a>   <span class="op">-</span><span class="fl">10</span></span>
-<span id="cb14-11"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">*</span> <span class="va">inv</span>(<span class="va">a</span>)</span>
-<span id="cb14-12"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
-<span id="cb14-13"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">1.0000</span>   <span class="op">-</span><span class="fl">0.0000</span></span>
-<span id="cb14-14"><a aria-hidden="true" tabindex="-1"></a>         <span class="fl">0</span>    <span class="fl">1.0000</span></span>
-<span id="cb14-15"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">/</span> <span class="va">a</span></span>
-<span id="cb14-16"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
-<span id="cb14-17"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">0</span></span>
-<span id="cb14-18"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">0</span>     <span class="fl">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">=</span> <span class="va">magic</span>(<span class="fl">2</span>)</span>
+<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span></span>
+<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">3</span></span>
+<span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">4</span>     <span class="fl">2</span></span>
+<span id="cb14-7"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">det</span>(<span class="va">a</span>)</span>
+<span id="cb14-8"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb14-9"><a aria-hidden="true" tabindex="-1"></a>   <span class="op">-</span><span class="fl">10</span></span>
+<span id="cb14-10"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">*</span> <span class="va">inv</span>(<span class="va">a</span>)</span>
+<span id="cb14-11"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb14-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">1.0000</span>   <span class="op">-</span><span class="fl">0.0000</span></span>
+<span id="cb14-13"><a aria-hidden="true" tabindex="-1"></a>         <span class="fl">0</span>    <span class="fl">1.0000</span></span>
+<span id="cb14-14"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">/</span> <span class="va">a</span></span>
+<span id="cb14-15"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb14-16"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">0</span></span>
+<span id="cb14-17"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">0</span>     <span class="fl">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="求解线性方程组" class="slide level2">
 <h2>求解线性方程组</h2>
@@ -812,14 +809,13 @@
 <div class="sourceCode" id="cb15"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">A</span><span class="op">=</span>[<span class="fl">2</span><span class="op">,</span><span class="fl">1</span><span class="op">,-</span><span class="fl">5</span><span class="op">,</span><span class="fl">1</span><span class="op">;</span> <span class="fl">1</span><span class="op">,-</span><span class="fl">3</span><span class="op">,</span><span class="fl">0</span><span class="op">,-</span><span class="fl">6</span><span class="op">;</span><span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">,-</span><span class="fl">1</span><span class="op">,</span><span class="fl">2</span><span class="op">;</span><span class="fl">1</span><span class="op">,</span><span class="fl">4</span><span class="op">,-</span><span class="fl">7</span><span class="op">,</span><span class="fl">6</span>]<span class="op">;</span></span>
 <span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">b</span><span class="op">=</span>[<span class="fl">8</span><span class="op">;</span><span class="fl">9</span><span class="op">;-</span><span class="fl">5</span><span class="op">;</span><span class="fl">0</span>]<span class="op">;</span></span>
 <span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">det</span>(<span class="va">A</span>)</span>
-<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
-<span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a>   <span class="fl">27.0000</span></span>
-<span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">x</span> <span class="op">=</span> <span class="va">A</span><span class="op">\</span><span class="va">b</span></span>
-<span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span></span>
-<span id="cb15-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">3.0000</span></span>
-<span id="cb15-9"><a aria-hidden="true" tabindex="-1"></a>   <span class="op">-</span><span class="fl">4.0000</span></span>
-<span id="cb15-10"><a aria-hidden="true" tabindex="-1"></a>   <span class="op">-</span><span class="fl">1.0000</span></span>
-<span id="cb15-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">1.0000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span> <span class="fl">27.0000</span></span>
+<span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">x</span> <span class="op">=</span> <span class="va">A</span><span class="op">\</span><span class="va">b</span></span>
+<span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span></span>
+<span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">3.0000</span></span>
+<span id="cb15-8"><a aria-hidden="true" tabindex="-1"></a>   <span class="op">-</span><span class="fl">4.0000</span></span>
+<span id="cb15-9"><a aria-hidden="true" tabindex="-1"></a>   <span class="op">-</span><span class="fl">1.0000</span></span>
+<span id="cb15-10"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">1.0000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="逐元素运算" class="slide level2">
@@ -835,30 +831,26 @@
 <span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">a</span> <span class="op">=</span></span>
 <span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">3</span></span>
 <span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">4</span>     <span class="fl">2</span></span>
-<span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-6"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">b</span> <span class="op">=</span> <span class="va">a</span><span class="op">'</span></span>
-<span id="cb16-7"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">4</span></span>
-<span id="cb16-8"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">3</span>     <span class="fl">2</span></span>
-<span id="cb16-9"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-10"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">.*</span> <span class="va">b</span></span>
-<span id="cb16-11"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
-<span id="cb16-12"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>    <span class="fl">12</span></span>
-<span id="cb16-13"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">12</span>     <span class="fl">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">b</span> <span class="op">=</span> <span class="va">a</span><span class="op">'</span></span>
+<span id="cb16-6"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">4</span></span>
+<span id="cb16-7"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">3</span>     <span class="fl">2</span></span>
+<span id="cb16-8"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">.*</span> <span class="va">b</span></span>
+<span id="cb16-9"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb16-10"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>    <span class="fl">12</span></span>
+<span id="cb16-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">12</span>     <span class="fl">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <div class="sourceCode" id="cb17"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">./</span> <span class="va">b</span></span>
 <span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
 <span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">1.0000</span>    <span class="fl">0.7500</span></span>
 <span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">1.3333</span>    <span class="fl">1.0000</span></span>
-<span id="cb17-5"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-6"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">.^</span> <span class="fl">2</span></span>
-<span id="cb17-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
-<span id="cb17-8"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">9</span></span>
-<span id="cb17-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">16</span>     <span class="fl">4</span></span>
-<span id="cb17-10"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-11"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="fl">2</span> <span class="op">.^</span> <span class="va">a</span></span>
-<span id="cb17-12"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
-<span id="cb17-13"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">2</span>     <span class="fl">8</span></span>
-<span id="cb17-14"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">16</span>     <span class="fl">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-5"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="va">a</span> <span class="op">.^</span> <span class="fl">2</span></span>
+<span id="cb17-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb17-7"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">1</span>     <span class="fl">9</span></span>
+<span id="cb17-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">16</span>     <span class="fl">4</span></span>
+<span id="cb17-9"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> <span class="fl">2</span> <span class="op">.^</span> <span class="va">a</span></span>
+<span id="cb17-10"><a aria-hidden="true" tabindex="-1"></a><span class="va">ans</span> <span class="op">=</span></span>
+<span id="cb17-11"><a aria-hidden="true" tabindex="-1"></a>     <span class="fl">2</span>     <span class="fl">8</span></span>
+<span id="cb17-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="fl">16</span>     <span class="fl">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 </section>
 <section id="下标" class="slide level2">
@@ -1007,8 +999,14 @@
 <dd>
 返回行向量<code>y</code>和<code>u</code>，<code>y</code>是<code>A</code>每列最大值，<code>u</code>是最大值所在行
 </dd>
+<dt><code>max(A, [], dim)</code></dt>
+<dd>
+<ul>
+<li><code>dim</code>取1时，和<code>max(A)</code>完全相同</li>
+<li><code>dim</code>取2时，按行取最大值</li>
+</ul>
+</dd>
 </dl>
-<p><code>max(A, [], dim)</code> : * <code>dim</code>取1时，和<code>max(A)</code>完全相同 * <code>dim</code>取2时，按行取最大值</p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1034,8 +1032,14 @@
 <dd>
 返回一个行向量，其第<code>i</code>个元素是<code>A</code>的第<code>i</code>列元素之和
 </dd>
+<dt><code>sum(A, dim)</code></dt>
+<dd>
+<ul>
+<li><code>dim = 1</code>时相当于sum(A)</li>
+<li><code>dim = 2</code>时，返回列向量</li>
+</ul>
+</dd>
 </dl>
-<p><code>sum(A, dim)</code> : * <code>dim = 1</code>时相当于sum(A) * <code>dim = 2</code>时，返回列向量</p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1052,26 +1056,48 @@
 </section>
 <section id="平均值" class="slide level2">
 <h2>平均值</h2>
-<p><span class="math display">\[ \bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i \]</span></p>
+<div class="columns">
+<div class="column" style="width:80%;">
 <dl>
 <dt><code>mean(x)</code></dt>
 <dd>
 返回向量<code>x</code>的算法平均值
 </dd>
+<dt><code>y = mean(A,dim)</code></dt>
+<dd>
+<ul>
+<li><code>dim = 1</code>返回行向量<code>y</code>，按列求平均值</li>
+<li><code>dim = 2</code>返回列向量<code>y</code>，按行求平均值</li>
+</ul>
+</dd>
 </dl>
-<p><code>y = mean(A,dim)</code> : * <code>dim = 1</code>返回行向量<code>y</code>，按列求平均值 * <code>dim = 2</code>返回列向量<code>y</code>，按行求平均值</p>
+</div><div class="column" style="width:20%;">
+<p><span class="math display">\[ \bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i \]</span></p>
+</div></div>
 </section>
 <section id="标准方差" class="slide level2">
 <h2>标准方差</h2>
-<p><span class="math inline">\(\sigma_1 = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2}\)</span></p>
-<p><span class="math inline">\(\sigma_2 = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (x_i - \bar{x})^2}\)</span></p>
+<div class="columns">
+<div class="column" style="width:70%;">
 <dl>
 <dt><code>std(x)</code></dt>
 <dd>
 返回向量<code>x</code>的标准方差
 </dd>
+<dt><code>y=std(A,flag,dim)</code></dt>
+<dd>
+<ul>
+<li><code>dim = 1</code>: 求各列元素的标准方差</li>
+<li><code>dim = 2</code>: 求各行元素的标准方差</li>
+<li><code>flag = 0</code>: 按照<span class="math inline">\(\sigma_1\)</span>计算</li>
+<li><code>flag = 1</code>: 按照<span class="math inline">\(\sigma_2\)</span>计算</li>
+</ul>
+</dd>
 </dl>
-<p><code>y=std(A,flag,dim)</code> : * <code>dim = 1</code>: 求各列元素的标准方差 * <code>dim = 2</code>: 求各行元素的标准方差 * <code>flag = 0</code>: 按照<span class="math inline">\(\sigma_1\)</span>计算 * <code>flag = 1</code>: 按照<span class="math inline">\(\sigma_2\)</span>计算</p>
+</div><div class="column" style="width:30%;">
+<p><span class="math inline">\(\sigma_1 = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2}\)</span></p>
+<p><span class="math inline">\(\sigma_2 = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (x_i - \bar{x})^2}\)</span></p>
+</div></div>
 </section>
 <section id="排序" class="slide level2">
 <h2>排序</h2>
@@ -1102,19 +1128,12 @@
 </section>
 <section id="多项式的运算" class="slide level2">
 <h2>多项式的运算</h2>
+<ul>
+<li><strong>加减:</strong> 向量加减，如果项数不同，在项数较少的前面补0</li>
+<li><strong>乘法:</strong> <code>conv(p1,p2)</code>表示多项式p1, p2的乘积。</li>
+<li><strong>除法:</strong> <code>[q, r] = deconv(p1, p2)</code>，其中<code>q</code>是商，<code>r</code>是余数</li>
+</ul>
 <dl>
-<dt>加减运算</dt>
-<dd>
-向量加减，如果项数不同，在项数较少的前面补0
-</dd>
-<dt>乘法运算</dt>
-<dd>
-<code>conv(p1,p2)</code>表示多项式p1, p2的乘积。
-</dd>
-<dt>除法运算</dt>
-<dd>
-<code>[q, r] = deconv(p1, p2)</code>，其中<code>q</code>是商，<code>r</code>是余数
-</dd>
 <dt><code>p</code>的导函数</dt>
 <dd>
 <code>p=polyder(p1)</code>
@@ -1131,8 +1150,14 @@
 </section>
 <section id="多项式的求值与求根" class="slide level2">
 <h2>多项式的求值与求根</h2>
-<p><code>y=polyval(p, x)</code> : * 若x为一数值，则求多项式在该点的值 * 若x为一向量，则求其中每个元素对应多项式的值</p>
 <dl>
+<dt><code>y=polyval(p, x)</code></dt>
+<dd>
+<ul>
+<li>若x为一数值，则求多项式在该点的值</li>
+<li>若x为一向量，则求其中每个元素对应多项式的值</li>
+</ul>
+</dd>
 <dt><code>x=roots(p)</code></dt>
 <dd>
 求多项式的根
@@ -1450,7 +1475,7 @@ A = \begin{bmatrix}
 <li>用直线或曲线连接这些点，得到函数的大致图形</li>
 </ol>
 
-<img data-src="images/manual_plot.png" class="r-stretch"></section>
+<img data-src="images/manual_plot.png" class="quarto-figure quarto-figure-center r-stretch" style="width:30.0%"></section>
 <section id="matlab绘图" class="slide level2">
 <h2>MATLAB绘图</h2>
 <ol type="1">
@@ -1503,36 +1528,39 @@ A = \begin{bmatrix}
 \]</span></p>
 <div class="fragment">
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <div class="sourceCode" id="cb41"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb41-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">t</span> <span class="op">=</span> <span class="op">-</span><span class="va">pi</span><span class="op">:</span><span class="va">pi</span><span class="op">/</span><span class="fl">100</span><span class="op">:</span><span class="va">pi</span><span class="op">;</span></span>
 <span id="cb41-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> <span class="va">t</span> <span class="op">.*</span> <span class="va">cos</span>(<span class="fl">3</span> <span class="op">*</span> <span class="va">t</span>)<span class="op">;</span></span>
 <span id="cb41-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span> <span class="op">=</span> <span class="va">t</span> <span class="op">.*</span> <span class="va">sin</span>(<span class="va">t</span>) <span class="op">.^</span> <span class="fl">2</span><span class="op">;</span></span>
 <span id="cb41-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span> <span class="va">y</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:40%;">
 <p><img data-src="images/parametric_curve.png"></p>
 </div></div>
 </div>
 </section>
 <section id="plotx-y的参数形式" class="slide level2">
 <h2><code>plot(x, y)</code>的参数形式</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
 <ul>
 <li>当<code>x</code>、<code>y</code>是维度相同的矩阵，以对应列为横、纵坐标绘图</li>
-</ul>
-<div class="sourceCode" id="cb42"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb42-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">t</span> <span class="op">=</span> <span class="va">linspace</span>(<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,</span><span class="fl">100</span>)<span class="op">;</span></span>
-<span id="cb42-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> [<span class="va">t</span><span class="op">;</span><span class="va">t</span>]<span class="op">';</span></span>
-<span id="cb42-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span> <span class="op">=</span> [<span class="va">sin</span>(<span class="va">t</span>)<span class="op">;</span><span class="va">cos</span>(<span class="va">t</span>)]<span class="op">';</span></span>
-<span id="cb42-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
 <li>当<code>x</code>是向量，<code>y</code>有一维与<code>x</code>同维，则以<code>x</code>为横坐标，<code>y</code>中与其同维的列为纵坐标画出多根曲线</li>
-</ul>
-<div class="sourceCode" id="cb43"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb43-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> <span class="va">linspace</span>(<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,</span><span class="fl">100</span>)<span class="op">;</span></span>
-<span id="cb43-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span> <span class="op">=</span> [<span class="va">sin</span>(<span class="va">x</span>)<span class="op">;</span><span class="va">cos</span>(<span class="va">x</span>)]<span class="op">;</span></span>
-<span id="cb43-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span> <span class="va">y</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
 <li>最简单形式：<code>plot(y)</code>，此时横坐标是元素对应的下标</li>
 </ul>
-<div class="sourceCode" id="cb44"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb44-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span> <span class="op">=</span> [<span class="fl">1</span><span class="op">,</span> <span class="fl">1</span><span class="op">,</span> <span class="fl">1</span><span class="op">;</span> <span class="fl">4</span><span class="op">,</span> <span class="fl">8</span><span class="op">,</span> <span class="fl">16</span><span class="op">;</span> <span class="fl">9</span><span class="op">,</span> <span class="fl">27</span><span class="op">,</span> <span class="fl">81</span>]<span class="op">;</span></span>
-<span id="cb44-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">y</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb42-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">% 默认x为下标1、2、3</span></span>
+<span id="cb42-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span> <span class="op">=</span> [<span class="fl">1</span><span class="op">,</span> <span class="fl">1</span><span class="op">,</span> <span class="fl">1</span><span class="op">;</span> <span class="fl">4</span><span class="op">,</span> <span class="fl">8</span><span class="op">,</span> <span class="fl">16</span><span class="op">;</span> <span class="fl">9</span><span class="op">,</span> <span class="fl">27</span><span class="op">,</span> <span class="fl">81</span>]<span class="op">;</span></span>
+<span id="cb42-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">y</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:40%;">
+<div class="sourceCode" id="cb43"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb43-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">% x, y维度相同</span></span>
+<span id="cb43-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">t</span> <span class="op">=</span> <span class="va">linspace</span>(<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,</span><span class="fl">100</span>)<span class="op">;</span></span>
+<span id="cb43-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> [<span class="va">t</span><span class="op">;</span><span class="va">t</span>]<span class="op">';</span></span>
+<span id="cb43-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span> <span class="op">=</span> [<span class="va">sin</span>(<span class="va">t</span>)<span class="op">;</span><span class="va">cos</span>(<span class="va">t</span>)]<span class="op">';</span></span>
+<span id="cb43-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb44-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">% x是向量，y有一维与x同维</span></span>
+<span id="cb44-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> <span class="va">linspace</span>(<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,</span><span class="fl">100</span>)<span class="op">;</span></span>
+<span id="cb44-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span> <span class="op">=</span> [<span class="va">sin</span>(<span class="va">x</span>)<span class="op">;</span><span class="va">cos</span>(<span class="va">x</span>)]<span class="op">;</span></span>
+<span id="cb44-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span> <span class="va">y</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
 </section>
 <section id="图形保持" class="slide level2">
 <h2>图形保持</h2>
@@ -1603,15 +1631,15 @@ A = \begin{bmatrix}
 <section id="带选项的plot函数" class="slide level2">
 <h2>带选项的<code>plot</code>函数</h2>
 <div class="columns">
-<div class="column" style="width:60%;">
-<div class="sourceCode" id="cb50"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb50-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x1</span><span class="op">,</span> <span class="va">y1</span><span class="op">,</span> 选项<span class="fl">1</span><span class="op">,</span> <span class="va">x2</span><span class="op">,</span> <span class="va">y2</span><span class="op">,</span> 选项<span class="fl">2</span><span class="op">,...</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb51"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb51-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> [<span class="fl">0</span><span class="op">:</span><span class="fl">0.2</span><span class="op">:</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span>]<span class="op">;</span></span>
-<span id="cb51-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">cos</span>(<span class="va">x</span>))<span class="op">;</span></span>
-<span id="cb51-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">cos</span>(<span class="va">x</span>)<span class="op">,</span><span class="ss">'r+:'</span>)<span class="op">;</span>  <span class="co">% 红色、虚线、  加号点</span></span>
-<span id="cb51-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">cos</span>(<span class="va">x</span>)<span class="op">,</span><span class="ss">'bd-.'</span>)<span class="op">;</span> <span class="co">% 蓝色、点划线、菱形点</span></span>
-<span id="cb51-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">cos</span>(<span class="va">x</span>)<span class="op">,</span><span class="ss">'k*-'</span>)<span class="op">;</span>  <span class="co">% 黑色、实线、  星号点</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><img data-src="images/plot_options.png"></p>
-</div><div class="column" style="width:40%;">
+<div class="column" style="width:55%;">
+<div class="sourceCode" id="cb50"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb50-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">% plot(x1, y1, 选项1, x2, y2, 选项2,...)</span></span>
+<span id="cb50-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> [<span class="fl">0</span><span class="op">:</span><span class="fl">0.2</span><span class="op">:</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span>]<span class="op">;</span></span>
+<span id="cb50-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">cos</span>(<span class="va">x</span>))<span class="op">;</span></span>
+<span id="cb50-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">cos</span>(<span class="va">x</span>)<span class="op">,</span><span class="ss">'r+:'</span>)<span class="op">;</span>  <span class="co">% 红色、虚线、  加号点</span></span>
+<span id="cb50-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">cos</span>(<span class="va">x</span>)<span class="op">,</span><span class="ss">'bd-.'</span>)<span class="op">;</span> <span class="co">% 蓝色、点划线、菱形点</span></span>
+<span id="cb50-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">cos</span>(<span class="va">x</span>)<span class="op">,</span><span class="ss">'k*-'</span>)<span class="op">;</span>  <span class="co">% 黑色、实线、  星号点</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img data-src="images/plot_options.png" style="width:80.0%"></p>
+</div><div class="column" style="width:45%;">
 <div class="small-table">
 <table class="caption-top">
 <thead>
@@ -1694,39 +1722,27 @@ A = \begin{bmatrix}
 </section>
 <section id="牛刀小试" class="slide level2">
 <h2>牛刀小试</h2>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Tip</strong></p>
-</div>
-<div class="callout-content">
-<p>用不同线型和颜色在同一坐标内绘制曲线<span class="math inline">\(y=2e^{-0.5x}sin(2\pi x)\)</span>及其包络线</p>
-</div>
-</div>
-</div>
+<p>用不同线型和颜色在同一坐标内绘制曲线 <span class="math inline">\(y=2e^{-0.5x}sin(2\pi x)\)</span> 及其包络线</p>
 <div class="fragment">
 <div class="columns">
 <div class="column" style="width:60%;">
-<div class="sourceCode" id="annotated-cell-53"><pre class="sourceCode matlab code-annotation-code code-with-copy code-annotated"><code class="sourceCode matlab"><span id="annotated-cell-53-1"><a href="#annotated-cell-53-1" aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> (<span class="fl">0</span><span class="op">:</span><span class="va">pi</span><span class="op">/</span><span class="fl">100</span><span class="op">:</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span>)<span class="op">';</span></span>
-<span id="annotated-cell-53-2"><a href="#annotated-cell-53-2" aria-hidden="true" tabindex="-1"></a><span class="va">y1</span> <span class="op">=</span> <span class="fl">2</span><span class="op">*</span><span class="va">exp</span>(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span><span class="va">x</span>)<span class="op">*</span>[<span class="fl">1</span><span class="op">,-</span><span class="fl">1</span>]<span class="op">;</span></span>
-<span id="annotated-cell-53-3"><a href="#annotated-cell-53-3" aria-hidden="true" tabindex="-1"></a><span class="va">y2</span> <span class="op">=</span> <span class="fl">2</span><span class="op">*</span><span class="va">exp</span>(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span><span class="va">x</span>)<span class="op">.*</span><span class="va">sin</span>(<span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">*</span><span class="va">x</span>)<span class="op">;</span></span>
-<span id="annotated-cell-53-4"><a href="#annotated-cell-53-4" aria-hidden="true" tabindex="-1"></a><span class="va">x1</span> <span class="op">=</span> (<span class="fl">0</span><span class="op">:</span><span class="fl">12</span>)<span class="op">/</span><span class="fl">2</span><span class="op">;</span></span>
-<span id="annotated-cell-53-5"><a href="#annotated-cell-53-5" aria-hidden="true" tabindex="-1"></a><span class="va">y3</span> <span class="op">=</span> <span class="fl">2</span><span class="op">*</span><span class="va">exp</span>(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span><span class="va">x1</span>)<span class="op">.*</span><span class="va">sin</span>(<span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">*</span><span class="va">x1</span>)<span class="op">;</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-53" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-53-6" class="code-annotation-target"><a href="#annotated-cell-53-6" aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">y1</span><span class="op">,</span><span class="ss">'g:'</span><span class="op">,</span><span class="va">x</span><span class="op">,</span><span class="va">y2</span><span class="op">,</span><span class="ss">'b--'</span><span class="op">,</span><span class="va">x1</span><span class="op">,</span><span class="va">y3</span><span class="op">,</span><span class="ss">'rp'</span>)<span class="op">;</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="annotated-cell-52"><pre class="sourceCode matlab code-annotation-code code-with-copy code-annotated"><code class="sourceCode matlab"><span id="annotated-cell-52-1"><a href="#annotated-cell-52-1" aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> (<span class="fl">0</span><span class="op">:</span><span class="va">pi</span><span class="op">/</span><span class="fl">100</span><span class="op">:</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span>)<span class="op">';</span></span>
+<span id="annotated-cell-52-2"><a href="#annotated-cell-52-2" aria-hidden="true" tabindex="-1"></a><span class="va">y1</span> <span class="op">=</span> <span class="fl">2</span><span class="op">*</span><span class="va">exp</span>(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span><span class="va">x</span>)<span class="op">*</span>[<span class="fl">1</span><span class="op">,-</span><span class="fl">1</span>]<span class="op">;</span></span>
+<span id="annotated-cell-52-3"><a href="#annotated-cell-52-3" aria-hidden="true" tabindex="-1"></a><span class="va">y2</span> <span class="op">=</span> <span class="fl">2</span><span class="op">*</span><span class="va">exp</span>(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span><span class="va">x</span>)<span class="op">.*</span><span class="va">sin</span>(<span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">*</span><span class="va">x</span>)<span class="op">;</span></span>
+<span id="annotated-cell-52-4"><a href="#annotated-cell-52-4" aria-hidden="true" tabindex="-1"></a><span class="va">x1</span> <span class="op">=</span> (<span class="fl">0</span><span class="op">:</span><span class="fl">12</span>)<span class="op">/</span><span class="fl">2</span><span class="op">;</span></span>
+<span id="annotated-cell-52-5"><a href="#annotated-cell-52-5" aria-hidden="true" tabindex="-1"></a><span class="va">y3</span> <span class="op">=</span> <span class="fl">2</span><span class="op">*</span><span class="va">exp</span>(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span><span class="va">x1</span>)<span class="op">.*</span><span class="va">sin</span>(<span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">*</span><span class="va">x1</span>)<span class="op">;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-52" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-52-6" class="code-annotation-target"><a href="#annotated-cell-52-6" aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">y1</span><span class="op">,</span><span class="ss">'g:'</span><span class="op">,</span><span class="va">x</span><span class="op">,</span><span class="va">y2</span><span class="op">,</span><span class="ss">'b--'</span><span class="op">,</span><span class="va">x1</span><span class="op">,</span><span class="va">y3</span><span class="op">,</span><span class="ss">'rp'</span>)<span class="op">;</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-53" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-52" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-53" data-code-lines="6" data-code-annotation="1">这行也可以用<code>hold on</code>实现:</span>
+<span data-code-cell="annotated-cell-52" data-code-lines="6" data-code-annotation="1">这行也可以用<code>hold on</code>实现:</span>
 </dd>
 </dl>
-<div class="sourceCode" id="cb52"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb52-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">y1</span><span class="op">,</span><span class="ss">'g:'</span>)<span class="op">;</span></span>
-<span id="cb52-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">hold</span> <span class="va">on</span></span>
-<span id="cb52-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">y2</span><span class="op">,</span><span class="ss">'b--'</span>)<span class="op">;</span></span>
-<span id="cb52-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x1</span><span class="op">,</span><span class="va">y3</span><span class="op">,</span><span class="ss">'rp'</span>)<span class="op">;</span></span>
-<span id="cb52-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">hold</span> <span class="va">off</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb51-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">y1</span><span class="op">,</span><span class="ss">'g:'</span>)<span class="op">;</span></span>
+<span id="cb51-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">hold</span> <span class="va">on</span></span>
+<span id="cb51-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">y2</span><span class="op">,</span><span class="ss">'b--'</span>)<span class="op">;</span></span>
+<span id="cb51-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x1</span><span class="op">,</span><span class="va">y3</span><span class="op">,</span><span class="ss">'rp'</span>)<span class="op">;</span></span>
+<span id="cb51-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">hold</span> <span class="va">off</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:40%;">
 <p><img data-src="images/enclose.png"></p>
 </div></div>
@@ -1752,13 +1768,13 @@ A = \begin{bmatrix}
 </div>
 <div class="columns">
 <div class="column" style="width:60%;">
-<div class="sourceCode" id="cb53"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb53-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">x1</span> <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="va">pi</span><span class="op">/</span><span class="fl">100</span><span class="op">:</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">;</span></span>
-<span id="cb53-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">x2</span> <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="va">pi</span><span class="op">/</span><span class="fl">100</span><span class="op">:</span><span class="fl">3</span><span class="op">*</span><span class="va">pi</span><span class="op">;</span></span>
-<span id="cb53-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">y1</span> <span class="op">=</span> <span class="va">exp</span>(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span><span class="va">x1</span>)<span class="op">.*</span><span class="va">sin</span>(<span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">*</span><span class="va">x1</span>)<span class="op">;</span></span>
-<span id="cb53-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">y2</span> <span class="op">=</span> <span class="fl">1.5</span><span class="op">*</span><span class="va">exp</span>(<span class="op">-</span><span class="fl">0.1</span><span class="op">*</span><span class="va">x2</span>)<span class="op">.*</span><span class="va">sin</span>(<span class="va">x2</span>)<span class="op">;</span></span>
-<span id="cb53-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">plotyy</span>(<span class="va">x1</span><span class="op">,</span><span class="va">y1</span><span class="op">,</span><span class="va">x2</span><span class="op">,</span><span class="va">y2</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb52-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">x1</span> <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="va">pi</span><span class="op">/</span><span class="fl">100</span><span class="op">:</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">;</span></span>
+<span id="cb52-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">x2</span> <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="va">pi</span><span class="op">/</span><span class="fl">100</span><span class="op">:</span><span class="fl">3</span><span class="op">*</span><span class="va">pi</span><span class="op">;</span></span>
+<span id="cb52-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">y1</span> <span class="op">=</span> <span class="va">exp</span>(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span><span class="va">x1</span>)<span class="op">.*</span><span class="va">sin</span>(<span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">*</span><span class="va">x1</span>)<span class="op">;</span></span>
+<span id="cb52-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">y2</span> <span class="op">=</span> <span class="fl">1.5</span><span class="op">*</span><span class="va">exp</span>(<span class="op">-</span><span class="fl">0.1</span><span class="op">*</span><span class="va">x2</span>)<span class="op">.*</span><span class="va">sin</span>(<span class="va">x2</span>)<span class="op">;</span></span>
+<span id="cb52-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">plotyy</span>(<span class="va">x1</span><span class="op">,</span><span class="va">y1</span><span class="op">,</span><span class="va">x2</span><span class="op">,</span><span class="va">y2</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:40%;">
-<p><img data-src="images/plot_yy.png"></p>
+<p><img data-src="images/plot_yy.png" style="width:80.0%"></p>
 </div></div>
 </section>
 <section id="绘图的辅助操作" class="slide level2">
@@ -1773,14 +1789,14 @@ A = \begin{bmatrix}
 <li><code>legend(图例1,图例2,…)</code></li>
 </ul>
 </div><div class="column" style="width:40%;">
-<div class="sourceCode" id="cb54"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb54-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="va">pi</span><span class="op">/</span><span class="fl">100</span><span class="op">:</span><span class="fl">4</span><span class="op">*</span><span class="va">pi</span><span class="op">;</span></span>
-<span id="cb54-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span> <span class="op">=</span> <span class="va">sin</span>(<span class="va">x</span>)<span class="op">;</span></span>
-<span id="cb54-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span>)<span class="op">;</span></span>
-<span id="cb54-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'y=sin(x)的图像'</span>)<span class="op">;</span></span>
-<span id="cb54-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">xlabel</span>(<span class="ss">'x'</span>)<span class="op">;</span></span>
-<span id="cb54-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">ylabel</span>(<span class="ss">'y=sin(x)'</span>)<span class="op">;</span></span>
-<span id="cb54-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">text</span>(<span class="va">pi</span><span class="op">/</span><span class="fl">2</span><span class="op">,</span> <span class="fl">0.8</span><span class="op">,</span><span class="ss">'最大值'</span>)<span class="op">;</span></span>
-<span id="cb54-8"><a aria-hidden="true" tabindex="-1"></a><span class="va">legend</span>(<span class="ss">'sin(x)'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb53-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="va">pi</span><span class="op">/</span><span class="fl">100</span><span class="op">:</span><span class="fl">4</span><span class="op">*</span><span class="va">pi</span><span class="op">;</span></span>
+<span id="cb53-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span> <span class="op">=</span> <span class="va">sin</span>(<span class="va">x</span>)<span class="op">;</span></span>
+<span id="cb53-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span>)<span class="op">;</span></span>
+<span id="cb53-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'y=sin(x)的图像'</span>)<span class="op">;</span></span>
+<span id="cb53-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">xlabel</span>(<span class="ss">'x'</span>)<span class="op">;</span></span>
+<span id="cb53-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">ylabel</span>(<span class="ss">'y=sin(x)'</span>)<span class="op">;</span></span>
+<span id="cb53-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">text</span>(<span class="va">pi</span><span class="op">/</span><span class="fl">2</span><span class="op">,</span> <span class="fl">0.8</span><span class="op">,</span><span class="ss">'最大值'</span>)<span class="op">;</span></span>
+<span id="cb53-8"><a aria-hidden="true" tabindex="-1"></a><span class="va">legend</span>(<span class="ss">'sin(x)'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><img data-src="images/plot_help.png"></p>
 </div></div>
 </section>
@@ -1803,27 +1819,27 @@ A = \begin{bmatrix}
 </ul>
 <div class="columns">
 <div class="column" style="width:35%;">
-<div class="sourceCode" id="cb55"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb55-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span><span class="op">=</span><span class="va">linspace</span>(<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,</span><span class="fl">60</span>)<span class="op">;</span></span>
-<span id="cb55-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span><span class="op">=</span><span class="va">sin</span>(<span class="va">x</span>)<span class="op">;</span></span>
-<span id="cb55-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">z</span><span class="op">=</span><span class="va">cos</span>(<span class="va">x</span>)<span class="op">;</span></span>
-<span id="cb55-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">t</span><span class="op">=</span><span class="va">sin</span>(<span class="va">x</span>)<span class="op">./</span>(<span class="va">cos</span>(<span class="va">x</span>)<span class="op">+</span><span class="va">eps</span>)<span class="op">;</span></span>
-<span id="cb55-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">ct</span><span class="op">=</span><span class="va">cos</span>(<span class="va">x</span>)<span class="op">./</span>(<span class="va">sin</span>(<span class="va">x</span>)<span class="op">+</span><span class="va">eps</span>)<span class="op">;</span></span>
-<span id="cb55-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">1</span>)<span class="op">;</span></span>
-<span id="cb55-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span>)<span class="op">;</span></span>
-<span id="cb55-8"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'sin(x)'</span>)<span class="op">;</span></span>
-<span id="cb55-9"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">1</span><span class="op">,</span><span class="fl">1</span>])<span class="op">;</span></span>
-<span id="cb55-10"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">2</span>)<span class="op">;</span></span>
-<span id="cb55-11"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">z</span>)<span class="op">;</span></span>
-<span id="cb55-12"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'cos(x)'</span>)<span class="op">;</span></span>
-<span id="cb55-13"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">1</span><span class="op">,</span><span class="fl">1</span>])<span class="op">;</span></span>
-<span id="cb55-14"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">3</span>)<span class="op">;</span></span>
-<span id="cb55-15"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">t</span>)<span class="op">;</span></span>
-<span id="cb55-16"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'tangent(x)'</span>)<span class="op">;</span></span>
-<span id="cb55-17"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">40</span><span class="op">,</span><span class="fl">40</span>])<span class="op">;</span></span>
-<span id="cb55-18"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">4</span>)<span class="op">;</span></span>
-<span id="cb55-19"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">ct</span>)<span class="op">;</span></span>
-<span id="cb55-20"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'cotangent(x)'</span>)<span class="op">;</span></span>
-<span id="cb55-21"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">40</span><span class="op">,</span><span class="fl">40</span>])<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb54-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span><span class="op">=</span><span class="va">linspace</span>(<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,</span><span class="fl">60</span>)<span class="op">;</span></span>
+<span id="cb54-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span><span class="op">=</span><span class="va">sin</span>(<span class="va">x</span>)<span class="op">;</span></span>
+<span id="cb54-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">z</span><span class="op">=</span><span class="va">cos</span>(<span class="va">x</span>)<span class="op">;</span></span>
+<span id="cb54-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">t</span><span class="op">=</span><span class="va">sin</span>(<span class="va">x</span>)<span class="op">./</span>(<span class="va">cos</span>(<span class="va">x</span>)<span class="op">+</span><span class="va">eps</span>)<span class="op">;</span></span>
+<span id="cb54-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">ct</span><span class="op">=</span><span class="va">cos</span>(<span class="va">x</span>)<span class="op">./</span>(<span class="va">sin</span>(<span class="va">x</span>)<span class="op">+</span><span class="va">eps</span>)<span class="op">;</span></span>
+<span id="cb54-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">1</span>)<span class="op">;</span></span>
+<span id="cb54-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span>)<span class="op">;</span></span>
+<span id="cb54-8"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'sin(x)'</span>)<span class="op">;</span></span>
+<span id="cb54-9"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">1</span><span class="op">,</span><span class="fl">1</span>])<span class="op">;</span></span>
+<span id="cb54-10"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">2</span>)<span class="op">;</span></span>
+<span id="cb54-11"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">z</span>)<span class="op">;</span></span>
+<span id="cb54-12"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'cos(x)'</span>)<span class="op">;</span></span>
+<span id="cb54-13"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">1</span><span class="op">,</span><span class="fl">1</span>])<span class="op">;</span></span>
+<span id="cb54-14"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">3</span>)<span class="op">;</span></span>
+<span id="cb54-15"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">t</span>)<span class="op">;</span></span>
+<span id="cb54-16"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'tangent(x)'</span>)<span class="op">;</span></span>
+<span id="cb54-17"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">40</span><span class="op">,</span><span class="fl">40</span>])<span class="op">;</span></span>
+<span id="cb54-18"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">4</span>)<span class="op">;</span></span>
+<span id="cb54-19"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">ct</span>)<span class="op">;</span></span>
+<span id="cb54-20"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'cotangent(x)'</span>)<span class="op">;</span></span>
+<span id="cb54-21"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">40</span><span class="op">,</span><span class="fl">40</span>])<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:65%;">
 <p><img data-src="images/subfig.png"></p>
 </div></div>
@@ -1832,31 +1848,31 @@ A = \begin{bmatrix}
 <h2>窗口灵活分割</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb56"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb56-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span><span class="op">=</span><span class="va">linspace</span>(<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,</span><span class="fl">60</span>)<span class="op">;</span> <span class="va">y</span><span class="op">=</span><span class="va">sin</span>(<span class="va">x</span>)<span class="op">;</span></span>
-<span id="cb56-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">1</span>)<span class="op">;</span> <span class="co">%选择2×2个区中的1号区</span></span>
-<span id="cb56-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">stairs</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span>)<span class="op">;</span></span>
-<span id="cb56-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'sin(x)-1'</span>)<span class="op">;</span></span>
-<span id="cb56-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">1</span><span class="op">,</span><span class="fl">1</span>])<span class="op">;</span></span>
-<span id="cb56-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">1</span><span class="op">,</span><span class="fl">2</span>)<span class="op">;</span> <span class="co">%选择2×1个区中的2号区</span></span>
-<span id="cb56-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">stem</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span>)<span class="op">;</span></span>
-<span id="cb56-8"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'sin(x)-2'</span>)<span class="op">;</span></span>
-<span id="cb56-9"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">1</span><span class="op">,</span><span class="fl">1</span>])<span class="op">;</span></span>
-<span id="cb56-10"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">4</span><span class="op">,</span><span class="fl">3</span>)<span class="op">;</span> <span class="co">%选择4×4个区中的3号区</span></span>
-<span id="cb56-11"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span>)<span class="op">;</span></span>
-<span id="cb56-12"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'sin(x)'</span>)<span class="op">;</span></span>
-<span id="cb56-13"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">1</span><span class="op">,</span><span class="fl">1</span>])<span class="op">;</span></span>
-<span id="cb56-14"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">4</span><span class="op">,</span><span class="fl">4</span>)<span class="op">;</span> <span class="co">%选择4×4个区中的4号区</span></span>
-<span id="cb56-15"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span> <span class="va">cos</span>(<span class="va">x</span>))<span class="op">;</span></span>
-<span id="cb56-16"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'cos(x)'</span>)<span class="op">;</span></span>
-<span id="cb56-17"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">1</span><span class="op">,</span><span class="fl">1</span>])<span class="op">;</span></span>
-<span id="cb56-18"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">4</span><span class="op">,</span><span class="fl">7</span>)<span class="op">;</span> <span class="co">%选择4×4个区中的7号区</span></span>
-<span id="cb56-19"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span> <span class="va">sin</span>(<span class="va">x</span>)<span class="op">./</span>(<span class="va">cos</span>(<span class="va">x</span>)<span class="op">+</span><span class="va">eps</span>))<span class="op">;</span></span>
-<span id="cb56-20"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'tangent(x)'</span>)<span class="op">;</span></span>
-<span id="cb56-21"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">40</span><span class="op">,</span><span class="fl">40</span>])<span class="op">;</span></span>
-<span id="cb56-22"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">4</span><span class="op">,</span><span class="fl">8</span>)<span class="op">;</span> <span class="co">%选择4×4个区中的8号区</span></span>
-<span id="cb56-23"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span> <span class="va">cos</span>(<span class="va">x</span>)<span class="op">./</span>(<span class="va">sin</span>(<span class="va">x</span>)<span class="op">+</span><span class="va">eps</span>))<span class="op">;</span></span>
-<span id="cb56-24"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'cotangent(x)'</span>)<span class="op">;</span></span>
-<span id="cb56-25"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">40</span><span class="op">,</span><span class="fl">40</span>])<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb55-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span><span class="op">=</span><span class="va">linspace</span>(<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,</span><span class="fl">60</span>)<span class="op">;</span> <span class="va">y</span><span class="op">=</span><span class="va">sin</span>(<span class="va">x</span>)<span class="op">;</span></span>
+<span id="cb55-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">1</span>)<span class="op">;</span> <span class="co">%选择2×2个区中的1号区</span></span>
+<span id="cb55-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">stairs</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span>)<span class="op">;</span></span>
+<span id="cb55-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'sin(x)-1'</span>)<span class="op">;</span></span>
+<span id="cb55-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">1</span><span class="op">,</span><span class="fl">1</span>])<span class="op">;</span></span>
+<span id="cb55-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">1</span><span class="op">,</span><span class="fl">2</span>)<span class="op">;</span> <span class="co">%选择2×1个区中的2号区</span></span>
+<span id="cb55-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">stem</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span>)<span class="op">;</span></span>
+<span id="cb55-8"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'sin(x)-2'</span>)<span class="op">;</span></span>
+<span id="cb55-9"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">1</span><span class="op">,</span><span class="fl">1</span>])<span class="op">;</span></span>
+<span id="cb55-10"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">4</span><span class="op">,</span><span class="fl">3</span>)<span class="op">;</span> <span class="co">%选择4×4个区中的3号区</span></span>
+<span id="cb55-11"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span>)<span class="op">;</span></span>
+<span id="cb55-12"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'sin(x)'</span>)<span class="op">;</span></span>
+<span id="cb55-13"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">1</span><span class="op">,</span><span class="fl">1</span>])<span class="op">;</span></span>
+<span id="cb55-14"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">4</span><span class="op">,</span><span class="fl">4</span>)<span class="op">;</span> <span class="co">%选择4×4个区中的4号区</span></span>
+<span id="cb55-15"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span> <span class="va">cos</span>(<span class="va">x</span>))<span class="op">;</span></span>
+<span id="cb55-16"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'cos(x)'</span>)<span class="op">;</span></span>
+<span id="cb55-17"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">1</span><span class="op">,</span><span class="fl">1</span>])<span class="op">;</span></span>
+<span id="cb55-18"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">4</span><span class="op">,</span><span class="fl">7</span>)<span class="op">;</span> <span class="co">%选择4×4个区中的7号区</span></span>
+<span id="cb55-19"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span> <span class="va">sin</span>(<span class="va">x</span>)<span class="op">./</span>(<span class="va">cos</span>(<span class="va">x</span>)<span class="op">+</span><span class="va">eps</span>))<span class="op">;</span></span>
+<span id="cb55-20"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'tangent(x)'</span>)<span class="op">;</span></span>
+<span id="cb55-21"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">40</span><span class="op">,</span><span class="fl">40</span>])<span class="op">;</span></span>
+<span id="cb55-22"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">4</span><span class="op">,</span><span class="fl">8</span>)<span class="op">;</span> <span class="co">%选择4×4个区中的8号区</span></span>
+<span id="cb55-23"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">x</span><span class="op">,</span> <span class="va">cos</span>(<span class="va">x</span>)<span class="op">./</span>(<span class="va">sin</span>(<span class="va">x</span>)<span class="op">+</span><span class="va">eps</span>))<span class="op">;</span></span>
+<span id="cb55-24"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'cotangent(x)'</span>)<span class="op">;</span></span>
+<span id="cb55-25"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span> ([<span class="fl">0</span><span class="op">,</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">,-</span><span class="fl">40</span><span class="op">,</span><span class="fl">40</span>])<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/figsplit.png"></p>
 </div></div>
@@ -1877,26 +1893,26 @@ A = \begin{bmatrix}
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb57"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb57-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span><span class="op">=</span><span class="fl">0</span><span class="op">:</span><span class="fl">0.35</span><span class="op">:</span><span class="fl">7</span><span class="op">;</span></span>
-<span id="cb57-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span><span class="op">=</span><span class="fl">2</span><span class="op">*</span><span class="va">exp</span>(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span><span class="va">x</span>)<span class="op">;</span></span>
-<span id="cb57-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">1</span>)<span class="op">;</span></span>
-<span id="cb57-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">bar</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span><span class="op">,</span><span class="ss">'g'</span>)<span class="op">;</span></span>
-<span id="cb57-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'bar(x,y,''g'')'</span>)<span class="op">;</span></span>
-<span id="cb57-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span>([<span class="fl">0</span><span class="op">,</span><span class="fl">7</span><span class="op">,</span><span class="fl">0</span><span class="op">,</span><span class="fl">2</span>])<span class="op">;</span> </span>
-<span id="cb57-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">2</span>)<span class="op">;</span></span>
-<span id="cb57-8"><a aria-hidden="true" tabindex="-1"></a><span class="va">fill</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span><span class="op">,</span><span class="ss">'r'</span>)<span class="op">;</span></span>
-<span id="cb57-9"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'fill(x,y,''r'')'</span>)<span class="op">;</span></span>
-<span id="cb57-10"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span>([<span class="fl">0</span><span class="op">,</span><span class="fl">7</span><span class="op">,</span><span class="fl">0</span><span class="op">,</span><span class="fl">2</span>])<span class="op">;</span></span>
-<span id="cb57-11"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">3</span>)<span class="op">;</span></span>
-<span id="cb57-12"><a aria-hidden="true" tabindex="-1"></a><span class="va">stairs</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span><span class="op">,</span><span class="ss">'b'</span>)<span class="op">;</span></span>
-<span id="cb57-13"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'stairs(x,y,''b'')'</span>)<span class="op">;</span></span>
-<span id="cb57-14"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span>([<span class="fl">0</span><span class="op">,</span><span class="fl">7</span><span class="op">,</span><span class="fl">0</span><span class="op">,</span><span class="fl">2</span>])<span class="op">;</span></span>
-<span id="cb57-15"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">4</span>)<span class="op">;</span></span>
-<span id="cb57-16"><a aria-hidden="true" tabindex="-1"></a><span class="va">stem</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span><span class="op">,</span><span class="ss">'k'</span>)<span class="op">;</span></span>
-<span id="cb57-17"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'stem(x,y,''k'')'</span>)<span class="op">;</span></span>
-<span id="cb57-18"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span>([<span class="fl">0</span><span class="op">,</span><span class="fl">7</span><span class="op">,</span><span class="fl">0</span><span class="op">,</span><span class="fl">2</span>])<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb56-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span><span class="op">=</span><span class="fl">0</span><span class="op">:</span><span class="fl">0.35</span><span class="op">:</span><span class="fl">7</span><span class="op">;</span></span>
+<span id="cb56-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span><span class="op">=</span><span class="fl">2</span><span class="op">*</span><span class="va">exp</span>(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span><span class="va">x</span>)<span class="op">;</span></span>
+<span id="cb56-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">1</span>)<span class="op">;</span></span>
+<span id="cb56-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">bar</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span><span class="op">,</span><span class="ss">'g'</span>)<span class="op">;</span></span>
+<span id="cb56-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'bar(x,y,''g'')'</span>)<span class="op">;</span></span>
+<span id="cb56-6"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span>([<span class="fl">0</span><span class="op">,</span><span class="fl">7</span><span class="op">,</span><span class="fl">0</span><span class="op">,</span><span class="fl">2</span>])<span class="op">;</span></span>
+<span id="cb56-7"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">2</span>)<span class="op">;</span></span>
+<span id="cb56-8"><a aria-hidden="true" tabindex="-1"></a><span class="va">fill</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span><span class="op">,</span><span class="ss">'r'</span>)<span class="op">;</span></span>
+<span id="cb56-9"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'fill(x,y,''r'')'</span>)<span class="op">;</span></span>
+<span id="cb56-10"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span>([<span class="fl">0</span><span class="op">,</span><span class="fl">7</span><span class="op">,</span><span class="fl">0</span><span class="op">,</span><span class="fl">2</span>])<span class="op">;</span></span>
+<span id="cb56-11"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">3</span>)<span class="op">;</span></span>
+<span id="cb56-12"><a aria-hidden="true" tabindex="-1"></a><span class="va">stairs</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span><span class="op">,</span><span class="ss">'b'</span>)<span class="op">;</span></span>
+<span id="cb56-13"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'stairs(x,y,''b'')'</span>)<span class="op">;</span></span>
+<span id="cb56-14"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span>([<span class="fl">0</span><span class="op">,</span><span class="fl">7</span><span class="op">,</span><span class="fl">0</span><span class="op">,</span><span class="fl">2</span>])<span class="op">;</span></span>
+<span id="cb56-15"><a aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">2</span><span class="op">,</span><span class="fl">4</span>)<span class="op">;</span></span>
+<span id="cb56-16"><a aria-hidden="true" tabindex="-1"></a><span class="va">stem</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span><span class="op">,</span><span class="ss">'k'</span>)<span class="op">;</span></span>
+<span id="cb56-17"><a aria-hidden="true" tabindex="-1"></a><span class="va">title</span>(<span class="ss">'stem(x,y,''k'')'</span>)<span class="op">;</span></span>
+<span id="cb56-18"><a aria-hidden="true" tabindex="-1"></a><span class="va">axis</span>([<span class="fl">0</span><span class="op">,</span><span class="fl">7</span><span class="op">,</span><span class="fl">0</span><span class="op">,</span><span class="fl">2</span>])<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
-<p><img data-src="images/other2d.png"></p>
+<p><img data-src="images/other2d.png" style="width:80.0%"></p>
 </div></div>
 </section>
 <section id="极坐标图" class="slide level2">
@@ -1907,9 +1923,9 @@ A = \begin{bmatrix}
 </ul>
 <div class="columns">
 <div class="column" style="width:60%;">
-<div class="sourceCode" id="cb58"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb58-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">theta</span><span class="op">=</span><span class="fl">0</span><span class="op">:</span><span class="fl">0.01</span><span class="op">:</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">;</span></span>
-<span id="cb58-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">rho</span><span class="op">=</span><span class="va">sin</span>(<span class="fl">2</span><span class="op">*</span><span class="va">theta</span>)<span class="op">.*</span><span class="va">cos</span>(<span class="fl">2</span><span class="op">*</span><span class="va">theta</span>)<span class="op">;</span></span>
-<span id="cb58-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">polar</span>(<span class="va">theta</span><span class="op">,</span><span class="va">rho</span><span class="op">,</span><span class="ss">'k'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb57-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">theta</span><span class="op">=</span><span class="fl">0</span><span class="op">:</span><span class="fl">0.01</span><span class="op">:</span><span class="fl">2</span><span class="op">*</span><span class="va">pi</span><span class="op">;</span></span>
+<span id="cb57-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">rho</span><span class="op">=</span><span class="va">sin</span>(<span class="fl">2</span><span class="op">*</span><span class="va">theta</span>)<span class="op">.*</span><span class="va">cos</span>(<span class="fl">2</span><span class="op">*</span><span class="va">theta</span>)<span class="op">;</span></span>
+<span id="cb57-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">polar</span>(<span class="va">theta</span><span class="op">,</span><span class="va">rho</span><span class="op">,</span><span class="ss">'k'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1924,7 +1940,7 @@ A = \begin{bmatrix}
 </div>
 </div>
 </div><div class="column" style="width:40%;">
-<p><img data-src="images/polar_sample.png"></p>
+<p><img data-src="images/polar_sample.png" style="width:80.0%"></p>
 </div></div>
 </section>
 <section id="空间三维作图" class="slide level2">
@@ -1941,21 +1957,21 @@ y = sin(t)\\
 z = cos(t)
 \end{cases}
 \]</span></p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb59-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">t</span><span class="op">=</span>[<span class="fl">0</span><span class="op">:</span><span class="fl">0.1</span><span class="op">:</span><span class="fl">10</span><span class="op">*</span><span class="va">pi</span>]<span class="op">;</span></span>
-<span id="cb59-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span><span class="op">=</span><span class="fl">2</span><span class="op">*</span><span class="va">t</span><span class="op">;</span> </span>
-<span id="cb59-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span><span class="op">=</span><span class="va">sin</span>(<span class="va">t</span>)<span class="op">;</span> </span>
-<span id="cb59-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">z</span><span class="op">=</span><span class="va">cos</span>(<span class="va">t</span>)<span class="op">;</span></span>
-<span id="cb59-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot3</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span><span class="op">,</span><span class="va">z</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb58-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">t</span><span class="op">=</span>[<span class="fl">0</span><span class="op">:</span><span class="fl">0.1</span><span class="op">:</span><span class="fl">10</span><span class="op">*</span><span class="va">pi</span>]<span class="op">;</span></span>
+<span id="cb58-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">x</span><span class="op">=</span><span class="fl">2</span><span class="op">*</span><span class="va">t</span><span class="op">;</span></span>
+<span id="cb58-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">y</span><span class="op">=</span><span class="va">sin</span>(<span class="va">t</span>)<span class="op">;</span></span>
+<span id="cb58-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">z</span><span class="op">=</span><span class="va">cos</span>(<span class="va">t</span>)<span class="op">;</span></span>
+<span id="cb58-5"><a aria-hidden="true" tabindex="-1"></a><span class="va">plot3</span>(<span class="va">x</span><span class="op">,</span><span class="va">y</span><span class="op">,</span><span class="va">z</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:40%;">
 <p><img data-src="images/plot3_sample.png"></p>
 </div></div>
 </section>
 <section id="绘制三维曲面" class="slide level2">
 <h2>绘制三维曲面</h2>
-<div class="sourceCode" id="cb60"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb60-1"><a aria-hidden="true" tabindex="-1"></a>[<span class="va">X</span><span class="op">,</span><span class="va">Y</span>]<span class="op">=</span><span class="va">meshgrid</span>(<span class="op">-</span><span class="fl">8</span><span class="op">:</span><span class="fl">0.1</span><span class="op">:</span><span class="fl">8</span>)<span class="op">;</span></span>
-<span id="cb60-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">r</span><span class="op">=</span><span class="va">sqrt</span>(<span class="va">X</span><span class="op">.^</span><span class="fl">2</span><span class="op">+</span><span class="va">Y</span><span class="op">.^</span><span class="fl">2</span>)<span class="op">+</span><span class="va">eps</span><span class="op">;</span></span>
-<span id="cb60-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">Z</span><span class="op">=</span><span class="va">sin</span>(<span class="va">r</span>)<span class="op">./</span><span class="va">r</span><span class="op">;</span></span>
-<span id="cb60-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">surf</span>(<span class="va">X</span><span class="op">,</span><span class="va">Y</span><span class="op">,</span><span class="va">Z</span><span class="op">,</span> <span class="ss">'EdgeColor'</span><span class="op">,</span><span class="ss">'none'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb59-1"><a aria-hidden="true" tabindex="-1"></a>[<span class="va">X</span><span class="op">,</span><span class="va">Y</span>]<span class="op">=</span><span class="va">meshgrid</span>(<span class="op">-</span><span class="fl">8</span><span class="op">:</span><span class="fl">0.1</span><span class="op">:</span><span class="fl">8</span>)<span class="op">;</span></span>
+<span id="cb59-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">r</span><span class="op">=</span><span class="va">sqrt</span>(<span class="va">X</span><span class="op">.^</span><span class="fl">2</span><span class="op">+</span><span class="va">Y</span><span class="op">.^</span><span class="fl">2</span>)<span class="op">+</span><span class="va">eps</span><span class="op">;</span></span>
+<span id="cb59-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">Z</span><span class="op">=</span><span class="va">sin</span>(<span class="va">r</span>)<span class="op">./</span><span class="va">r</span><span class="op">;</span></span>
+<span id="cb59-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">surf</span>(<span class="va">X</span><span class="op">,</span><span class="va">Y</span><span class="op">,</span><span class="va">Z</span><span class="op">,</span> <span class="ss">'EdgeColor'</span><span class="op">,</span><span class="ss">'none'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <img data-src="images/mexicain.png" class="r-stretch"></section>
 <section id="matlab画图类型" class="slide level2">
