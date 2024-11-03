@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://zjsu.github.io/mm/chap/01/index.html</loc>
-    <lastmod>2024-10-14T05:46:39.259Z</lastmod>
-  </url>
-  <url>
     <loc>https://zjsu.github.io/mm/intro/index.html</loc>
-    <lastmod>2024-10-14T05:46:39.280Z</lastmod>
-  </url>
-  <url>
-    <loc>https://zjsu.github.io/mm/index.html</loc>
-    <lastmod>2024-10-14T05:46:39.280Z</lastmod>
+    <lastmod>2024-11-03T14:27:44.431Z</lastmod>
   </url>
   <url>
     <loc>https://zjsu.github.io/mm/matlab/index.html</loc>
-    <lastmod>2024-10-14T05:46:39.294Z</lastmod>
+    <lastmod>2024-11-03T14:27:44.447Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zjsu.github.io/mm/chap/01/index.html</loc>
+    <lastmod>2024-11-03T14:27:44.387Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zjsu.github.io/mm/index.html</loc>
+    <lastmod>2024-11-03T14:27:44.431Z</lastmod>
   </url>
 </urlset>
