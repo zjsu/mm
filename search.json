@@ -42,6 +42,363 @@
     "text": "课程概要\n\n\n\n\n\nflowchart LR\n  subgraph BASE[\" \"]\n    A[\"①对变化进行建模\"] --&gt; B[\"②建模过程、比例性和几何相似性\"]\n    B --&gt; C[\"③模型拟合\"]\n  end\n  BASE --&gt; D[\"④实验建模\"]\n  D --&gt; E[\"⑤模拟方法建模\"]\n  BASE --&gt; F[\"⑥离散概率模型\"]\n  BASE --&gt; G[\"⑦离散模型的优化\"]\n  BASE --&gt; H[\"⑧图论建模\"]\n  F --&gt; I[\"⑨决策论建模\"]\n  I --&gt; J[\"⑩博弈论\"]\n  BASE --&gt; K[\"⑪用微分方程建模\"]\n  K --&gt; L[\"⑫用微分方程组建模\"]\n  L --&gt; M[\"⑬连续模型的优化\"]\n  E --&gt; N[\"⑭量纲分析和相似性\"]\n  BASE --&gt; O[\"⑮函数图表构成模型\"]\n  classDef missing stroke-width:2px,stroke-dasharray: 5 5\n  class N,O missing"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "数学建模",
+    "section": "",
+    "text": "第 1 章 对变化进行建模\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "chap/01/index.html#弹簧系统",
+    "href": "chap/01/index.html#弹簧系统",
+    "title": "第 1 章 对变化进行建模",
+    "section": "弹簧系统",
+    "text": "弹簧系统\n\nspring_data = FileAttachment(\"spring.csv\").csv({ typed: true })\n\n\n\n\n\n\n\n\nPlot.plot({\n  grid: true,\n  marks: [\n    Plot.ruleY([0]),\n    Plot.ruleX([0]),\n    Plot.dot(spring_data, {x: \"质量\", y: \"拉伸\", symbol: \"circle\", fill: \"currentColor\"}),\n    Plot.line([[0, 0], [550, 8.9375]], {stroke: \"green\"}),\n    Plot.dot([[200, 3.25], [300, 4.875]], {fill: \"red\"}),\n    Plot.text([\"e = 0.01625m\"], {x: 250, y: 3, fontSize: 16, fontWeight: \"bold\"})\n  ]\n})\n\n\n\n\n\n\n\n\\(斜率 = \\frac{4.875-3.25}{300-200} = 0.01625\\)\n\n\nInputs.table(spring_data, {\n  // TODO: uncomment the following when observable is updated\n  // select: false,\n  format: {\n    '拉伸': d =&gt; d.toFixed(3)\n  },\n  align: {\n    '质量': \"left\"\n  },\n  height: \"100%\" })"
+  },
+  {
+    "objectID": "chap/01/index.html#对变化进行建模",
+    "href": "chap/01/index.html#对变化进行建模",
+    "title": "第 1 章 对变化进行建模",
+    "section": "对变化进行建模",
+    "text": "对变化进行建模\n\n未来值 = 现在值 + 变化\n变化 = 未来值 - 现在值\n离散时间: 差分方程(difference equation)\n连续时间: 微分方程(第11章)"
+  },
+  {
+    "objectID": "chap/01/index.html#差分方程",
+    "href": "chap/01/index.html#差分方程",
+    "title": "第 1 章 对变化进行建模",
+    "section": "差分方程",
+    "text": "差分方程\n对于数列\\(A = {a_0, a_1, a_2, a_3, \\cdots}\\), 其一阶差分定义为:\n\n\n\\[\n\\Delta a_0 = a_1 - a_0 \\\\\n\\Delta a_1 = a_2 - a_1 \\\\\n\\Delta a_2 = a_3 - a_2 \\\\\n\\Delta a_3 = a_4 - a_3 \\\\\n\\cdots \\\\\n\\Delta a_n = a_{n+1} - a_n\n\\]"
+  },
+  {
+    "objectID": "chap/01/index.html#储蓄问题",
+    "href": "chap/01/index.html#储蓄问题",
+    "title": "第 1 章 对变化进行建模",
+    "section": "储蓄问题",
+    "text": "储蓄问题\n考虑本金1000美元, 月利息1%的储蓄问题: \\(A = (1000, 1010, 1020.10, 1030.30, ...)\\).\n\\[\n\\Delta a_0 = a_1 - a_0 = 1010.0 - 1000.0 = 10.0 \\\\\n\\Delta a_1 = a_2 - a_1 = 1020.1 - 1010.0 = 10.1 \\\\\n\\Delta a_2 = a_3 - a_2 = 1030.3 - 1020.1 = 10.2 \\\\\n\\cdots \\\\\n\\Delta a_n = a_{n+1} - a_n = 0.01a_n \\\\\n\\]\n\\[\na_{n+1} = a_n + 0.01a_n = 1.01a_n, n = 0, 1, 2, 3 \\\\\na_0 = 1000\n\\]\n\n如果每月取出50美元\\(\\cdots\\)\n\\[\\Delta a_n = a_{n+1} - a_n = 0.01a_n - 50\\]"
+  },
+  {
+    "objectID": "chap/01/index.html#如何找出变化",
+    "href": "chap/01/index.html#如何找出变化",
+    "title": "第 1 章 对变化进行建模",
+    "section": "如何找出变化?",
+    "text": "如何找出变化?\n在多数情况下, 很难象上述例子那样精确表述, 因此我们通过如下步骤找出变化:\n\n\n\n\n\n\nImportant\n\n\n\n画出变化\n观察变化规律\n用数学术语描述变化\n\n\n\n\n变化 = \\(\\Delta a_n\\) = 某个函数\\(f\\)\n对于离散情况:\n变化 = \\(\\Delta a_n\\) = \\(a_{n+1} - a_n\\) = \\(f\\)(序列中的项, 外部项)"
+  },
+  {
+    "objectID": "chap/01/index.html#按揭买房",
+    "href": "chap/01/index.html#按揭买房",
+    "title": "第 1 章 对变化进行建模",
+    "section": "按揭买房",
+    "text": "按揭买房\n六年前按揭20年买了一套80000美元的房子, 月供880.87美元并付每月1%的利息. 问现在还欠银行多少?\n\\[\\Delta b_n = b_{n+1} - b_n = 0.01b_n - 880.87\\]\n求解下列方程即可:\n\\[\n\\begin{align*}\nb_{n+1} &= 1.01b_n - 880.87 \\\\\nb_0 &= 80000\n\\end{align*}\n\\]\n\\[B = (80000, 79919.13, 79837.45, \\cdots)\\]"
+  },
+  {
+    "objectID": "chap/01/index.html#按揭买房-1",
+    "href": "chap/01/index.html#按揭买房-1",
+    "title": "第 1 章 对变化进行建模",
+    "section": "按揭买房",
+    "text": "按揭买房"
+  },
+  {
+    "objectID": "chap/01/index.html#用差分方程来近似变化",
+    "href": "chap/01/index.html#用差分方程来近似变化",
+    "title": "第 1 章 对变化进行建模",
+    "section": "用差分方程来近似变化",
+    "text": "用差分方程来近似变化\n\n变化 = \\(\\Delta a_n\\) = 某个函数\\(f\\)\n离散变化与连续变化\n模型的细化: 生、死、资源"
+  },
+  {
+    "objectID": "chap/01/index.html#酵母培养-找出模型",
+    "href": "chap/01/index.html#酵母培养-找出模型",
+    "title": "第 1 章 对变化进行建模",
+    "section": "酵母培养 – 找出模型",
+    "text": "酵母培养 – 找出模型\n\n\\[\\Delta p_n = p_{n+1} - p_n = k(665 - p_n)p_n\\]"
+  },
+  {
+    "objectID": "chap/01/index.html#酵母培养-模型数值求解",
+    "href": "chap/01/index.html#酵母培养-模型数值求解",
+    "title": "第 1 章 对变化进行建模",
+    "section": "酵母培养 – 模型数值求解",
+    "text": "酵母培养 – 模型数值求解\n\n\\[k \\approx 0.00082\\] \\[p_{n+1} = p_n + 0.00082(665 - p_n)p_n\\]"
+  },
+  {
+    "objectID": "chap/01/index.html#酵母培养-模型验证",
+    "href": "chap/01/index.html#酵母培养-模型验证",
+    "title": "第 1 章 对变化进行建模",
+    "section": "酵母培养 – 模型验证",
+    "text": "酵母培养 – 模型验证\n\n\\[p_{n+1} = p_n + 0.00082(665 - p_n)p_n\\]\n\n\n\n\n\n\n\n思考\n\n\n如何为书上例2传染病传播模型加入其它因素?"
+  },
+  {
+    "objectID": "chap/01/index.html#地高辛在血流中的变化",
+    "href": "chap/01/index.html#地高辛在血流中的变化",
+    "title": "第 1 章 对变化进行建模",
+    "section": "地高辛在血流中的变化",
+    "text": "地高辛在血流中的变化\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nn\n0\n1\n2\n3\n4\n5\n6\n7\n8\n\n\n\n\n\\(a_n\\)\n0.5\n0.345\n0.238\n0.164\n0.113\n0.078\n0.054\n0.037\n0.026\n\n\n\\(\\Delta a_n\\)\n-0.155\n-0.107\n-0.074\n-0.051\n-0.035\n-0.024\n-0.017\n-0.011\n\n\n\n\n\n\n\n\n\n\\[\n\\Delta a_n = -0.31a_n \\\\\na_{n+1} -  a_n = -0.31a_n \\\\\na_{n+1} = 0.69a_n\n\\]"
+  },
+  {
+    "objectID": "chap/01/index.html#动态系统的解法-猜测",
+    "href": "chap/01/index.html#动态系统的解法-猜测",
+    "title": "第 1 章 对变化进行建模",
+    "section": "动态系统的解法 – 猜测",
+    "text": "动态系统的解法 – 猜测\n\n\n存款问题: \\(a_{n+1} = 1.01a_n, a_0 = 1000\\)\n\\[\n\\begin{align*}\na_1 &= 1010.0 = 1.01(1000)\\\\\na_2 &= 1020.1 = 1.01(1010) = 1.01^2 (1000)\\\\\na_3 &= 1030.3 = 1.01(1020.1) = 1.01^3 (1000)\\\\\na_4 &= 1040.6 = 1.01(1030.3) = 1.01^4 (1000)\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "chap/01/index.html#动态系统的解法-猜测-1",
+    "href": "chap/01/index.html#动态系统的解法-猜测-1",
+    "title": "第 1 章 对变化进行建模",
+    "section": "动态系统的解法 – 猜测",
+    "text": "动态系统的解法 – 猜测\n猜测: \\(a_k = 1.01^k(1000)\\) 验证、结论: …\n\n\n\n\n\n\n\n猜测法的一般步骤\n\n\n\n观察模式\n猜测动力系统的形式\n用带入法来测试该猜测\n接受或拒绝该推测：取决于代入和代数运算后结果是否满足该动力系统。\n\n\n\n\n\n推论： 形式为\\(a_{n+1} = ra_n\\)的动态系统的解为\\(a_k = r^k a_0\\)."
+  },
+  {
+    "objectID": "chap/01/index.html#a_n1ra_n",
+    "href": "chap/01/index.html#a_n1ra_n",
+    "title": "第 1 章 对变化进行建模",
+    "section": "\\(a_{n+1}=ra_n\\)",
+    "text": "\\(a_{n+1}=ra_n\\)\n\\(r = ?\\)"
+  },
+  {
+    "objectID": "chap/01/index.html#a_n1ra_n-b",
+    "href": "chap/01/index.html#a_n1ra_n-b",
+    "title": "第 1 章 对变化进行建模",
+    "section": "\\(a_{n+1}=ra_n + b\\)",
+    "text": "\\(a_{n+1}=ra_n + b\\)"
+  },
+  {
+    "objectID": "chap/01/index.html#不动点平衡点",
+    "href": "chap/01/index.html#不动点平衡点",
+    "title": "第 1 章 对变化进行建模",
+    "section": "不动点(平衡点）",
+    "text": "不动点(平衡点）\n\nDigoxin浓度变化"
+  },
+  {
+    "objectID": "chap/01/index.html#不动点",
+    "href": "chap/01/index.html#不动点",
+    "title": "第 1 章 对变化进行建模",
+    "section": "不动点",
+    "text": "不动点\n\\[a_{n+1} = 1.01a_n -1000\\]\n\n投资"
+  },
+  {
+    "objectID": "chap/01/index.html#r-1",
+    "href": "chap/01/index.html#r-1",
+    "title": "第 1 章 对变化进行建模",
+    "section": "\\(r = 1\\)",
+    "text": "\\(r = 1\\)\n\\[a_{n+1} = a_n -300\\]"
+  },
+  {
+    "objectID": "chap/01/index.html#不动点-1",
+    "href": "chap/01/index.html#不动点-1",
+    "title": "第 1 章 对变化进行建模",
+    "section": "不动点",
+    "text": "不动点\n\\(a_{n+1} = ra_n + b, r \\neq 1\\)的不动点为：\n\\[a = \\frac{b}{1-r}\\]\n上述动态系统的解为： \\(a_k=r^kc+\\frac{b}{1-r}\\).\n\n\n\n\n\n\n\n思考\n\n\n\\(r\\)的值不同时，长期来说系统如何变化？"
+  },
+  {
+    "objectID": "chap/01/index.html#非线性系统",
+    "href": "chap/01/index.html#非线性系统",
+    "title": "第 1 章 对变化进行建模",
+    "section": "非线性系统",
+    "text": "非线性系统"
+  },
+  {
+    "objectID": "chap/01/index.html#差分方程组",
+    "href": "chap/01/index.html#差分方程组",
+    "title": "第 1 章 对变化进行建模",
+    "section": "差分方程组",
+    "text": "差分方程组\n\n找出不动点\n当初始值在不动点附近时，系统如何变化\n\n研究系统的长期变化，看系统对如下条件是否敏感：\n\n初始条件\n对模型中的常量进行扰动"
+  },
+  {
+    "objectID": "chap/01/index.html#汽车租赁公司",
+    "href": "chap/01/index.html#汽车租赁公司",
+    "title": "第 1 章 对变化进行建模",
+    "section": "汽车租赁公司",
+    "text": "汽车租赁公司\n\n\n\n\n\n\\(O_n\\): 第\\(n\\)天营业结束时在奥兰多的车辆数\n\\(T_n\\): 第\\(n\\)天营业结束时在坦帕的车辆数\n\n\\[\n\\begin{align*}\nO_{n+1} &=0.6O_n + 0.3T_n \\\\\nT_{n+1} &=0.4O_n + 0.7T_n\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "chap/01/index.html#计算平衡点",
+    "href": "chap/01/index.html#计算平衡点",
+    "title": "第 1 章 对变化进行建模",
+    "section": "计算平衡点",
+    "text": "计算平衡点\n如果存在平衡点\\(O\\), \\(T\\): \\[O=O_{n+1}=O_n\\] \\[T=T_{n+1}=T_n\\] 推导出： \\[O=0.6O + 0.3T\\] \\[T=0.4O + 0.7T\\]"
+  },
+  {
+    "objectID": "chap/01/index.html#方程求解",
+    "href": "chap/01/index.html#方程求解",
+    "title": "第 1 章 对变化进行建模",
+    "section": "方程求解",
+    "text": "方程求解\n\\(O=\\frac{3}{4}T\\)满足上述方程组. 如果公司有7000辆车，则\\((O, T) = (3000, 4000)\\)处开始，保持不变。\n分析下述四种初始条件："
+  },
+  {
+    "objectID": "chap/01/index.html#分析",
+    "href": "chap/01/index.html#分析",
+    "title": "第 1 章 对变化进行建模",
+    "section": "分析",
+    "text": "分析"
+  },
+  {
+    "objectID": "chap/01/index.html#分析-1",
+    "href": "chap/01/index.html#分析-1",
+    "title": "第 1 章 对变化进行建模",
+    "section": "分析",
+    "text": "分析"
+  },
+  {
+    "objectID": "chap/01/index.html#结论",
+    "href": "chap/01/index.html#结论",
+    "title": "第 1 章 对变化进行建模",
+    "section": "结论",
+    "text": "结论\n四种情形中每一种情形在一周内都是和平衡点\\((3000,4000)\\)很接近的，甚至在其中一个城市没有车的情况也是如此。结果显示，平衡点是稳定的而且对初始值不敏感的。\n思考:该系统是否对\\(O_{n+1}\\)和\\(T_{n+1}\\)的系数敏感？"
+  },
+  {
+    "objectID": "chap/01/index.html#特拉法尔加战斗",
+    "href": "chap/01/index.html#特拉法尔加战斗",
+    "title": "第 1 章 对变化进行建模",
+    "section": "特拉法尔加战斗",
+    "text": "特拉法尔加战斗\n法西联军33艘战舰，英军27艘战舰，在一次遭遇战中每方的战舰损失都是对方战舰的\\(10\\%\\)。\n动力系统模型 令\\(n\\)表示战斗过程中遭遇战的阶段并定义：\n\n\\(B_n =\\)第\\(n\\)阶段英军的战舰数\n\\(F_n =\\)第\\(n\\)阶段法西联军的战舰数"
+  },
+  {
+    "objectID": "chap/01/index.html#死拼打法",
+    "href": "chap/01/index.html#死拼打法",
+    "title": "第 1 章 对变化进行建模",
+    "section": "死拼打法",
+    "text": "死拼打法\n战斗结束：英军全面战败，剩3艘战舰其中一艘严重损坏，法军大约还有18艘战舰。"
+  },
+  {
+    "objectID": "chap/01/index.html#各个击破",
+    "href": "chap/01/index.html#各个击破",
+    "title": "第 1 章 对变化进行建模",
+    "section": "各个击破",
+    "text": "各个击破\n\n策略：英军13艘攻击\\(A\\)；然后，全力攻击\\(B\\)，最后攻击\\(C\\)。"
+  },
+  {
+    "objectID": "chap/01/index.html#战斗a",
+    "href": "chap/01/index.html#战斗a",
+    "title": "第 1 章 对变化进行建模",
+    "section": "战斗A",
+    "text": "战斗A"
+  },
+  {
+    "objectID": "chap/01/index.html#战斗b",
+    "href": "chap/01/index.html#战斗b",
+    "title": "第 1 章 对变化进行建模",
+    "section": "战斗B",
+    "text": "战斗B"
+  },
+  {
+    "objectID": "chap/01/index.html#战斗c",
+    "href": "chap/01/index.html#战斗c",
+    "title": "第 1 章 对变化进行建模",
+    "section": "战斗C",
+    "text": "战斗C"
+  },
+  {
+    "objectID": "chap/01/index.html#战果",
+    "href": "chap/01/index.html#战果",
+    "title": "第 1 章 对变化进行建模",
+    "section": "战果",
+    "text": "战果\n英军大获全胜。现实世界：法西联军没有参加战斗C，而是把剩下的约13艘战舰撤回法国。"
+  },
+  {
+    "objectID": "chap/01/index.html#斑点猫头鹰和隼",
+    "href": "chap/01/index.html#斑点猫头鹰和隼",
+    "title": "第 1 章 对变化进行建模",
+    "section": "斑点猫头鹰和隼",
+    "text": "斑点猫头鹰和隼\n\n\\(O_n\\), \\(H_n\\)分别表示第\\(n\\)天猫头鹰和隼的数量\n\\(\\Delta O_n=k_1O_n\\), \\(\\Delta H_n=k_2H_n\\) (不考虑竞争）\n\\(\\Delta O_n=k_1O_n - k_3O_nH_n\\), \\(\\Delta H_n=k_2H_n-k_4O_nH_n\\) (考虑竞争）\n\\(O_{n+1}=(1+k_1)O_n - k_3O_nH_n\\)\n\\(H_{n+1}=(1+k_2)H_n-k_4O_nH_n\\)"
+  },
+  {
+    "objectID": "chap/01/index.html#求解平衡点",
+    "href": "chap/01/index.html#求解平衡点",
+    "title": "第 1 章 对变化进行建模",
+    "section": "求解平衡点",
+    "text": "求解平衡点\n\n\\(O_{n+1}=1.2O_n - 0.001O_nH_n\\)\n\\(H_{n+1}=1.3H_n - 0.002O_nH_n\\)\n\n如果\\((O,H)\\)为平衡点则\\(O_{n+1}=O_n=O\\), \\(H_{n+1}=H_n=H\\)：\n\n\\(O=1.2O - 0.001OH \\Rightarrow O = 0 or H = 200\\)\n\\(H=1.3H - 0.002OH \\Rightarrow H = 0 or O = 150\\)"
+  },
+  {
+    "objectID": "chap/01/index.html#平衡点分析",
+    "href": "chap/01/index.html#平衡点分析",
+    "title": "第 1 章 对变化进行建模",
+    "section": "平衡点分析",
+    "text": "平衡点分析\n两个平衡点: \\((0, 0)\\), \\((150, 200)\\). 为什么？"
+  },
+  {
+    "objectID": "chap/01/index.html#情况1",
+    "href": "chap/01/index.html#情况1",
+    "title": "第 1 章 对变化进行建模",
+    "section": "情况1",
+    "text": "情况1"
+  },
+  {
+    "objectID": "chap/01/index.html#情况2",
+    "href": "chap/01/index.html#情况2",
+    "title": "第 1 章 对变化进行建模",
+    "section": "情况2",
+    "text": "情况2"
+  },
+  {
+    "objectID": "chap/01/index.html#情况3",
+    "href": "chap/01/index.html#情况3",
+    "title": "第 1 章 对变化进行建模",
+    "section": "情况3",
+    "text": "情况3"
+  },
+  {
+    "objectID": "chap/01/index.html#对初始条件的敏感性和长期行为",
+    "href": "chap/01/index.html#对初始条件的敏感性和长期行为",
+    "title": "第 1 章 对变化进行建模",
+    "section": "对初始条件的敏感性和长期行为",
+    "text": "对初始条件的敏感性和长期行为\n如果在栖息地安置350只猫头鹰和隼：\n\n如果150头为猫头鹰：猫头鹰和隼的数量不变（150、200）\n如果149头或更少猫头鹰：猫头鹰将灭绝\n如果151头或更多猫头鹰：隼将灭绝\n该模型对初始条件极其敏感，平衡点不稳定。"
+  },
+  {
+    "objectID": "chap/01/index.html#旅客趋势",
+    "href": "chap/01/index.html#旅客趋势",
+    "title": "第 1 章 对变化进行建模",
+    "section": "旅客趋势",
+    "text": "旅客趋势\n\n\n\\(S_n =\\) 第\\(n\\)个旅行周乘坐US Airways的旅客数\n\\(U_n =\\) 第\\(n\\)个旅行周乘坐United Airlines的旅客数\n\\(A_n =\\) 第\\(n\\)个旅行周乘坐American Airlines的旅客数"
+  },
+  {
+    "objectID": "chap/01/index.html#差分方程组-1",
+    "href": "chap/01/index.html#差分方程组-1",
+    "title": "第 1 章 对变化进行建模",
+    "section": "差分方程组",
+    "text": "差分方程组\n\\[\nS_{n+1}=0.75S_n+0.20U_n+0.40A_n \\\\\nU_{n+1}=0.05S_n+0.60U_n+0.20A_n \\\\\nA_{n+1}=0.20S_n+0.20U_n+0.40A_n\n\\]\n平衡点: \\(S_{n+1}=S_n=S\\), \\(U_{n+1}=U_n=U\\), \\(A_{n+1}=A_n=A\\):\n\\[\n-0.25S+0.20U+0.40A=0 \\\\\n0.05S-0.40U+0.20A=0 \\\\\n0.20S+0.20U-0.60A=0\n\\]"
+  },
+  {
+    "objectID": "chap/01/index.html#平衡点分析-1",
+    "href": "chap/01/index.html#平衡点分析-1",
+    "title": "第 1 章 对变化进行建模",
+    "section": "平衡点分析",
+    "text": "平衡点分析\n\\(S:U:A = 2.2221:0.7777694:1\\)"
+  },
+  {
+    "objectID": "chap/01/index.html#情况1-1",
+    "href": "chap/01/index.html#情况1-1",
+    "title": "第 1 章 对变化进行建模",
+    "section": "情况1",
+    "text": "情况1"
+  },
+  {
+    "objectID": "chap/01/index.html#情况2-1",
+    "href": "chap/01/index.html#情况2-1",
+    "title": "第 1 章 对变化进行建模",
+    "section": "情况2",
+    "text": "情况2"
+  },
+  {
+    "objectID": "chap/01/index.html#情况3-1",
+    "href": "chap/01/index.html#情况3-1",
+    "title": "第 1 章 对变化进行建模",
+    "section": "情况3",
+    "text": "情况3"
+  },
+  {
+    "objectID": "chap/01/index.html#情况4",
+    "href": "chap/01/index.html#情况4",
+    "title": "第 1 章 对变化进行建模",
+    "section": "情况4",
+    "text": "情况4"
+  },
+  {
+    "objectID": "chap/01/index.html#总结",
+    "href": "chap/01/index.html#总结",
+    "title": "第 1 章 对变化进行建模",
+    "section": "总结",
+    "text": "总结\n系统相当稳定，即使刚开始没有人坐US Airways和United Airlines的旅客数."
+  },
+  {
     "objectID": "matlab/index.html#matlab",
     "href": "matlab/index.html#matlab",
     "title": "MATLAB",
@@ -488,362 +845,5 @@
     "title": "MATLAB",
     "section": "Matlab画图类型",
     "text": "Matlab画图类型"
-  },
-  {
-    "objectID": "chap/01/index.html#弹簧系统",
-    "href": "chap/01/index.html#弹簧系统",
-    "title": "第 1 章 对变化进行建模",
-    "section": "弹簧系统",
-    "text": "弹簧系统\n\nspring_data = FileAttachment(\"spring.csv\").csv({ typed: true })\n\n\n\n\n\n\n\n\nPlot.plot({\n  grid: true,\n  marks: [\n    Plot.ruleY([0]),\n    Plot.ruleX([0]),\n    Plot.dot(spring_data, {x: \"质量\", y: \"拉伸\", symbol: \"circle\", fill: \"currentColor\"}),\n    Plot.line([[0, 0], [550, 8.9375]], {stroke: \"green\"}),\n    Plot.dot([[200, 3.25], [300, 4.875]], {fill: \"red\"}),\n    Plot.text([\"e = 0.01625m\"], {x: 250, y: 3, fontSize: 16, fontWeight: \"bold\"})\n  ]\n})\n\n\n\n\n\n\n\n\\(斜率 = \\frac{4.875-3.25}{300-200} = 0.01625\\)\n\n\nInputs.table(spring_data, {\n  // TODO: uncomment the following when observable is updated\n  // select: false,\n  format: {\n    '拉伸': d =&gt; d.toFixed(3)\n  },\n  align: {\n    '质量': \"left\"\n  },\n  height: \"100%\" })"
-  },
-  {
-    "objectID": "chap/01/index.html#对变化进行建模",
-    "href": "chap/01/index.html#对变化进行建模",
-    "title": "第 1 章 对变化进行建模",
-    "section": "对变化进行建模",
-    "text": "对变化进行建模\n\n未来值 = 现在值 + 变化\n变化 = 未来值 - 现在值\n离散时间: 差分方程(difference equation)\n连续时间: 微分方程(第11章)"
-  },
-  {
-    "objectID": "chap/01/index.html#差分方程",
-    "href": "chap/01/index.html#差分方程",
-    "title": "第 1 章 对变化进行建模",
-    "section": "差分方程",
-    "text": "差分方程\n对于数列\\(A = {a_0, a_1, a_2, a_3, \\cdots}\\), 其一阶差分定义为:\n\n\n\\[\n\\Delta a_0 = a_1 - a_0 \\\\\n\\Delta a_1 = a_2 - a_1 \\\\\n\\Delta a_2 = a_3 - a_2 \\\\\n\\Delta a_3 = a_4 - a_3 \\\\\n\\cdots \\\\\n\\Delta a_n = a_{n+1} - a_n\n\\]"
-  },
-  {
-    "objectID": "chap/01/index.html#储蓄问题",
-    "href": "chap/01/index.html#储蓄问题",
-    "title": "第 1 章 对变化进行建模",
-    "section": "储蓄问题",
-    "text": "储蓄问题\n考虑本金1000美元, 月利息1%的储蓄问题: \\(A = (1000, 1010, 1020.10, 1030.30, ...)\\).\n\\[\n\\Delta a_0 = a_1 - a_0 = 1010.0 - 1000.0 = 10.0 \\\\\n\\Delta a_1 = a_2 - a_1 = 1020.1 - 1010.0 = 10.1 \\\\\n\\Delta a_2 = a_3 - a_2 = 1030.3 - 1020.1 = 10.2 \\\\\n\\cdots \\\\\n\\Delta a_n = a_{n+1} - a_n = 0.01a_n \\\\\n\\]\n\\[\na_{n+1} = a_n + 0.01a_n = 1.01a_n, n = 0, 1, 2, 3 \\\\\na_0 = 1000\n\\]\n\n如果每月取出50美元\\(\\cdots\\)\n\\[\\Delta a_n = a_{n+1} - a_n = 0.01a_n - 50\\]"
-  },
-  {
-    "objectID": "chap/01/index.html#如何找出变化",
-    "href": "chap/01/index.html#如何找出变化",
-    "title": "第 1 章 对变化进行建模",
-    "section": "如何找出变化?",
-    "text": "如何找出变化?\n在多数情况下, 很难象上述例子那样精确表述, 因此我们通过如下步骤找出变化:\n\n\n\n\n\n\nImportant\n\n\n\n画出变化\n观察变化规律\n用数学术语描述变化\n\n\n\n\n变化 = \\(\\Delta a_n\\) = 某个函数\\(f\\)\n对于离散情况:\n变化 = \\(\\Delta a_n\\) = \\(a_{n+1} - a_n\\) = \\(f\\)(序列中的项, 外部项)"
-  },
-  {
-    "objectID": "chap/01/index.html#按揭买房",
-    "href": "chap/01/index.html#按揭买房",
-    "title": "第 1 章 对变化进行建模",
-    "section": "按揭买房",
-    "text": "按揭买房\n六年前按揭20年买了一套80000美元的房子, 月供880.87美元并付每月1%的利息. 问现在还欠银行多少?\n\\[\\Delta b_n = b_{n+1} - b_n = 0.01b_n - 880.87\\]\n求解下列方程即可:\n\\[\n\\begin{align*}\nb_{n+1} &= 1.01b_n - 880.87 \\\\\nb_0 &= 80000\n\\end{align*}\n\\]\n\\[B = (80000, 79919.13, 79837.45, \\cdots)\\]"
-  },
-  {
-    "objectID": "chap/01/index.html#按揭买房-1",
-    "href": "chap/01/index.html#按揭买房-1",
-    "title": "第 1 章 对变化进行建模",
-    "section": "按揭买房",
-    "text": "按揭买房"
-  },
-  {
-    "objectID": "chap/01/index.html#用差分方程来近似变化",
-    "href": "chap/01/index.html#用差分方程来近似变化",
-    "title": "第 1 章 对变化进行建模",
-    "section": "用差分方程来近似变化",
-    "text": "用差分方程来近似变化\n\n变化 = \\(\\Delta a_n\\) = 某个函数\\(f\\)\n离散变化与连续变化\n模型的细化: 生、死、资源"
-  },
-  {
-    "objectID": "chap/01/index.html#酵母培养-找出模型",
-    "href": "chap/01/index.html#酵母培养-找出模型",
-    "title": "第 1 章 对变化进行建模",
-    "section": "酵母培养 – 找出模型",
-    "text": "酵母培养 – 找出模型\n\n\\[\\Delta p_n = p_{n+1} - p_n = k(665 - p_n)p_n\\]"
-  },
-  {
-    "objectID": "chap/01/index.html#酵母培养-模型数值求解",
-    "href": "chap/01/index.html#酵母培养-模型数值求解",
-    "title": "第 1 章 对变化进行建模",
-    "section": "酵母培养 – 模型数值求解",
-    "text": "酵母培养 – 模型数值求解\n\n\\[k \\approx 0.00082\\] \\[p_{n+1} = p_n + 0.00082(665 - p_n)p_n\\]"
-  },
-  {
-    "objectID": "chap/01/index.html#酵母培养-模型验证",
-    "href": "chap/01/index.html#酵母培养-模型验证",
-    "title": "第 1 章 对变化进行建模",
-    "section": "酵母培养 – 模型验证",
-    "text": "酵母培养 – 模型验证\n\n\\[p_{n+1} = p_n + 0.00082(665 - p_n)p_n\\]\n\n\n\n\n\n\n\n思考\n\n\n如何为书上例2传染病传播模型加入其它因素?"
-  },
-  {
-    "objectID": "chap/01/index.html#地高辛在血流中的变化",
-    "href": "chap/01/index.html#地高辛在血流中的变化",
-    "title": "第 1 章 对变化进行建模",
-    "section": "地高辛在血流中的变化",
-    "text": "地高辛在血流中的变化\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nn\n0\n1\n2\n3\n4\n5\n6\n7\n8\n\n\n\n\n\\(a_n\\)\n0.5\n0.345\n0.238\n0.164\n0.113\n0.078\n0.054\n0.037\n0.026\n\n\n\\(\\Delta a_n\\)\n-0.155\n-0.107\n-0.074\n-0.051\n-0.035\n-0.024\n-0.017\n-0.011\n\n\n\n\n\n\n\n\n\n\\[\n\\Delta a_n = -0.31a_n \\\\\na_{n+1} -  a_n = -0.31a_n \\\\\na_{n+1} = 0.69a_n\n\\]"
-  },
-  {
-    "objectID": "chap/01/index.html#动态系统的解法-猜测",
-    "href": "chap/01/index.html#动态系统的解法-猜测",
-    "title": "第 1 章 对变化进行建模",
-    "section": "动态系统的解法 – 猜测",
-    "text": "动态系统的解法 – 猜测\n\n\n存款问题: \\(a_{n+1} = 1.01a_n, a_0 = 1000\\)\n\\[\n\\begin{align*}\na_1 &= 1010.0 = 1.01(1000)\\\\\na_2 &= 1020.1 = 1.01(1010) = 1.01^2 (1000)\\\\\na_3 &= 1030.3 = 1.01(1020.1) = 1.01^3 (1000)\\\\\na_4 &= 1040.6 = 1.01(1030.3) = 1.01^4 (1000)\n\\end{align*}\n\\]"
-  },
-  {
-    "objectID": "chap/01/index.html#动态系统的解法-猜测-1",
-    "href": "chap/01/index.html#动态系统的解法-猜测-1",
-    "title": "第 1 章 对变化进行建模",
-    "section": "动态系统的解法 – 猜测",
-    "text": "动态系统的解法 – 猜测\n猜测: \\(a_k = 1.01^k(1000)\\) 验证、结论: …\n\n\n\n\n\n\n\n猜测法的一般步骤\n\n\n\n观察模式\n猜测动力系统的形式\n用带入法来测试该猜测\n接受或拒绝该推测：取决于代入和代数运算后结果是否满足该动力系统。\n\n\n\n\n\n推论： 形式为\\(a_{n+1} = ra_n\\)的动态系统的解为\\(a_k = r^k a_0\\)."
-  },
-  {
-    "objectID": "chap/01/index.html#a_n1ra_n",
-    "href": "chap/01/index.html#a_n1ra_n",
-    "title": "第 1 章 对变化进行建模",
-    "section": "\\(a_{n+1}=ra_n\\)",
-    "text": "\\(a_{n+1}=ra_n\\)\n\\(r = ?\\)"
-  },
-  {
-    "objectID": "chap/01/index.html#a_n1ra_n-b",
-    "href": "chap/01/index.html#a_n1ra_n-b",
-    "title": "第 1 章 对变化进行建模",
-    "section": "\\(a_{n+1}=ra_n + b\\)",
-    "text": "\\(a_{n+1}=ra_n + b\\)"
-  },
-  {
-    "objectID": "chap/01/index.html#不动点平衡点",
-    "href": "chap/01/index.html#不动点平衡点",
-    "title": "第 1 章 对变化进行建模",
-    "section": "不动点(平衡点）",
-    "text": "不动点(平衡点）\n\nDigoxin浓度变化"
-  },
-  {
-    "objectID": "chap/01/index.html#不动点",
-    "href": "chap/01/index.html#不动点",
-    "title": "第 1 章 对变化进行建模",
-    "section": "不动点",
-    "text": "不动点\n\\[a_{n+1} = 1.01a_n -1000\\]\n\n投资"
-  },
-  {
-    "objectID": "chap/01/index.html#r-1",
-    "href": "chap/01/index.html#r-1",
-    "title": "第 1 章 对变化进行建模",
-    "section": "\\(r = 1\\)",
-    "text": "\\(r = 1\\)\n\\[a_{n+1} = a_n -300\\]"
-  },
-  {
-    "objectID": "chap/01/index.html#不动点-1",
-    "href": "chap/01/index.html#不动点-1",
-    "title": "第 1 章 对变化进行建模",
-    "section": "不动点",
-    "text": "不动点\n\\(a_{n+1} = ra_n + b, r \\neq 1\\)的不动点为：\n\\[a = \\frac{b}{1-r}\\]\n上述动态系统的解为： \\(a_k=r^kc+\\frac{b}{1-r}\\).\n\n\n\n\n\n\n\n思考\n\n\n\\(r\\)的值不同时，长期来说系统如何变化？"
-  },
-  {
-    "objectID": "chap/01/index.html#非线性系统",
-    "href": "chap/01/index.html#非线性系统",
-    "title": "第 1 章 对变化进行建模",
-    "section": "非线性系统",
-    "text": "非线性系统"
-  },
-  {
-    "objectID": "chap/01/index.html#差分方程组",
-    "href": "chap/01/index.html#差分方程组",
-    "title": "第 1 章 对变化进行建模",
-    "section": "差分方程组",
-    "text": "差分方程组\n\n找出不动点\n当初始值在不动点附近时，系统如何变化\n\n研究系统的长期变化，看系统对如下条件是否敏感：\n\n初始条件\n对模型中的常量进行扰动"
-  },
-  {
-    "objectID": "chap/01/index.html#汽车租赁公司",
-    "href": "chap/01/index.html#汽车租赁公司",
-    "title": "第 1 章 对变化进行建模",
-    "section": "汽车租赁公司",
-    "text": "汽车租赁公司\n\n\n\n\n\n\\(O_n\\): 第\\(n\\)天营业结束时在奥兰多的车辆数\n\\(T_n\\): 第\\(n\\)天营业结束时在坦帕的车辆数\n\n\\[\n\\begin{align*}\nO_{n+1} &=0.6O_n + 0.3T_n \\\\\nT_{n+1} &=0.4O_n + 0.7T_n\n\\end{align*}\n\\]"
-  },
-  {
-    "objectID": "chap/01/index.html#计算平衡点",
-    "href": "chap/01/index.html#计算平衡点",
-    "title": "第 1 章 对变化进行建模",
-    "section": "计算平衡点",
-    "text": "计算平衡点\n如果存在平衡点\\(O\\), \\(T\\): \\[O=O_{n+1}=O_n\\] \\[T=T_{n+1}=T_n\\] 推导出： \\[O=0.6O + 0.3T\\] \\[T=0.4O + 0.7T\\]"
-  },
-  {
-    "objectID": "chap/01/index.html#方程求解",
-    "href": "chap/01/index.html#方程求解",
-    "title": "第 1 章 对变化进行建模",
-    "section": "方程求解",
-    "text": "方程求解\n\\(O=\\frac{3}{4}T\\)满足上述方程组. 如果公司有7000辆车，则\\((O, T) = (3000, 4000)\\)处开始，保持不变。\n分析下述四种初始条件："
-  },
-  {
-    "objectID": "chap/01/index.html#分析",
-    "href": "chap/01/index.html#分析",
-    "title": "第 1 章 对变化进行建模",
-    "section": "分析",
-    "text": "分析"
-  },
-  {
-    "objectID": "chap/01/index.html#分析-1",
-    "href": "chap/01/index.html#分析-1",
-    "title": "第 1 章 对变化进行建模",
-    "section": "分析",
-    "text": "分析"
-  },
-  {
-    "objectID": "chap/01/index.html#结论",
-    "href": "chap/01/index.html#结论",
-    "title": "第 1 章 对变化进行建模",
-    "section": "结论",
-    "text": "结论\n四种情形中每一种情形在一周内都是和平衡点\\((3000,4000)\\)很接近的，甚至在其中一个城市没有车的情况也是如此。结果显示，平衡点是稳定的而且对初始值不敏感的。\n思考:该系统是否对\\(O_{n+1}\\)和\\(T_{n+1}\\)的系数敏感？"
-  },
-  {
-    "objectID": "chap/01/index.html#特拉法尔加战斗",
-    "href": "chap/01/index.html#特拉法尔加战斗",
-    "title": "第 1 章 对变化进行建模",
-    "section": "特拉法尔加战斗",
-    "text": "特拉法尔加战斗\n法西联军33艘战舰，英军27艘战舰，在一次遭遇战中每方的战舰损失都是对方战舰的\\(10\\%\\)。\n动力系统模型 令\\(n\\)表示战斗过程中遭遇战的阶段并定义：\n\n\\(B_n =\\)第\\(n\\)阶段英军的战舰数\n\\(F_n =\\)第\\(n\\)阶段法西联军的战舰数"
-  },
-  {
-    "objectID": "chap/01/index.html#死拼打法",
-    "href": "chap/01/index.html#死拼打法",
-    "title": "第 1 章 对变化进行建模",
-    "section": "死拼打法",
-    "text": "死拼打法\n战斗结束：英军全面战败，剩3艘战舰其中一艘严重损坏，法军大约还有18艘战舰。"
-  },
-  {
-    "objectID": "chap/01/index.html#各个击破",
-    "href": "chap/01/index.html#各个击破",
-    "title": "第 1 章 对变化进行建模",
-    "section": "各个击破",
-    "text": "各个击破\n\n策略：英军13艘攻击\\(A\\)；然后，全力攻击\\(B\\)，最后攻击\\(C\\)。"
-  },
-  {
-    "objectID": "chap/01/index.html#战斗a",
-    "href": "chap/01/index.html#战斗a",
-    "title": "第 1 章 对变化进行建模",
-    "section": "战斗A",
-    "text": "战斗A"
-  },
-  {
-    "objectID": "chap/01/index.html#战斗b",
-    "href": "chap/01/index.html#战斗b",
-    "title": "第 1 章 对变化进行建模",
-    "section": "战斗B",
-    "text": "战斗B"
-  },
-  {
-    "objectID": "chap/01/index.html#战斗c",
-    "href": "chap/01/index.html#战斗c",
-    "title": "第 1 章 对变化进行建模",
-    "section": "战斗C",
-    "text": "战斗C"
-  },
-  {
-    "objectID": "chap/01/index.html#战果",
-    "href": "chap/01/index.html#战果",
-    "title": "第 1 章 对变化进行建模",
-    "section": "战果",
-    "text": "战果\n英军大获全胜。现实世界：法西联军没有参加战斗C，而是把剩下的约13艘战舰撤回法国。"
-  },
-  {
-    "objectID": "chap/01/index.html#斑点猫头鹰和隼",
-    "href": "chap/01/index.html#斑点猫头鹰和隼",
-    "title": "第 1 章 对变化进行建模",
-    "section": "斑点猫头鹰和隼",
-    "text": "斑点猫头鹰和隼\n\n\\(O_n\\), \\(H_n\\)分别表示第\\(n\\)天猫头鹰和隼的数量\n\\(\\Delta O_n=k_1O_n\\), \\(\\Delta H_n=k_2H_n\\) (不考虑竞争）\n\\(\\Delta O_n=k_1O_n - k_3O_nH_n\\), \\(\\Delta H_n=k_2H_n-k_4O_nH_n\\) (考虑竞争）\n\\(O_{n+1}=(1+k_1)O_n - k_3O_nH_n\\)\n\\(H_{n+1}=(1+k_2)H_n-k_4O_nH_n\\)"
-  },
-  {
-    "objectID": "chap/01/index.html#求解平衡点",
-    "href": "chap/01/index.html#求解平衡点",
-    "title": "第 1 章 对变化进行建模",
-    "section": "求解平衡点",
-    "text": "求解平衡点\n\n\\(O_{n+1}=1.2O_n - 0.001O_nH_n\\)\n\\(H_{n+1}=1.3H_n - 0.002O_nH_n\\)\n\n如果\\((O,H)\\)为平衡点则\\(O_{n+1}=O_n=O\\), \\(H_{n+1}=H_n=H\\)：\n\n\\(O=1.2O - 0.001OH \\Rightarrow O = 0 or H = 200\\)\n\\(H=1.3H - 0.002OH \\Rightarrow H = 0 or O = 150\\)"
-  },
-  {
-    "objectID": "chap/01/index.html#平衡点分析",
-    "href": "chap/01/index.html#平衡点分析",
-    "title": "第 1 章 对变化进行建模",
-    "section": "平衡点分析",
-    "text": "平衡点分析\n两个平衡点: \\((0, 0)\\), \\((150, 200)\\). 为什么？"
-  },
-  {
-    "objectID": "chap/01/index.html#情况1",
-    "href": "chap/01/index.html#情况1",
-    "title": "第 1 章 对变化进行建模",
-    "section": "情况1",
-    "text": "情况1"
-  },
-  {
-    "objectID": "chap/01/index.html#情况2",
-    "href": "chap/01/index.html#情况2",
-    "title": "第 1 章 对变化进行建模",
-    "section": "情况2",
-    "text": "情况2"
-  },
-  {
-    "objectID": "chap/01/index.html#情况3",
-    "href": "chap/01/index.html#情况3",
-    "title": "第 1 章 对变化进行建模",
-    "section": "情况3",
-    "text": "情况3"
-  },
-  {
-    "objectID": "chap/01/index.html#对初始条件的敏感性和长期行为",
-    "href": "chap/01/index.html#对初始条件的敏感性和长期行为",
-    "title": "第 1 章 对变化进行建模",
-    "section": "对初始条件的敏感性和长期行为",
-    "text": "对初始条件的敏感性和长期行为\n如果在栖息地安置350只猫头鹰和隼：\n\n如果150头为猫头鹰：猫头鹰和隼的数量不变（150、200）\n如果149头或更少猫头鹰：猫头鹰将灭绝\n如果151头或更多猫头鹰：隼将灭绝\n该模型对初始条件极其敏感，平衡点不稳定。"
-  },
-  {
-    "objectID": "chap/01/index.html#旅客趋势",
-    "href": "chap/01/index.html#旅客趋势",
-    "title": "第 1 章 对变化进行建模",
-    "section": "旅客趋势",
-    "text": "旅客趋势\n\n\n\\(S_n =\\) 第\\(n\\)个旅行周乘坐US Airways的旅客数\n\\(U_n =\\) 第\\(n\\)个旅行周乘坐United Airlines的旅客数\n\\(A_n =\\) 第\\(n\\)个旅行周乘坐American Airlines的旅客数"
-  },
-  {
-    "objectID": "chap/01/index.html#差分方程组-1",
-    "href": "chap/01/index.html#差分方程组-1",
-    "title": "第 1 章 对变化进行建模",
-    "section": "差分方程组",
-    "text": "差分方程组\n\\[\nS_{n+1}=0.75S_n+0.20U_n+0.40A_n \\\\\nU_{n+1}=0.05S_n+0.60U_n+0.20A_n \\\\\nA_{n+1}=0.20S_n+0.20U_n+0.40A_n\n\\]\n平衡点: \\(S_{n+1}=S_n=S\\), \\(U_{n+1}=U_n=U\\), \\(A_{n+1}=A_n=A\\):\n\\[\n-0.25S+0.20U+0.40A=0 \\\\\n0.05S-0.40U+0.20A=0 \\\\\n0.20S+0.20U-0.60A=0\n\\]"
-  },
-  {
-    "objectID": "chap/01/index.html#平衡点分析-1",
-    "href": "chap/01/index.html#平衡点分析-1",
-    "title": "第 1 章 对变化进行建模",
-    "section": "平衡点分析",
-    "text": "平衡点分析\n\\(S:U:A = 2.2221:0.7777694:1\\)"
-  },
-  {
-    "objectID": "chap/01/index.html#情况1-1",
-    "href": "chap/01/index.html#情况1-1",
-    "title": "第 1 章 对变化进行建模",
-    "section": "情况1",
-    "text": "情况1"
-  },
-  {
-    "objectID": "chap/01/index.html#情况2-1",
-    "href": "chap/01/index.html#情况2-1",
-    "title": "第 1 章 对变化进行建模",
-    "section": "情况2",
-    "text": "情况2"
-  },
-  {
-    "objectID": "chap/01/index.html#情况3-1",
-    "href": "chap/01/index.html#情况3-1",
-    "title": "第 1 章 对变化进行建模",
-    "section": "情况3",
-    "text": "情况3"
-  },
-  {
-    "objectID": "chap/01/index.html#情况4",
-    "href": "chap/01/index.html#情况4",
-    "title": "第 1 章 对变化进行建模",
-    "section": "情况4",
-    "text": "情况4"
-  },
-  {
-    "objectID": "chap/01/index.html#总结",
-    "href": "chap/01/index.html#总结",
-    "title": "第 1 章 对变化进行建模",
-    "section": "总结",
-    "text": "总结\n系统相当稳定，即使刚开始没有人坐US Airways和United Airlines的旅客数."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "数学建模",
-    "section": "",
-    "text": "第 1 章 对变化进行建模\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
